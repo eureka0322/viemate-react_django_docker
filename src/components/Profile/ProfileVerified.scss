@@ -1,0 +1,83 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.profile {
+  &__verified {
+    display: block;
+    padding-bottom: 7px;
+
+    &-text {
+      display: block;
+      font-size: 16px;
+      line-height: 32px;
+      margin-bottom: 6px;
+      color: rgba(0,0,0,0.44);
+      @include font-base-medium;
+      letter-spacing: 2.46px;
+      text-transform: uppercase;
+
+      @include breakpoint('phone-max') {
+        font-size: 15px;
+      }
+    }
+
+    &-list {
+      display: block;
+      font-size: 0;
+    }
+
+    &-item {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+
+      &--verified {
+        padding: 0 15px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      &--non-verified {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &--icon_passport,
+      &--icon_phone {
+        display: block;
+        vertical-align: middle;
+        font-size: 25px;
+        line-height: 25px;
+        color: $color-silver-light;
+      }
+
+      &--icon_phone {
+        margin-bottom: 4px;
+        margin-left: 6px;
+      }
+
+      &--icon_passport {
+        margin-top: 4px;
+      }
+
+      &--text {
+        display: block;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-gray-tundora;
+        @include font-base-medium;
+
+        @include breakpoint('phone-max') {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

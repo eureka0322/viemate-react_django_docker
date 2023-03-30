@@ -1,0 +1,71 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.setting-header {
+  text-align: center;
+
+  @include breakpoint("phone-max") {
+    margin-bottom: 60px;
+  }
+
+  &--extra-space {
+    margin-bottom: 35px;
+
+    @include breakpoint("phone-max") {
+      margin-bottom: 25px;
+    }
+  }
+
+  &--payments {
+    @include breakpoint("phone-max") {
+      margin-bottom: 0;
+
+      .setting-header__title {
+        // @include font-size--lx;
+        text-transform: none;
+      }
+
+      .setting-header__subtitle {
+        display: none;
+      }
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    margin-top: 0
+  }
+
+  &__title {
+    color: $color-tundora;
+    @include font-base-medium;
+    @include font-size--ol;
+    letter-spacing: -.35px;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+
+    @include breakpoint ('phone-max') {
+      @include font-size--lx;
+      letter-spacing: -.42px;
+      margin-bottom: 15px;
+    }
+
+    &--jumio-grey {
+      color: $color-jumio-grey;
+    }
+  }
+
+  &__subtitle {
+    color: $color-boulder;
+    @include font-base-book;
+    @include font-size--g;
+    margin-bottom: 45px;
+
+    @include breakpoint ('phone-max') {
+      @include font-size--g;
+      line-height: 25px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}

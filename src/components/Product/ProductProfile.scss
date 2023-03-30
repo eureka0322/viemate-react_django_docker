@@ -1,0 +1,133 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.product-profile {
+  color: $color-tundora;
+  background-color: $color-white;
+  border: 1px solid $color-concrete;
+  border-radius: 6px;
+  margin-bottom: 54px;
+  text-align: center;
+
+  @include breakpoint ('tablet') {
+    margin-bottom: 40px;
+  }
+
+
+  @include breakpoint('phone-max') {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+    padding: 40px 39px;
+
+    @include breakpoint ('tablet-desktop') {
+      padding: 39px 20px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding: 39px 20px 0 20px;
+    }
+  }
+
+  &__avatar {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &__name,
+  &__description {
+    @include font-base-medium;
+  }
+
+  &__name {
+    @include font-size--o;
+    letter-spacing: -.4px;
+    margin: 0 0 18px 0;
+    position: relative;
+  }
+
+
+
+  &__description {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 27px;
+    max-height: 85px;
+    overflow: hidden;
+    word-spacing: normal;
+    word-wrap: break-word;
+    white-space: normal;
+
+    @include breakpoint ('tablet-desktop') {
+      max-height: 107px;
+    }
+
+    @include breakpoint ('tablet-portrait-custom') {
+      max-height: 104px;
+    }
+
+    @include breakpoint('phone-max') {
+      max-height: 86px;
+    }
+  }
+
+  &__share {
+    margin-top: -23px;
+
+    @include breakpoint('phone-max') {
+      margin-top: 17px;
+    }
+
+    .dropdown__share {
+      border-right: 0;
+      width: 100%;
+
+      .dropdown--share-networks {
+        .dropdown-menu {
+          &--share {
+            min-width: 100% !important;
+
+            &:after {
+              @include breakpoint('phone-max') {
+                margin-left: -13px !important;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .product-nav {
+    padding: 0;
+
+    .form-button {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__user-bage {
+    margin-left: 13px;
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+
+    @include breakpoint('phone-max') {
+      margin-left: 10px;
+    }
+  }
+
+}
+
+.product-profile,
+.action {
+  @include breakpoint('tablet') {
+    margin-bottom: 40px;
+  }
+}

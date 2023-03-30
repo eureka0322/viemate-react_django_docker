@@ -1,0 +1,26 @@
+.infoBox {
+  cursor: pointer;
+
+  &--popup {
+    > img {
+      // width: 18px;
+      // height: 18px;
+      width: 54px;
+      height: 54px;
+      padding: 18px; // (54px - 18px) / 2
+      position: absolute !important;
+      top: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+
+  &--label {
+    // transform: translateZ(0px) translateX(-50%) !important;
+    // -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  &:hover {
+    z-index: 1;
+  }
+}

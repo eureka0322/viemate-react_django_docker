@@ -1,0 +1,121 @@
+.notification {
+  background-color: $color-white;
+  min-width: 328px;
+  max-width: 328px;
+  width: 100%;
+
+  @include breakpoint ('phone-max') {
+    min-width: 305px !important;
+    max-width: 100%;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-concrete;
+    display: block;
+    font-size: 15px;
+    line-height: 21px;
+    position: relative;
+    padding: 16px 13px;
+    margin-right: 24px;
+    text-align: left;
+
+    &:first-child {
+      padding-top: 7px !important;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &.is-active {
+
+      .avatar {
+        &:before {
+          content: '';
+          background-color: $color-radical-red;
+          border-radius: 50%;
+          position: absolute;
+          height: 10px;
+          width: 10px;
+          top: 4px;
+          margin: -3px 12px 0 20px;
+          left: 11px;
+          z-index: 2;
+        }
+      }
+    }
+
+    &--all-view {
+      background: $color-white;
+      text-align: center;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+      border: 1px solid $color-white;
+      border-radius: 6px;
+      padding: 0 !important;
+      margin-bottom: -14px;
+      margin-right: 0;
+
+      & > a {
+        color: $color-boulder !important;
+        display: block;
+        @include font-size--f;
+        padding: 8px 13px 6px 13px !important;
+        opacity: .9;
+        text-decoration: underline;
+        text-align: center !important;
+      }
+    }
+
+    .avatar {
+      position: absolute;
+    }
+
+    .avatar-wrapper {
+      float: none;
+    }
+  }
+
+  &__user-activity,
+  .avatar-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__user-activity {
+    color: $color-tundora;
+    margin-bottom: 2px;
+    word-spacing: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+
+    & > a {
+      color: $color-boulder;
+      margin: 0 5px;
+      text-decoration: underline;
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__date {
+    color: $color-silver-light;
+    display: block;
+    font-size: 13px;
+  }
+
+  &__loader {
+    color: $color-tundora;
+    @include font-size--f;
+    text-align: center;
+    padding-top: 14px;
+    width: 100%;
+  }
+}

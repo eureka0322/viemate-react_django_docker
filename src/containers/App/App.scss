@@ -1,0 +1,30 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/components/components";
+
+.app {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+
+  .main{
+    position: relative;
+
+    @include clearfix();
+    padding: 27px 30px;
+  }
+
+  &__container {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+}
+
+.body-settings {
+  .app__container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}

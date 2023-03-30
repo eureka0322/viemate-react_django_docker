@@ -1,0 +1,80 @@
+
+
+.react-crop {
+  &__container {
+    margin: 0 auto 25px auto;
+
+    &-wrap {
+      margin: 0 auto 30px auto;
+      height: 216px;
+      width: 216px;
+    }
+
+    .ReactCrop {
+      border-radius: 6px;
+      margin: 0 auto 30px auto;
+
+      &--crop-wrapper,
+      &--image {
+        border-radius: 6px;
+      }
+
+      .ord-w,
+      .ord-s,
+      .ord-n,
+      .ord-e {
+        display: none;
+      }
+    }
+
+    .InputRange {
+      margin: 0 auto 30px auto;
+      width: 216px;
+
+      &-sliderContainer {
+        &:last-child {
+          .InputRange-slider {
+            height: 23px;
+            width: 23px;
+            right: 0;
+            margin-top: -20px;
+
+            @include breakpoint ('tablet') {
+              margin-top: -26px;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-groups {
+      margin-top: 45px;
+      text-align: center;
+
+      .form-button--pink {
+        margin-right: 15px;
+      }
+    }
+  }
+
+
+
+  &__avatar {
+
+    & > img {
+      background-color: $color-black;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      // width: 155px;
+      // height: 155px;
+    }
+
+    .btn-groups {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+
+}

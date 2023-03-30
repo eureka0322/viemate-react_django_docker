@@ -1,0 +1,627 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+$dropdown: 'dropdown';
+
+.#{$dropdown} {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 1;
+
+  .dropdown-menu {
+    border-radius: 6px !important;
+    border-color: transparent !important;
+    display: block;
+    padding: 14px 0;
+    & > li {
+      & > a,
+      & > button {
+        @include font-size--f;
+        padding: 7px 22px !important;
+        text-align: left;
+
+        &:hover,
+        &:focus {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    &--user-menu {
+      padding: 13px 0 !important;
+      min-width: 187px;
+
+      & > li & > a {
+        padding: 7px 31px !important;
+      }
+
+    }
+
+    &--notification {
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.20) !important;
+      padding: 14px 0 !important;
+      backface-visibility: hidden; // prevents possible header jumping
+      transform: translateZ(0); // same
+
+      & > li > ul {
+        margin: 0;
+        padding: 0;
+        max-height: 415px;
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: $color-white;
+          border-radius: 4px;
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-clip: content-box;
+          background-color: $color-silver-grey;
+          border: 1px solid $color-silver-grey;
+          border-radius: 4px;
+          width: 6px;
+        }
+
+        &::-ms-scrollbar {
+          width: 6px;
+        }
+
+        &::-ms-scrollbar-track {
+          background-color: $color-white;
+          border-radius: 4px;
+          width: 6px;
+        }
+
+        &::-ms-scrollbar-thumb {
+          background-clip: content-box;
+          background-color: $color-silver-grey;
+          border: 1px solid $color-silver-grey;
+          border-radius: 4px;
+          width: 6px;
+        }
+      }
+
+      & > li {
+        border-bottom: 1px solid $color-concrete;
+
+        &:first-child {
+          border-bottom: 0;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+          text-align: center;
+          padding-top: 11px;
+          padding-bottom: 0
+        }
+
+        &.notification__loader {
+          padding: 16px 13px;
+          @include font-base-medium;
+        }
+      }
+
+      .notification__user-activity {
+        color: $color-tundora;
+        @include font-size--f;
+        @include font-base-medium;
+        padding: 16px 20px 13px 14px;
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .notification-container {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+    }
+
+    &--setting-nav {
+
+      & > li {
+        & > a {
+          @include font-size--g;
+          width: 100%;
+
+          @include breakpoint ('phone-max') {
+            padding: 15px !important;
+            text-align: left;
+          }
+        }
+      }
+
+    }
+
+    &--create-post-list {
+      background-color: transparent;
+      border-radius: 0 !important;
+      box-shadow: none;
+      padding: 0;
+      margin-left: -9px !important;
+      top: 61px;
+
+      .form-button {
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        color: $color-white;
+        @include font-size--g;
+        padding: 27px 43px !important;
+        letter-spacing: 0;
+        max-width: 186px;
+        text-transform: none;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+          color: $color-boulder;
+        }
+      }
+
+      & > li {
+        &:last-child {
+          .form-button {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    &--share {
+      min-width: 246px !important;
+    }
+  }
+
+  &--no-radius {
+    .dropdown-menu {
+      border-radius: 0 !important;
+    }
+  }
+
+  &--position {
+    &-center {
+      .dropdown-menu {
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, 0);
+        margin: 10px 0 0 0 !important;
+
+        @include breakpoint ('phone-max') {
+          left: 0 !important;
+          transform: translate(0, 0);
+        }
+
+        &--full-width {
+          width: 100%;
+        }
+      }
+    }
+
+    &-left {
+      .dropdown-menu {
+        left: 0 !important;
+      }
+    }
+
+    &-right {
+      .dropdown-menu {
+        right: -22px !important;
+        left: auto !important;
+        top: 5px;
+
+        @include breakpoint ('tablet') {
+          right: -25px;
+          top: 0;
+        }
+
+        @include breakpoint ('phone-max') {
+          right: -15px;
+        }
+      }
+    }
+
+    &-top {
+      .dropdown-menu {
+        margin-top: -8px !important;
+
+        @include breakpoint ('phone-max') {
+          margin-left: -3px !important;
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+
+  &--create-post {
+    background-color: $color-radical-red;
+    height: 100%;
+    padding: 10px 12px;
+    min-height: 72px;
+    z-index: 0 !important;
+    max-width: 186px;
+    min-width: 186px;
+    width: 100%;
+    text-align: left;
+
+    @include breakpoint ('tablet-large') {
+      max-width: 154px;
+      min-width: 154px;
+    }
+
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    .dropdown-menu {
+      margin-top: 0 !important;
+    }
+
+    .dropdown__trigger {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &--arrow {
+    .dropdown-menu {
+      position: absolute;
+
+      &:after {
+        bottom: 100%;
+        border: solid transparent;
+        border-width: 13px;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        margin-left: -13px;
+      }
+    }
+
+    &-disabled {
+      .dropdown-menu {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+
+    &-center {
+      .dropdown-menu {
+        &:after {
+          left: 50%;
+          margin-right: -22px;
+        }
+      }
+    }
+
+    &-left {
+      .dropdown-menu {
+        &:after {
+          left: 20%;
+        }
+      }
+
+    }
+
+    &-right {
+      .dropdown-menu {
+        &:after {
+          right: 21px;
+          border-width: 7px;
+          margin-left: -7px;
+
+          @include breakpoint ('tablet') {
+            right: 25px;
+          }
+
+          @include breakpoint ('phone-max') {
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &--color {
+
+    &-white,
+    &-black {
+      .dropdown-menu {
+        &:after {
+          border-color: transparent;
+        }
+      }
+    }
+
+    &-white {
+      .dropdown-menu {
+        background: $color-white !important;
+
+        &:after {
+          border-bottom-color: $color-white;
+        }
+      }
+    }
+
+    &-black {
+      .dropdown-menu {
+        background-color: rgba(71, 71, 71, .95) !important;
+
+        &:after {
+          border-bottom-color: rgba(71, 71, 71, .95);
+        }
+
+        & > li {
+          & > a,
+          & > button {
+            color: $color-white !important;
+
+            &:hover,
+            &:focus {
+              color: $color-silver-light !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--full-width {
+    .dropdown-menu {
+      width: 100%;
+    }
+  }
+
+  &--share-networks {
+    .dropdown-menu {
+      &:after {
+        @include breakpoint ('phone-max') {
+          margin-left: -40px !important;
+        }
+      }
+    }
+  }
+
+
+  &--header {
+    &.is-active {
+      .form-button--header-dropdown-active,
+      .form-button--header-dropdown-user {
+        background-color: $color-boulder !important;
+      }
+
+      .form-button--header-dropdown-notification,
+      .form-button--header-dropdown-email {
+        .icon-count {
+          background-color: $color-boulder;
+          border-color: $color-white;
+          color: $color-white;
+        }
+      }
+
+      .form-button--header-dropdown-location{
+        color: $color-white;
+      }
+    }
+  }
+
+  &__header-user-menu {
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+    .dropdown-menu {
+      left: 40% !important;
+
+      a {
+        white-space: normal;
+      }
+    }
+  }
+
+
+  &__notification {
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+
+    &.dropdown--position-center {
+      .dropdown-menu {
+        @include breakpoint ('phone-max') {
+          right: 0 !important;
+          left: auto !important;
+          transform: translate(0, 0);
+        }
+      }
+    }
+
+    &.dropdown--arrow-center {
+      .dropdown-menu {
+        &:after {
+          margin-left: -15px;
+          @include breakpoint ('phone-max'){
+            left: auto;
+            margin-right: 7px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  &__setting {
+    background-color: $color-white;
+    box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.10);
+    color: $color-mine-grey;
+    display: block;
+    @include font-size--i;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &.is-active,
+    &:focus {
+      color: $color-mine-grey;
+
+      .form-button {
+        color: $color-mine-grey;
+      }
+    }
+  }
+
+  &__share {
+    border-right: 1px solid $color-concrete;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+
+    .dropdown,
+    .form-button {
+      width: 100% !important;
+    }
+
+    .icon {
+      margin-right: 6px;
+      max-height: 18px;
+    }
+
+    .icon,
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .dropdown-menu {
+
+      .icon {
+        background-size: 14px 14px;
+        margin-right: 17px;
+        height: 14px;
+        width: 14px;
+
+        @include breakpoint ('tablet-portrait-custom') {
+          margin-right: 10px;
+        }
+      }
+
+      .SocialMediaShareButton, .social_media_btn {
+        background: none;
+        border: none;
+        outline: none;
+        color: $color-white;
+        cursor: pointer;
+        @include font-size--f;
+        padding: 7px 30px;
+        text-align: left;
+        text-transform: capitalize;
+        width: 100%;
+
+        @include breakpoint ('tablet-desktop') {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        @include breakpoint ('tablet-portrait-custom') {
+          padding-left: 15px;
+          padding-right: 15px;
+          @include font-size--e;
+        }
+
+        @include breakpoint('phone-max') {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        &:hover {
+          color: $color-silver-light;
+        }
+      }
+    }
+  }
+
+  &__payments {
+    &.dropdown--position-right {
+      .dropdown-menu {
+        @include breakpoint ('phone-max') {
+          right: 0 !important;
+        }
+      }
+    }
+
+    &.dropdown--arrow-right .dropdown-menu:after {
+
+      @include breakpoint ('phone-max') {
+        border-width: 5px !important;
+        margin-left: -5px !important;
+        right: 5px !important;
+      }
+    }
+
+    .dropdown-toggle {
+      @include breakpoint("tablet-max") {
+        padding: 18px;
+        margin: -18px;
+        // margin-top: -3px;
+      }
+    }
+
+    .dropdown-menu {
+      @include breakpoint("tablet-max") {
+        top: 5px;
+
+        &:after {
+          right: 21px;
+        }
+      }
+    }
+
+
+  }
+
+}
+.dropdown-menu {
+  z-index: 2;
+}
+
+.#{$dropdown}-animation {
+  position: relative;
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  opacity: .99;
+
+  &-enter {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate3d(0,5px,0);
+  }
+
+  &-enter.#{$dropdown}-animation-enter-active {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transform: translate3d(0,0,0);
+  }
+
+  &-leave {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  &-leave.#{$dropdown}-animation-leave-active {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}

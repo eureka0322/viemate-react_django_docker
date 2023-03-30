@@ -1,0 +1,238 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: $color-white;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.13);
+  border-radius: 6px;
+  margin-top: -1px;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    .panel-links__btn,
+    .panel-links__like {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  &.is-like {
+    .panel-links--top {
+      opacity: 1;
+
+      .icon {
+        &--like {
+          display: none;
+        }
+
+        &--like-full {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  &__panel-img {
+    position: relative;
+    padding-bottom: 100%;
+    margin: -1px;
+    overflow: hidden;
+  }
+
+  &__media-cover {
+    backface-visibility: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    // background-color: $color-grey;
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+     img {
+      display: inline-block;
+      vertical-align: middle;
+      height: auto;
+      width: 100%;
+      user-select: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+  &__caption {
+    @include font-base-book;
+    padding: 23px 32px 31px 32px;
+    text-align: left;
+
+    @include breakpoint ('tablet-portrait-custom') {
+      padding: 22px 16px 20px 16px;
+    }
+
+    @include breakpoint ('phone') {
+      padding-right: 18px;
+      padding-left: 18px;
+    }
+  }
+
+  &__name {
+    color: $color-tundora;
+    display: block;
+    @include font-base-demi;
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 19px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 24px;
+    margin-bottom: 3px;
+    max-height: 65px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint ('phone-max') {
+      margin-top: 22px;
+    }
+  }
+
+  &__trigger-more {
+    color: $color-sharm-rock;
+    font-size: 15px;
+    line-height: 22px;
+
+    &:hover {
+      color: $color-silver-light;
+    }
+  }
+}
+
+
+//User-details
+.user-details {
+  margin: 0 0 10px 0;
+
+  &__item {
+    color: $color-tundora;
+    display: block;
+    margin-bottom: 10px;
+
+    @include breakpoint ('tablet') {
+      margin-bottom: 8px;
+    }
+
+    i,
+    &--text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    span {
+      @include font-size--f;
+      // @include font-base-book;
+    }
+  }
+
+  &--bold {
+    @include font-base-medium;
+  }
+}
+
+//Panel-links
+.panel-links {
+  position: absolute;
+  z-index: 2;
+
+  @include breakpoint ('phone-max') {
+    opacity: 1;
+  }
+
+  &--top {
+    top: 0;
+    right: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &__like {
+    cursor: pointer;
+    position: absolute;
+    top: 22px;
+    right: 23px;
+
+    &:hover {
+      @include breakpoint ('tablet-min') {
+        .icon {
+          &--like {
+            background-image: url("../../../icons/svg/icon-like-hover.svg");
+          }
+        }
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+
+    &.is-active {
+      opacity: 1;
+
+      .icon--like {
+        display: none;
+      }
+
+      .icon--like-full {
+        display: block;
+      }
+    }
+
+    .icon {
+      &--like {
+        background-size: 54px 48px;
+        width: 54px;
+        height: 48px;
+      }
+
+      &--like-full {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0 0 32px -51px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+  }
+}

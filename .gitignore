@@ -1,0 +1,21 @@
+# Webstorm
+.idea/
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+node_modules/
+dist/
+*.iml
+.DB
+webpack-assets.json
+webpack-stats.json
+npm-debug.log
+.vagrant/
+
+*.log
+
+*.sublime-workspace
+*.sublime-project

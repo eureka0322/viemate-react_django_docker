@@ -1,0 +1,17 @@
+.title {
+  color: $color-tundora;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-transform: uppercase;
+
+  @include breakpoint('phone-max') {
+    @include font-size--e;
+    letter-spacing: 1px;
+  }
+
+  @include breakpoint ('phone') {
+    @include font-size--d;
+  }
+}

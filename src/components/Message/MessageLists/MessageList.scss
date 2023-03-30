@@ -1,0 +1,71 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+.message-list {
+  padding-top: 44px;
+  position: absolute;
+  bottom: 188px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include breakpoint ('phone-max') {
+    bottom: 141px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-white;
+    border-radius: 10px;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    width: 3px;
+  }
+
+  &::-ms-scrollbar {
+    width: 7px;
+  }
+
+  &::-ms-scrollbar-track {
+    background-color: $color-white;
+    border-radius: 10px;
+    width: 7px;
+  }
+
+  &::-ms-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    width: 3px;
+  }
+
+  &__wrapper {
+    position: static;
+    left: 0;
+    right: 16px;
+    bottom: 0;
+  }
+
+  &__container {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+

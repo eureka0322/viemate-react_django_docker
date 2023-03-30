@@ -1,0 +1,51 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.notifications {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1052;
+  visibility: visible;
+  max-width: 780px;
+  margin: 90px auto 50px auto;
+  pointer-events: 'none';
+
+  @include breakpoint ('phone-max') {
+    max-width: 375px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__wrap {
+    background-color: $color-white;
+  }
+
+  &.notifications-enter {
+    visibility: hidden;
+    transform: translate(0, -50%);
+    opacity: 0;
+
+    &.notifications-enter-active{
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: all .5s ease-out;
+    }
+  }
+
+  &.notifications-leave {
+
+    &.notifications-leave-active{
+      opacity: 0;
+      transform: translate(0, -50%);
+      transition: all .5s ease-out;
+    }
+  }
+
+  .alert {
+    @include font-size--o;
+    @include clearfix;
+  }
+}

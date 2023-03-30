@@ -1,0 +1,714 @@
+.table {
+  display: table;
+  margin-bottom: 0;
+  width: 100%;
+
+  &--bg {
+    &-grey {
+      border-bottom: 1px solid $color-concrete;
+      padding-bottom: 18px;
+
+      @include breakpoint ('phone-max') {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &--payment-detail {
+    border-top: 1px solid $color-concrete;
+
+    @include breakpoint ('phone-max') {
+      display: table;
+    }
+
+    .table__body {
+
+      @include breakpoint ('phone-max') {
+        display: table-row-group;
+      }
+
+      .table__row {
+        @include breakpoint ('phone-max') {
+          display: table-row;
+          width: 100%;
+        }
+      }
+
+      .table__cell {
+        @include breakpoint ('phone-max') {
+          display: table-cell;
+          padding: 14px 0;
+          width: 50%;
+        }
+
+        &:last-child {
+          @include breakpoint ('phone-max') {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &--payment-method {
+    margin-bottom: 68px;
+  }
+
+  &--payment-history {
+    .table__body {
+      .table__cell {
+        &:last-child {
+          text-align: left;
+        }
+      }
+    }
+
+    .table__cell {
+      padding-left: 38px;
+      @include font-size--f;
+      padding-top: 19px;
+      padding-bottom: 17px;
+
+      &.table__header-item {
+        @include font-size--i;
+      }
+    }
+  }
+
+  &-responsive {
+    @include breakpoint ('phone-max') {
+      display: block;
+    }
+
+    .table__body,
+    .table__row,
+    .table__cell {
+      @include breakpoint ('phone-max') {
+        display: block;
+      }
+    }
+
+    .table__row {
+      @include breakpoint ('phone-max') {
+        position: relative;
+        border-bottom: 1px solid $color-concrete;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+
+    .table__cell,
+    .table__header-item {
+      @include breakpoint ('phone-max') {
+        border-bottom: 0;
+        padding: 0 !important;
+        margin-bottom: 13px;
+        font-size: 18px;
+        line-height: 18px;
+        text-align: center !important;
+        width: 100%;
+      }
+    }
+  }
+
+  &-payments {
+    @include font-base-book;
+    width: 100%;
+
+    @include breakpoint ('phone-max') {
+      max-width: 375px;
+      margin: 0 auto;
+    }
+
+    .table__row {
+      &:not(.table__row--header) {
+        &:first-child {
+          cursor: pointer;
+        }
+      }
+
+      &:hover {
+        background-color: $color-concrete;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      &--header {
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .table__cell {
+      color: $color-tundora;
+      font-size: 18px;
+      line-height: 25px;
+      padding: 20px 11px 18px;
+      @include font-base-book;
+      vertical-align: middle;
+
+      @include breakpoint ('tablet-portrait-custom') {
+        @include font-size--e;
+      }
+
+      &:first-child {
+        padding-left: 12px;
+      }
+
+      &:last-child {
+        // padding-right: 0;
+        text-align: left;
+      }
+
+      &--center {
+        text-align: center !important;
+      }
+
+      &--no-border {
+        border-bottom: 0;
+      }
+
+      &--no-space {
+        padding-left: 11px;
+
+        @include breakpoint ('phone-max') {
+          padding-left: 0;
+        }
+      }
+
+      &--no-space-t-b {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &.table__header-item  {
+        padding-bottom: 16px;
+      }
+    }
+
+    &--users {
+      @include breakpoint("phone-max") {
+        .table__body {
+          &:not(:first-of-type) {
+            margin-top: 35px;
+          }
+
+          background: $color-white;
+          border: 1px solid $color-concrete;
+          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.13);
+          border-radius: 6px;
+
+          tr {
+            padding: 17px 25px 15px;
+          }
+        }
+
+        .table__row--flex {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column-reverse;
+        }
+
+        .table__row--details {
+          display: none;
+        }
+
+        .table__cell {
+          font-size: 15px;
+          overflow: hidden;
+
+          &:nth-child(1) {
+            order: 1;
+          }
+        }
+
+        .payments__avatar {
+          margin-bottom: 20px;
+
+          @include breakpoint ('phone-max') {
+            margin-bottom: 18px;
+          }
+        }
+
+        .payments__user-name {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__who {
+      &:first-of-type {
+        td {
+          padding-top: 25px;
+        }
+      }
+
+      text-align: center;
+
+      td {
+        padding: 15px 0;
+        font-size: 18px;
+        line-height: 1;
+        cursor: default;
+      }
+    }
+  }
+
+  &--add-payment {
+    margin-bottom: 30px;
+
+    @include breakpoint("phone-max") {
+      margin-bottom: 0;
+    }
+  }
+
+  &__payment-method {
+    margin-bottom: 80px;
+
+    @include breakpoint("tablet-max") {
+      margin-bottom: 50px;
+    }
+    @include breakpoint("phone-max") {
+      margin: 20px 0 64px 0;
+    }
+
+    .table__cell:last-child {
+      text-align: left;
+    }
+
+    .table__header-item {
+      padding-left: 35px;
+
+      @include breakpoint ('tablet') {
+        padding-left: 11px;
+      }
+    }
+
+    .table__row {
+      &:not(.table__row--header):first-child {
+        cursor: auto;
+      }
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    .table__cell {
+      padding-top: 35px;
+      padding-bottom: 35px;
+      padding-left: 35px;
+      @include font-base-book;
+
+      @include breakpoint ('tablet') {
+        padding-left: 11px;
+      }
+
+      @include breakpoint("phone-max") {
+        padding-left: 15px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        font-size: 15px;
+        text-align: left !important;
+        margin: 13px 0 0;
+
+        &--settings {
+          width: 14px;
+          height: 18px;
+          margin: 0;
+          position: absolute;
+          top: 24px;
+          right: 0;
+        }
+
+        &--modified {
+          order: 1;
+          color: $color-tundora;
+          opacity: .6;
+        }
+
+        &--status {
+          order: 2;
+          @include font-base-book;
+          color: #50e3c2;
+
+          &:empty {
+            display: none;
+          }
+        }
+
+        &--details {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: $color-tundora;
+
+          // .icon,
+          // .payments-ending {
+          //   @include breakpoint ('phone-max') {
+          //     display: inline-block;
+          //     width: 50%;
+          //   }
+          // }
+
+          .details-wrapper {
+            @include breakpoint ('phone-max') {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+            }
+          }
+
+          .payments-ending {
+            @include breakpoint ('phone-max') {
+              color: $color-tundora;
+              opacity: .6;
+              text-align: right;
+            }
+          }
+        }
+
+        &--card-type {
+          @include font-base-medium;
+          font-size: 18px;
+        }
+      }
+
+      &--default {
+        @include font-base-book;
+        color: $color-turquoise;
+      }
+
+      &--settings {
+        line-height: 0;
+      }
+
+      &-mob-added {
+        display: none;
+
+        @include breakpoint("phone-max") {
+          display: inline;
+        }
+      }
+
+      // @include breakpoint ('phone-max') {
+      //   display: block;
+      // }
+    }
+
+    &--cards-list {
+      .table__row {
+        @include breakpoint("phone-max") {
+           display: flex;
+           flex-wrap: wrap;
+           padding: 20px 0 20px;
+
+          &:last-child {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    &--add-payment {
+      .table__row {
+        padding: 22px 0;
+      }
+    }
+  }
+
+  &__header {
+    display: table-header-group;
+    vertical-align: top;
+
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    &--unpaid {
+      background-color: rgba(255, 51, 102, .1);
+    }
+  }
+
+  &__header-item {
+    color: $color-tundora;
+    @include font-base-demi;
+    @include font-size--i;
+    font-weight: 400;
+    padding: 0 11px;
+    opacity: .4;
+    text-transform: capitalize;
+    text-align: left;
+    vertical-align: top;
+    padding-bottom: 15px;
+
+    @include breakpoint ('tablet') {
+      font-size: 16px;
+    }
+
+    &--no-space {
+      padding-left: 0 !important;
+    }
+  }
+
+  &__body {
+    display: table-row-group;
+    vertical-align: middle;
+    width: 100%;
+
+    &--position {
+      &-top {
+        .table__cell {
+          vertical-align: top;
+        }
+      }
+    }
+
+    &--unpaid {
+      background-color: rgba(255, 51, 102, .1);
+
+      &:hover {
+        background-color: rgba(255, 51, 102, .1);
+      }
+
+      .table__row {
+        &:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  &__row {
+    display: table-row;
+    position: relative;
+    width: 100%;
+
+    &--expired {
+      @include breakpoint ('phone-max') {
+        border-bottom: 0;
+      }
+
+      &:focus,
+      &.is-active{
+        background-color: rgba(0, 0, 0, .33);
+
+        &:hover {
+          background-color: rgba(0, 0, 0, .33);
+        }
+
+        .table__cell {
+          color: $color-white;
+        }
+      }
+    }
+
+    &--expired-open {
+      background-color: rgba(0, 0, 0, .33);
+    }
+
+    &--pending {
+      &:focus,
+      &.is-active {
+        background-color: rgba(254, 187, 157, .1);
+
+        &:hover {
+          background-color: rgba(254, 187, 157, .1);
+        }
+      }
+    }
+
+    &--declined {
+      &:focus,
+      &.is-active {
+        background-color: rgba(255, 130, 130, .1);
+
+        &:hover {
+          background-color: rgba(255, 130, 130, .1);
+        }
+      }
+    }
+
+    &--paid,
+    &--approved {
+      &:focus,
+      &.is-active {
+        background-color: rgba(80, 227, 194, .1);
+
+        &:hover {
+          background-color: rgba(80, 227, 194, .1);
+        }
+      }
+    }
+
+
+    &--declined,
+    &--pending,
+    &--paid {
+      &:focus {
+        color: $color-dusty-gray;
+      }
+    }
+
+    &--declined,
+    &--pending,
+    &--paid,
+    &--approved,
+    &--expired,
+    &--unpaid {
+      &.is-active {
+        .table__cell {
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &--unpaid {
+      &:focus,
+      &.is-active {
+        background-color: rgba(255, 51, 102, .1);
+
+        &:hover {
+          background-color: rgba(255, 51, 102, .1);
+        }
+      }
+
+      & > .table__cell {
+        color: $color-tundora-light;
+
+        &--no-padding {
+          padding-top: 0;
+          padding-bottom: 31px;
+        }
+      }
+    }
+
+    &--open-item {
+      .table__cell {
+        border-bottom: 1px solid $color-concrete;
+        // padding-top: 0;
+        padding-bottom: 31px !important;
+
+        &--no-border {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+
+  &__cell {
+    color: $color-tundora;
+    display: table-cell;
+    vertical-align: top;
+
+    &--no-border {
+      border-bottom: 0;
+    }
+
+    &--first {
+      width: 11%;
+    }
+
+    &--second {
+      width: 15%;
+    }
+
+    &--third {
+      width: 19.3%;
+    }
+
+    &--fourth {
+      width: 19%;
+    }
+
+    &--fifth {
+      width: 13.7%;
+    }
+
+    &--sixth {
+      width: 12%;
+    }
+
+    &--seven {
+      width: 12%;
+    }
+
+    &--position {
+      &-left {
+        text-align: left !important;
+      }
+    }
+
+    &--no-padding {
+      padding: 0 !important;
+    }
+
+
+    &--procedure {
+      padding-right: 16px !important;
+
+      @include breakpoint("phone-max") {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  // mobile
+  &__mob-ttl {
+    float: left;
+    width: 40%;
+    @include font-base-bold;
+    text-align: left;
+    color: #484848;
+    letter-spacing: 2.31px;
+    display: none;
+
+    @include breakpoint("phone-max") {
+      display: block;
+
+      & + span {
+        display: block;
+        padding-left: 12px;
+        text-align: left;
+        letter-spacing: 2.31px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &__mob-row-ttl {
+    margin-bottom: 20px;
+    @include font-base-demi;
+    line-height: 1.2;
+    color: $color-tundora;
+    opacity: .4;
+    display: none;
+
+    @include breakpoint("phone-max") {
+      display: block;
+    }
+
+    &--method {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+
+    &--details {
+      margin: 16px 0 16px;
+      font-size: 16px;
+    }
+  }
+}

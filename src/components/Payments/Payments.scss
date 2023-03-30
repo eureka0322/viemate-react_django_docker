@@ -1,0 +1,871 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.payments {
+
+  &__avatar {
+
+    .avatar-wrapper {
+      display: block;
+      float: none;
+
+      @include breakpoint ('phone-max') {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__preview {
+    @include clearfix;
+    margin-bottom: 16px;
+
+    @include breakpoint("phone-max") {
+      text-align: center;
+    }
+
+    .settings__description {
+      margin-bottom: 38px;
+    }
+
+    .form-button--user-action {
+      padding-left: 36px;
+      padding-right: 36px;
+
+      @include breakpoint("phone-max") {
+        float: none;
+      }
+    }
+  }
+
+  &__table {
+
+    .table__cell {
+      border-bottom: 1px solid $color-concrete;
+
+      @include breakpoint("phone-max") {
+        border-bottom: 0;
+      }
+
+      &.table__header-item {
+        border-bottom: 0;
+      }
+    }
+
+    .form-radio {
+      &__label {
+        color: $color-tundora;
+        font-size: 15px;
+        line-height: 24px;
+
+        @include breakpoint ('tablet-max') {
+          font-size: 18px;
+        }
+
+        @include breakpoint ('phone-max') {
+          margin-bottom: 0;
+        }
+
+        &--caption  {
+          color: $color-silver-dark;
+          display: block;
+          padding-left: 0;
+
+          @include breakpoint ('phone-max') {
+            display: none !important;
+          }
+        }
+      }
+
+      &__label,
+      &__icon {
+        vertical-align: middle;
+      }
+
+      &__group {
+        .form-group {
+          display: block;
+          text-align: left;
+          width: 100%;
+          padding: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      &__icon {
+        @include breakpoint ('tablet-max') {
+          display: inline-block !important;
+          position: absolute !important;
+          margin: 0 !important;
+        }
+      }
+    }
+
+    .dropdown-setting {
+      display: none;
+
+      @include breakpoint ('phone-max') {
+        text-align: right;
+      }
+    }
+
+    .form-radio__group,
+    .dropdown-setting,
+    .payment-type {
+      @include breakpoint ('phone-max') {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    }
+
+    .time,
+    .currency,
+    .details,
+    .payment-date,
+    .rent-detail {
+      @include breakpoint ('phone-max') {
+        opacity: .6;
+      }
+    }
+
+    .details {
+      @include breakpoint ('phone-max') {
+        line-height: 22px;
+      }
+    }
+
+    .fee,
+    .currency {
+      @include breakpoint ('phone-max') {
+        display: none;
+      }
+    }
+
+    .time,
+    .currency__position-mobile,
+    .transition-type,
+    .total-amount,
+    .rent-detail,
+    .payment-date {
+      @include breakpoint ('phone-max') {
+        display: inline-block !important;
+        vertical-align: top;
+        margin-bottom: 24px;
+        width: 50%;
+      }
+    }
+
+    .currency {
+      &__position-mobile {
+        display: none;
+
+        @include breakpoint ('phone-max') {
+          text-align: right;
+        }
+      }
+    }
+
+    .form-button  {
+      &--user-action {
+        @include breakpoint ('tablet') {
+          padding-left: 50px;
+          padding-right: 50px;
+        }
+
+        @include breakpoint ('phone-max') {
+          float: none;
+          display: block;
+          margin: 0 auto;
+          padding-left: 38px;
+          padding-right: 38px;
+        }
+      }
+    }
+
+    .payment-type,
+    .user-info {
+      line-height: 25px;
+
+      @include breakpoint ('tablet') {
+        line-height: 27px;
+      }
+
+      &__caption {
+        color: $color-silver-dark;
+
+        @include breakpoint ('phone-max') {
+          color: $color-tundora;
+        }
+      }
+    }
+
+    .payment-type__title,
+    .payment-type__caption,
+    .user-info {
+      display: block;
+
+      @include breakpoint ('phone-max') {
+        display: inline-block;
+      }
+    }
+
+    .payment-type__title {
+      .hidden {
+        @include breakpoint ('phone-max') {
+          display: inline-block !important;
+        }
+      }
+    }
+
+    .user-info {
+      @include breakpoint ('phone-max') {
+        margin-bottom: 24px;
+      }
+    }
+
+    .payment-status {
+      text-transform: capitalize;
+
+      // @include breakpoint ('phone-max') {
+      //   line-height: 25px;
+      // }
+
+      &--success, &--paid, &--approved {
+        color: $color-turquoise;
+      }
+
+      &--error, &--declined {
+        color: $color-orange;
+      }
+
+      &--check, &--pending {
+        color: $color-orange;
+      }
+
+      &--expired {
+        color: $color-tundora-light;
+      }
+
+      &--unpaid {
+        color: $color-radical-red;
+        position: relative;
+        padding-left: 24px;
+
+        @include breakpoint ('phone-max') {
+          padding-left: 34px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 49%;
+          transform: translateY(-49%);
+          background-image: url("../../../icons/svg/icon-danger-min.svg");
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          height: 16px;
+          width: 16px;
+
+          @include breakpoint ('phone-max') {
+            left: 13px;
+          }
+        }
+      }
+
+      .icon {
+        margin-right: 12px;
+
+        @include breakpoint ('phone-max') {
+          margin-right: 4px;
+        }
+      }
+
+      .icon,
+      .payment-status__title {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    .payment-notes {
+      display: block;
+      font-size: 18px;
+      line-height: 24px;
+
+      @include breakpoint("phone-max") {
+        padding: 0;
+      }
+
+      &--expired {
+        color: $color-tundora-light;
+      }
+
+      &--pending {
+        color: $color-mona-lisa;
+      }
+
+      &--declined {
+        color: $color-vivid-tangerine;
+      }
+
+      &--paid,
+      &--success {
+        color: $color-turquoise;
+      }
+
+      &--unpaid {
+        color: $color-radical-red;
+      }
+
+      .icon--checked-green {
+        @include breakpoint("phone-max") {
+          display: block;
+          margin: 0 auto 12px;
+        }
+      }
+    }
+
+    .payment-date,
+    .rent-detail,
+    .payment-status__title {
+      @include breakpoint ('phone-max') {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    .payment-date,
+    .rent-detail {
+      @include breakpoint ('phone-max') {
+        margin-bottom: 22px;
+      }
+    }
+
+    .total-amount,
+    .rent-detail {
+      @include breakpoint ('phone-max') {
+        text-align: right;
+      }
+    }
+
+    .transition-type,
+    .total-amount {
+      @include breakpoint ('phone-max') {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+
+  &__notification {
+
+    &.alert {
+      padding: 18px 26px 15px 26px !important;
+      margin-bottom: 50px;
+    }
+
+    .alert__icon {
+      & > .icon--error-lg {
+        background-image: 27px;
+        height: 27px;
+        width: 27px;
+      }
+    }
+
+    .alert__text {
+      padding-top: 0;
+    }
+  }
+
+  .avatar {
+    text-align: center;
+  }
+
+  &__user-name {
+    color: $color-tundora;
+    @include font-size--e;
+    @include font-base-book;
+    margin-top: 10px;
+    text-align: center;
+
+    @include  breakpoint ('phone-max') {
+      margin-top: 7px;
+    }
+  }
+
+  &__select-time {
+    margin-bottom: 23px;
+  }
+
+  &__details {
+    padding: 0 43px 0 126px;
+
+    @include breakpoint ('tablet') {
+      padding-left: 106px;
+    }
+
+    @include  breakpoint ('phone-max') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__procedure-title {
+    width: 284px;
+    margin-left: auto;
+    margin-right: 0;
+    color: $color-boulder;
+    @include font-base-light;
+    @include font-size--k;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    @include breakpoint("phone-max") {
+      width: auto;
+      margin-bottom: 10px;
+      @include font-base-demi;
+      text-align: left;
+    }
+  }
+
+  &__procedure-lists {
+    margin-left: auto;
+    margin-right: 0;
+    list-style: none;
+    padding: 0;
+
+    &.table {
+      width: 284px;
+
+      @include breakpoint("phone-max") {
+        display: block;
+        width: auto;
+      }
+    }
+
+    .table__row {
+      border-bottom: 0 !important;
+
+      &:first-child {
+        cursor: auto !important;
+
+        @include breakpoint("phone-max") {
+          margin-top: 0;
+          border-top: none;
+        }
+      }
+
+      @include breakpoint("phone-max") {
+        margin-top: 20px;
+        border-top: 1px solid $color-dusty-gray;
+        line-height: 1;
+
+        &:nth-child(n) {
+          padding: 20px 0 0;
+        }
+      }
+
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+
+    .payments__procedure-nav {
+      @include breakpoint("phone-max") {
+        border-top: none;
+
+        &:nth-child(n) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &__procedure-item {
+    &:first-child {
+      @include font-base-demi;
+    }
+
+    color: $color-tundora;
+    border-bottom: 1px solid $color-dusty-gray;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 20px 0;
+
+    &:nth-child(2n+2),
+    &:last-child {
+      text-align: right !important;
+    }
+
+    // &:nth-child(2n+1) {
+    //   opacity: .8;
+    // }
+
+    @include breakpoint("phone-max") {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      @include font-size--f;
+      text-align: left;
+    }
+
+    &--no-border {
+      border-bottom: 0;
+
+      @include breakpoint("phone-max") {
+        padding-bottom: 0;
+      }
+    }
+
+    .form-button {
+      min-width: 130px;
+      @include font-base-medium;
+
+      @include breakpoint("phone-max") {
+        width: 100%;
+      }
+    }
+  }
+
+  &__procedure-info {
+    width: 51%;
+    margin-top: -20px;
+    padding: 0 0 33px 21px;
+    color: $color-boulder;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: left;
+
+    @include breakpoint("phone-max") {
+      width: AUTO;
+      margin-top: 0;
+      padding-left: 0;
+      font-size: 14px;
+    }
+  }
+
+  &__procedure-bold {
+    @include font-base-demi;
+  }
+
+  &__procedure-nav {
+    @include breakpoint("phone-max") {
+      display: flex !important;
+      width: auto !important;
+      margin: -10px -10px 0;
+      padding-bottom: 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .payments__procedure-item {
+        width: auto;
+        flex-grow: 1;
+        padding: 10px 10px 0;
+      }
+    }
+
+    .payments__procedure-item {
+      @include breakpoint("phone-max") {
+        width: auto;
+        flex-grow: 1;
+        padding: 10px 10px 0;
+      }
+      @media screen and (max-width: 364px) {// to make the Decline button below the Approve
+        &:first-child {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__method-title {
+    color: $color-tundora;
+    @include font-size--g;
+    margin-bottom: 9px;
+
+    @include breakpoint("phone-max") {
+      @include font-size--e;
+      color: #919191;
+    }
+  }
+
+  &__method-lists {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -webkit-padding-start: 0;
+
+    & > li {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 20px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__nav {
+    text-align: right;
+    margin: 0 -14px;
+
+    @include  breakpoint ('phone-max') {
+      text-align: center;
+    }
+
+    .form-button {
+      @include font-size--k;
+      padding: 18px 53px 17px 53px;
+      margin: 0 14px;
+
+      @include breakpoint ('phone-max') {
+        @include font-size--e;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-left: 7px;
+        margin-right: 7px;
+        width: 35%;
+      }
+
+      &--payments-procedure {
+        @include breakpoint ('phone-max') {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  &__mob-descr {
+    @include font-size--e;
+    color: $color-tundora;
+    opacity: .4;
+    display: none;
+
+    @include breakpoint("phone-max") {
+      display: block;
+    }
+  }
+}
+
+.add-payment {
+  &__form {
+    margin: 0 auto;
+    padding: 30px 75px 50px;
+    text-align: left;
+
+    @include breakpoint("phone-max") {
+      max-width: 375px;
+      padding: 0 5px;
+    }
+
+    // .table__payment-method {
+    //   margin-bottom: 30px;
+    // }
+
+    .table__header-ttl {
+      display: block;
+      margin-bottom: 55px;
+      @include font-base-book;
+      font-size: 25px;
+      text-align: center;
+
+      @include breakpoint("phone-max") {
+        margin-bottom: 30px;
+      }
+    }
+
+    .table__body {
+      display: block;
+      overflow: hidden;
+    }
+
+    .table__row {
+      display: block;
+      margin-bottom: 32px;
+
+      &--half {
+        float: left;
+        width: 47% !important;
+
+        @include breakpoint('phone-max') {
+          float: none;
+          width: 100% !important;
+        }
+      }
+
+      &--right {
+        float: right;
+
+        & + .table__row--half {
+          clear: both;
+        }
+      }
+    }
+
+    .input {
+      padding-left: 19px;
+
+      &::placeholder {
+        color: $color-silver-light;
+      }
+    }
+
+    .payments__nav {
+      margin: -10px -18px 0;
+
+      @include breakpoint("phone-max") {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+      }
+
+      .form-button {
+        min-width: 190px;
+        padding-top: 20px;
+        padding-bottom: 19px;
+        margin: 10px 18px 0;
+        font-size: 15px;
+
+        @include breakpoint("phone-max") {
+          min-width: 125px;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__select {
+    .Select--single {
+      .Select-control {
+        width: 100%;
+        height: 54px;
+
+        @include breakpoint("tablet-max") {
+          height: 65px;
+        }
+        @include breakpoint("phone-max") {
+          height: 50px;
+        }
+      }
+
+      .Select-placeholder,
+      .Select-value {
+        color: $color-silver-light !important;
+        padding-top: 19px !important;
+
+        @include breakpoint("tablet-max") {
+          padding-top: 22px !important;
+        }
+        @include breakpoint("phone-max") {
+          padding-top: 17px !important;
+        }
+      }
+    }
+
+    .has-value.Select--single > .Select-control .Select-value .Select-value-label {
+      color: $color-tundora !important;
+    }
+  }
+}
+
+.payments-links {
+  margin-top: 60px;
+
+  &__list {
+    @include font-base-medium;
+    font-size: 22px;
+    color: #727272;
+  }
+
+  &__item {
+
+    @include breakpoint ('phone-max') {
+      border-bottom: 1px solid $color-concrete;
+      padding-bottom: 5px;
+      padding-left: 15px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 5px 21px 5px 0;
+    margin: 0;
+    color: inherit;
+    position: relative;
+
+    .icon--error-xs {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.payments-header {
+  @include breakpoint ('phone-max') {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__mob-descr {
+    display: block;
+    margin-bottom: 20px;
+    @include font-size--e;
+    @include font-base-book;
+    color: $color-boulder;
+    text-align: center;
+  }
+
+  &__mob-dropdown {
+    .dropdown {
+      z-index: 2;
+    }
+  }
+}
+
+.payment-container--small {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.payouts {
+  &__paypal-logo-wrap {
+    margin-bottom: 60px;
+    text-align: center;
+    line-height: 0;
+
+    .icon--paypal {
+      width: 152px;
+      height: 50px;
+    }
+  }
+
+  &__select {
+    .Select--single .Select-control {
+      width: 100%;
+    }
+  }
+
+  .credit-card__form-section {
+    margin-bottom: 40px;
+  }
+}

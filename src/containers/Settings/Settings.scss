@@ -1,0 +1,96 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.settings {
+  &__nav {
+    background-color: $color-white;
+    box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.10);
+    padding: 0;
+    margin-bottom: 67px;
+    font-size: 0;
+
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    &-item {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 33.333%;
+
+      &--count-1 {
+        width: 100%;
+      }
+
+      &--count-2 {
+        width: 50%;
+      }
+
+      &--count-3 {
+        width: 33.333%;
+      }
+
+      &--count-4 {
+        width: 25%;
+      }
+
+      &--count-5 {
+        width: 20%;
+      }
+
+      &--is_new {
+
+
+        span {
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -18px;
+            background-image: url("../../../icons/svg/icon-error-xl.svg");
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            height: 32px;
+            width: 32px;
+            margin-left: -45px;
+
+            @include breakpoint ('tablet-desktop') {
+              height: 28px;
+              width: 28px;
+              margin-top: -14px;
+            }
+
+            @include breakpoint ('tablet') {
+              margin-left: -30px;
+            }
+
+            @include breakpoint ('tablet-portrait-custom') {
+              height: 18px;
+              width: 18px;
+              margin-top: -9px;
+            }
+
+            @include breakpoint ('phone-max') {
+              display: none;
+            }
+          }
+        }
+
+
+
+        .form-button--setting-menu {
+          padding-left: 60px;
+
+          @include breakpoint ('tablet-portrait-custom') {
+            padding-left: 38px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.radio-btn {
+
+  @include breakpoint ('tablet-max') {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  label {
+    padding-left: 40px;
+
+    @include breakpoint ('tablet-max') {
+      padding-left: 0;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-left: 36px;
+    }
+  }
+
+  &__label {
+    color: $color-tundora;
+    @include font-size--e;
+    line-height: 22px;
+
+    @include breakpoint ('tablet-max') {
+      @include font-size--i;
+      margin-bottom: 17px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 11px;
+    }
+
+    &--info {
+      color: $color-silver-light;
+      padding-left: 17px;
+
+      @include breakpoint ('tablet-max') {
+        padding-left: 0;
+        @include font-size--g;
+        line-height: 24px;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--f;
+        line-height: 24px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon {
+    border: 1px solid $color-mercury;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    text-align: center;
+
+    &--inner-icon {
+      border-radius: 50%;
+      border: 3px solid $color-white;
+      display: inline-block;
+      position: relative;
+      top: 50%;
+      margin-top: -3px;
+      vertical-align: middle;
+      z-index: 2;
+    }
+  }
+
+  &__label,
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include breakpoint ('tablet-max') {
+      display: block;
+    }
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    margin-left: 0;
+  }
+
+  input[type="radio"] + span.radio-btn__icon {
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 0;
+    top: 0;
+    border: 1px solid $color-mercury;
+    border-radius: 50%;
+    background-color: $color-white;
+    overflow: hidden;
+
+    @include breakpoint ('tablet') {
+      display: block;
+      position: relative;
+      margin: 0 auto 19px auto;
+    }
+
+    @include breakpoint ('tablet-max') {
+      height: 23px;
+      width: 23px;
+    }
+
+    @include breakpoint ('phone-max') {
+      left: -3px;
+      top: -3px;
+    }
+  }
+
+  input[type="radio"]:checked + span.radio-btn__icon--pink {
+    background-color: $color-radical-red;
+    border-color: $color-radical-red;
+  }
+
+  input[type="radio"]:checked + span.radio-btn__icon--black {
+    background-color: $color-m-shaft;
+    border-color: $color-m-shaft;
+  }
+
+}

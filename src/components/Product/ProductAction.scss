@@ -1,0 +1,82 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.action {
+  background-color: $color-white;
+  border: 1px solid $color-concrete;
+  border-radius: 6px;
+  margin-bottom: 60px;
+  text-align: center;
+
+  @include breakpoint('phone-max') {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 25px;
+    margin-bottom: 40px;
+    margin-top: -5px;
+  }
+
+  &--btn-wrapper {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-concrete;
+    padding: 39px 40px;
+
+    @include breakpoint('tablet-desktop') {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include breakpoint('phone-max') {
+      border-bottom: 0;
+      padding-top: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .form-button {
+      width: 100%;
+    }
+  }
+
+
+  &__btn-group {
+    border-top: 1px solid $color-concrete;
+    border-radius: 0 0 6px 6px;
+    margin-top: -1px;
+    width: 100%;
+
+    @include breakpoint ('phone-max') {
+      border-top: 1px solid $color-concrete;
+    }
+
+    .form-button {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      color: $color-silver-light;
+      @include font-size--f;
+      padding: 22px 17px;
+      width: 50%;
+
+      @include breakpoint('tablet-max') {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .icon--share {
+        width: 15px;
+      }
+
+      .icon,
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .icon {
+        margin-right: 6px;
+      }
+    }
+  }
+}

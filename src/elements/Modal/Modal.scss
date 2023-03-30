@@ -1,0 +1,846 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+$modal: 'modal';
+$modal-transition-time: 200ms;
+$modal-transition: ease-out !default;
+$modal-transition-in: ease-in !default;
+$modal-transition-out: ease-out !default;
+
+.#{$modal} {
+  background-color: rgba(51, 51, 51, .9) !important;
+  position: fixed;
+  top: 0;
+  display: block !important;
+  left: 0;
+  z-index: 12;
+  // overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+  padding-bottom: 0;
+  overflow-y: auto;
+
+  @include breakpoint ('phone-max') {
+    background-color: $color-white !important;
+    // bottom: auto !important;
+  }
+
+  &.hide-scroll {
+    & > .modal-close {
+      display: none;
+    }
+  }
+
+  .modal-dialog {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+
+    @include breakpoint ('tablet-desktop') {
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 8%;
+      padding-bottom: 8%;
+    }
+
+    &.inner-btn-close {
+      .modal-close--inner {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+
+  &--filters  {
+    .modal-body {
+
+      @include breakpoint ('large') {
+        max-width: 788px;
+      }
+
+      @include breakpoint ('tablet') {
+        max-width: 900px;
+      }
+    }
+
+    .modal-dialog {
+      @include breakpoint ('phone-max') {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 48px;
+      }
+    }
+
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      @include breakpoint ('phone-max') {
+        right: 26px !important;
+        top: -12px !important;
+      }
+    }
+
+    .modal-children-wrap {
+      @include breakpoint ('phone-max') {
+        position: static !important;
+      }
+    }
+
+  }
+
+  &--product,
+  &--user-profile {
+    .modal-body {
+      max-width: 1216px;
+
+      @include breakpoint ('tablet-desktop') {
+        max-width: 960px;
+      }
+    }
+  }
+
+  &--product {
+    .modal-body {
+
+      .product-details {
+        padding-top: 0;
+        margin: 0;
+
+        &__offer {
+          margin-bottom: 0;
+        }
+
+        &__offer-wrapper {
+          border: 0;
+
+          @include breakpoint ('phone-max') {
+            border: 1px solid $color-concrete;
+          }
+        }
+      }
+
+      .product-slider {
+        .swiper-button-next,
+        .swiper-button-prev {
+
+          &:after {
+            background-color: $color-white;
+            box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.16);
+            border-radius: 50%;
+            height: 48px;
+            margin-top: -24px;
+            width: 48px;
+          }
+
+          &:before {
+            background-size: 8px 16px;
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 16px;
+            z-index: 2;
+            margin-top: -7px;
+          }
+
+        }
+
+        .swiper-button-next {
+          right: 0;
+
+          &:after {
+            right: -24px;
+          }
+
+          &:before {
+            background-image: url("../../../icons/svg/icon-prev-grey.svg");
+            right: -5px;
+          }
+        }
+
+        .swiper-button-prev {
+          left: 0;
+
+          &:after {
+            left: -24px;
+          }
+
+          &:before {
+            background-image: url("../../../icons/svg/icon-next-grey.svg");
+            left: -5px;
+          }
+        }
+      }
+    }
+
+    .modal-body__container {
+      pointer-events: none;
+    }
+  }
+
+  &--product-no-panel {
+
+    .product-header__preview {
+      display: block;
+    }
+
+    .modal-dialog {
+      max-width: 854px;
+    }
+
+    .modal-body {
+      max-width: 100%;
+    }
+
+    .modal-body__container {
+      .modal-children-wrap {
+        @include breakpoint ('phone-max') {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    .user__details {
+      width: 100%;
+      padding-right: 0;
+
+      @include breakpoint ('phone-max') {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .user-header__icon-like,
+    .product-header__icon-like {
+      display: none;
+    }
+  }
+
+  &--user-profile {
+    .modal-body__container {
+      pointer-events: none;
+    }
+
+    .user {
+
+      &__details {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--product,
+  &--user-profile,
+  &--user-info {
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  &--new-address {
+    .modal-body {
+      max-width: 537px !important;
+    }
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 42px;
+      right: 59px;
+    }
+  }
+
+  &--new-message {
+    .modal-body {
+      max-width: 788px;
+    }
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 42px;
+      right: 27px;
+    }
+  }
+
+
+  &--filters {
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 43px;
+      right: 27px;
+    }
+  }
+
+  &--send-email {
+    .modal-body {
+      max-width: 898px;
+    }
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 35px;
+      right: 31px;
+    }
+  }
+
+  &--success {
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 22px;
+      right: 22px;
+
+      @include breakpoint("phone-max") {
+        top: 10px !important;
+        right: 0 !important;
+      }
+    }
+
+    .modal-dialog {
+      padding-top: 2%;
+      padding-bottom: 2%;
+    }
+
+    .modal-content {
+      .modal-body__container {
+        @include breakpoint("phone-max") {
+          position: relative;
+        }
+      }
+    }
+
+    .modal-children-wrap {
+      margin-top: 0 !important;
+    }
+  }
+
+  &--rent-place {
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 33px;
+      right: 26px;
+    }
+  }
+
+  &--rent-place,
+  &--success {
+    .modal-body {
+      max-width: 429px;
+
+      @include breakpoint ('tablet-desktop') {
+        max-width: 429px !important;
+      }
+    }
+  }
+
+  &--send-email {
+    .modal-close {
+      @include breakpoint ('phone-max') {
+        right: 32px !important;
+      }
+    }
+  }
+
+  &--user-info {
+    .modal-body {
+      max-width: 759px;
+      .user {
+        &__details {
+          margin-bottom: 0;
+        }
+      }
+
+      .profile-wrap {
+        border-radius: 6px;
+        background-color: $color-white;
+
+        .container {
+          padding-left: 32px;
+          padding-right: 32px;
+
+          @include breakpoint ('phone-max') {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        .profile-info {
+          padding-top: 32px;
+          margin-top: 0;
+        }
+
+        .list-apartment {
+          &__header {
+            margin-bottom: 0;
+            padding-left: 0;
+
+            @include breakpoint ('tablet-max') {
+              margin-bottom: 24px;
+            }
+          }
+
+          &__wrap {
+            @include breakpoint ('tablet') {
+              margin-left: -30px;
+              margin-top: -30px;
+            }
+          }
+        }
+      }
+
+      .list-user {
+        display: none;
+      }
+    }
+  }
+
+  &--location-lists {
+    background-color: $color-cod-grey !important;
+
+    .modal-body {
+      max-width: 1245px;
+
+      @include breakpoint ('tablet') {
+        max-width: 818px;
+      }
+    }
+
+    .modal-close {
+      @include breakpoint ('phone-max') {
+        background-image: url("../../../icons/svg/icon-close-white.svg") !important;
+      }
+    }
+
+    .modal-dialog {
+      @include breakpoint ('phone-max') {
+        padding-bottom: 72px !important;
+      }
+    }
+  }
+
+  &--sign-up {
+    .modal-content {
+      @include breakpoint ('phone-max') {
+        vertical-align: top !important;
+      }
+    }
+    .modal-body__container {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      max-width: 416px !important;
+
+      @include breakpoint ('phone-max') {
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: 345px !important;
+      }
+
+      .sign-up {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &__content {
+          @include breakpoint ('phone-max') {
+            border: 0;
+          }
+        }
+      }
+
+      .modal-children-wrap {
+        @include breakpoint ('phone-max') {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 33px;
+      right: 33px;
+
+      @include breakpoint ('phone-max') {
+        top: -9px !important;
+      }
+    }
+  }
+
+  &--create-post {
+    &.modal {
+      background-color: $color-cod-grey !important;
+    }
+
+    .modal-content {
+      vertical-align: middle !important;
+    }
+  }
+
+  &--gallery {
+    height: 100vh;
+
+    @include breakpoint ('phone-max') {
+      overflow: hidden !important;
+      background-color: rgba(51, 51, 51, 0.9) !important;
+      height: 100%;
+    }
+
+    .modal-close {
+      top: 13px !important;
+      right: 48px !important;
+
+      @include breakpoint ('tablet') {
+        top: 16px !important
+      }
+    }
+
+    .modal-body {
+      padding: 0 !important;
+      height: 97vh;
+
+      @include breakpoint ('phone-max') {
+        height: 100%;
+        overflow: hidden !important;
+      }
+
+      &__container {
+        max-width: 100% !important;
+
+        .modal-children-wrap {
+          height: 100%;
+
+          @include breakpoint ('phone-max') {
+            margin-top: 0 !important;
+          }
+
+          & > div {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .modal-dialog {
+      max-width: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      @include breakpoint ('phone-max') {
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+    }
+
+    .swiper {
+
+      &--top {
+        height: 100%;
+      }
+
+      // .img-slider {
+      //   width: auto;
+      //   height: auto;
+      //   max-width: 100%;
+      //   max-height: 100%;
+      //   -ms-transform: translate(-50%,-50%);
+      //   -webkit-transform: translate(-50%,-50%);
+      //   -moz-transform: translate(-50%,-50%);
+      //   transform: translate(-50%,-50%);
+      //   position: absolute;
+      //   left: 50%;
+      //   top: 50%;
+
+      //   @include breakpoint ('phone-max') {
+      //     width: 100%;
+      //   }
+      // }
+
+      &-container {
+
+        &.swiper-main,
+        &.swiper-thumbs {
+          height: 100% !important;
+          max-height: 100%;
+          padding-bottom: 0 !important;
+        }
+      }
+
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        background-size: 16px 37px !important;
+        background-repeat: no-repeat !important;
+        color: $color-white;
+        width: 16px !important;
+        height: 37px !important;
+        z-index: 2;
+        margin-top: -18px !important;
+      }
+
+    }
+
+    .swiper-button-next {
+      right: 0;
+
+      &:before {
+        background-image: url("../../../icons/svg/icon-arrow-right-w.svg") !important;
+        right: 20px !important;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0;
+
+      &:before {
+        background-image: url("../../../icons/svg/icon-arrow-left-w.svg") !important;
+        left: 18px !important;
+      }
+    }
+
+    .swiper-slide {
+      background-color: rgba(51, 51, 51, .2);
+    }
+
+  }
+
+  &--report {
+    .modal-body {
+      max-width: 788px !important;
+    }
+
+    .modal-dialog {
+      &.inner-btn-close {
+        .modal-close--inner {
+          top: 43px;
+          right: 26px;
+        }
+      }
+    }
+
+  }
+
+  &--feedback {
+    .modal-body {
+      max-width: 670px !important;
+    }
+
+    .modal-dialog.inner-btn-close .modal-close--inner {
+      top: 23px;
+      right: 11px;
+    }
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 3px 0px;
+  }
+
+  .modal-header {
+    color: $color-white;
+    font-size: 25px;
+    line-height: 46px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom: 0;
+    display: none;
+  }
+
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .modal-close {
+    background-color: transparent;
+    background-image: url("../../../icons/svg/icon-close-modal.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 40px 40px;
+    cursor: pointer;
+    position: fixed;
+    top: 17px;
+    right: 32px;
+    padding: 0;
+    opacity: 1;
+    display: block;
+    height: 38px;
+    width: 38px;
+    border: none;
+    z-index: 2;
+    backface-visibility: hidden;
+    pointer-events: all;
+
+    @include breakpoint('phone-max') {
+      position: absolute;
+      display: block !important;
+      background-image: url("../../../icons/svg/icon-close-dark.svg");
+      background-size: 17px !important;
+      margin-top: 0 !important;
+      margin-right: 0 !important;
+      top: -22px !important;
+      right: -13px !important;
+      height: 17px !important;
+      width: 17px !important;
+      z-index: 18 !important;
+      padding: 24px;
+    }
+
+    &--inner {
+      background-image: url("../../../icons/svg/icon-close-grey.svg");
+      background-size: 25px;
+      top: 50%;
+      right: 50%;
+      height: 25px;
+      width: 25px;
+
+      @include breakpoint ('phone-max') {
+        display: none;
+      }
+    }
+
+
+    img {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .modal-title {
+    letter-spacing: 0.4px;
+
+    @include breakpoint('phone-max') {
+      padding-right: 40px;
+    }
+  }
+
+  .modal-body {
+    @include clearfix;
+
+    &__container {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+      position: relative;
+      z-index: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+
+      @include breakpoint ('tablet-desktop') {
+        max-width: 767px;
+      }
+
+      @include breakpoint('phone-max') {
+        max-width: 375px;
+        position: static;
+
+        // prevents closing on mobile
+        &:before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          pointer-events: all;
+        }
+
+        .modal-children-wrap {
+          position: relative;
+
+          @include breakpoint ('phone-max') {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .map-form {
+    backface-visibility: hidden;
+  }
+}
+
+.modal-body__container {
+  .modal,
+  .modal-body__container {
+    pointer-events: all;
+  }
+}
+
+.modal--product {
+  .modal--gallery {
+    & > .modal-close {
+      @include breakpoint ('phone-max') {
+        top: 0 !important;
+        right: 0 !important;
+      }
+    }
+  }
+}
+
+.modal--gallery {
+  & > .modal-close {
+    @include breakpoint ('phone-max') {
+      background-image: url("../../../icons/svg/icon-close-white.svg") !important;
+      top: 0 !important;
+      right: 0 !important;
+      padding-right: 6px;
+      // display: none !important;
+    }
+  }
+}
+
+.modal--location-lists,
+.modal--create-post {
+  & > .modal-close {
+    @include breakpoint ('phone-max') {
+      top: 0 !important;
+      right: 0 !important;
+    }
+  }
+
+  .modal-children-wrap {
+    @include breakpoint ('phone-max') {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.modal--payments {
+  .modal-body {
+    max-width: 940px;
+  }
+
+  .message-container {
+    max-width: none;
+
+    @include breakpoint("phone-max") {
+      border: none;
+    }
+  }
+
+  .modal-dialog {
+    &.inner-btn-close {
+      .modal-close--inner {
+        top: 30px;
+        right: 25px;
+      }
+    }
+  }
+}

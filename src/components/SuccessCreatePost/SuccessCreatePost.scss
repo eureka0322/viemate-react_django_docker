@@ -1,0 +1,74 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.success-container {
+  background-color: $color-white-ice;
+  border-radius: 6px;
+  margin: 0 auto;
+  max-width: 429px;
+  text-align: center;
+  overflow: hidden;
+
+  &__wrapper {
+    padding: 44px 62px 140px 62px;
+
+    @include breakpoint ('phone-max') {
+      padding: 40px 31px 22px 31px;
+    }
+  }
+
+  &__congtrats-text {
+    color: $color-tundora;
+    @include font-size--o;
+    margin-bottom: 90px;
+
+    @include breakpoint("phone-max") {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__success-text {
+    color: $color-turquoise;
+    // @include font-size--i;
+    font-size: 18px;
+    line-height: 26px;
+    // margin-bottom: 54px;
+    margin: 0;
+  }
+
+  .icon--success-lg {
+    margin-bottom: 58px;
+
+    @include breakpoint("phone-max") {
+      margin-bottom: 40px;
+    }
+  }
+
+  .form-button--user-action {
+    @include font-size--k;
+    padding-top: 21px;
+    padding-bottom: 18px;
+  }
+
+  .panel-info {
+    padding: 20px 25px 24px 39px;
+    font-size: 12px;
+    text-align: left;
+    background: #fff;
+
+    @include breakpoint("phone-max") {
+      padding-left: 20px;
+      padding-bottom: 0;
+    }
+
+    &__icon {
+      float: left;
+      margin-right: 15px;
+    }
+
+    &__text {
+      display: block;
+      overflow: hidden;
+    }
+  }
+}

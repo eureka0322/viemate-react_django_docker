@@ -1,0 +1,387 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.post-edit {
+  margin-bottom: 85px;
+
+  &__header {
+    background-color: $color-mine-grey;
+    border-bottom: 4px solid $color-radical-red;
+    color: $color-silver-light;
+    @include font-size--k;
+    padding: 19px 0 18px 0;
+    margin-bottom: 58px;
+    text-align: center;
+  }
+
+  &__section {
+    margin-bottom: 43px;
+
+    &--place-name {
+      margin-left: -8px;
+      margin-right: -8px;
+
+      @include breakpoint ('phone-max') {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &--dropzone {
+      margin-bottom: 45px;
+
+       @include breakpoint ('phone-max') {
+        margin-top: 67px !important;
+       }
+    }
+
+    &--type-rooms {
+      border-bottom: 1px solid $color-concrete;
+      padding-bottom: 27px;
+      margin-bottom: 23px;
+    }
+
+    &--details {
+      margin-bottom: 58px;
+    }
+
+    &--lease-type {
+      margin-bottom: 57px;
+    }
+
+    &--tags,
+    &--location {
+      margin-bottom: 74px;
+
+      &-included {
+        margin-bottom: 84px;
+      }
+
+      &-nearby {
+        margin-bottom: 71px;
+      }
+    }
+
+    &--no-title {
+      .post-form__item--price {
+        width: 43.3%;
+      }
+    }
+
+    .input-file {
+
+      &__add-more {
+        .dropzone-element {
+          width: 99.8%;
+
+          @include breakpoint ('phone-max') {
+            width: 100%;
+          }
+        }
+      }
+
+      .dropzone-container {
+        @include breakpoint ('phone-max') {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__item {
+    &--title {
+      width: 77%;
+    }
+
+    &--price {
+      width: 23%;
+    }
+
+    &--title,
+    &--price {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 8px;
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 28px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__dropzone-cover {
+    margin-bottom: 12px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 20px;
+    }
+
+    .dropzone-container__panel-link--title {
+      color: $color-white;
+    }
+  }
+
+  &__dropzone-thumbs {
+    margin-left: -6px;
+    margin-right: -6px;
+    font-size: 0;
+
+    @include breakpoint ('phone-max') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .dropzone-element--thumb,
+    .input-file__add-more .dropzone-element {
+      height: 122px;
+      margin-bottom: 12px;
+
+      @include breakpoint ('phone-max') {
+        height: 176px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .input-file__container,
+    .dropzone-element--thumb {
+      padding-left: 6px;
+      padding-right: 6px;
+
+      @include breakpoint ('phone-max') {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__calendar {
+    margin-bottom: 61px;
+
+    .date-range-picker {
+      display: block;
+      width: 100%;
+
+      &__label-wrap {
+        margin-top: 0;
+        margin-bottom: 18px;
+        width: 42%;
+
+        @include breakpoint ('phone-max') {
+          width: 100%;
+        }
+
+        &--start {
+          margin-right: 56px;
+
+          @include breakpoint ('phone-max') {
+            margin-right: 0;
+          }
+        }
+
+        &--end {
+          @include breakpoint ('phone-max') {
+            margin-top: 15px;
+          }
+        }
+      }
+
+      .DateRangePicker {
+        .DateInput {
+          margin-right: 56px;
+          height: 65px;
+          width: 42%;
+
+          @include breakpoint ('phone-max') {
+            width: 100%;
+            margin-right: 0;
+          }
+
+          &:before {
+            background-size: 20px 18px;
+            height: 18px;
+            width: 20px;
+          }
+
+          &__display-text {
+            height: 100%;
+            padding-top: 22px;
+            padding-bottom: 22px;
+            padding-left: 62px;
+          }
+        }
+
+        &__picker {
+          @include breakpoint("phone-max") {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+
+      .CalendarMonth {
+        &__day {
+          @include font-size--e;
+        }
+      }
+    }
+  }
+
+
+  .post-form {
+    &__section {
+      &--select-option {
+        width: 25%;
+
+        @include breakpoint ('tablet') {
+          width: 42%;
+        }
+
+        @include breakpoint ('phone-max') {
+          margin-bottom: 53px !important;
+          width: 100% !important;
+        }
+      }
+
+
+      &--select-option {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__tags-list {
+    margin: -8px;
+
+    li {
+      display: inline-block;
+      padding: 8px;
+    }
+
+    .form-checkbox {
+      &__label {
+        &--tag {
+          background-color: $color-concrete;
+          border-color: transparent;
+          border-radius: 6px;
+          color: $color-m-shaft;
+          @include font-size--f;
+          height: 40px;
+          padding: 11px 17px;
+
+          &-select {
+            background-color: $color-tundora;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 76px;
+
+    .post-form__label {
+      @include font-base-bold;
+      margin-bottom: 20px;
+    }
+
+    .form-textarea {
+      min-height: 154px;
+    }
+
+    .textarea-count {
+      bottom: -18px;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__title-text {
+    color: $color-silver-grey;
+    @include font-size--d;
+    letter-spacing: 1.5px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+  }
+
+  &__place-text {
+    color: $color-m-shaft;
+    @include font-size--ol;
+    @include font-base-book;
+    margin-bottom: 38px;
+  }
+
+  &__info-text {
+    color: $color-silver-light;
+    @include font-size--g;
+    @include font-base-light;
+
+    @include breakpoint ('phone-max') {
+      @include font-size--c;
+    }
+
+    .form-button--link {
+      color: $color-silver-light;
+    }
+  }
+
+  .map {
+    margin-bottom: 116px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 58px;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+
+    & > div,
+    &__inner {
+      @include breakpoint ('phone-max') {
+        height: 240px !important;
+      }
+    }
+  }
+
+  &__nav {
+    text-align: center;
+
+    .form-button {
+      @include font-size--k;
+      padding-top: 19px;
+      padding-bottom: 19px;
+
+      @include breakpoint ('phone-max') {
+        @include font-size--g;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 44%;
+        vertical-align: top;
+      }
+
+      &--default-dark {
+        margin-right: 21px;
+        padding-left: 60px;
+        padding-right: 60px;
+
+        @include breakpoint ('phone-max') {
+          margin-right: 9px;
+        }
+      }
+
+      &--pink {
+        padding-right: 70px;
+        padding-left: 70px;
+      }
+    }
+  }
+
+}
+
+.post-edit__max-size {
+  margin-top: 5px;
+  @include font-base-demi;
+}

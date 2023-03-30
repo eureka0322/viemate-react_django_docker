@@ -1,0 +1,116 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.product-header {
+  color: $color-tundora;
+  padding-top: 41px;
+  position: relative;
+
+  @include breakpoint('tablet') {
+    padding-top: 34px;
+  }
+
+  @include breakpoint ('phone-max') {
+    padding-top: 28px;
+  }
+
+
+
+  &__wrapper {
+    margin: 0 41px 38px 37px;
+
+    @include breakpoint('tablet') {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin: 19px 19px 30px 19px;
+    }
+  }
+
+  &__preview {
+    display: none;
+    border-bottom: 1px solid $color-concrete;
+    color: $color-boulder;
+    @include font-size--ol;
+    @include font-base-book;
+    padding: 0 40px 27px 40px;
+    margin-bottom: 38px;
+
+    @include breakpoint('tablet') {
+      padding-bottom: 29px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint ('phone-max') {
+      border-bottom: 0;
+      padding-bottom: 0;
+      padding-left: 19px;
+      padding-right: 19px;
+      text-align: center;
+    }
+
+  }
+
+  &--left,
+  &__icon-like {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--left {
+    width: 85%;
+  }
+
+  &__icon-like  {
+    text-align: right;
+    width: 15%;
+
+    &:hover {
+      .icon--like-grey {
+        background-image: url("../../../icons/svg/icon-like-pink.svg");
+        background-size: 30px 26px;
+        width: 30px;
+        height: 26px;
+      }
+    }
+
+    &.is-active {
+      .icon--like-grey {
+        display: none;
+      }
+
+      .icon--like-full-1 {
+        display: inline-block;
+      }
+    }
+
+    .icon--like-full-1 {
+      display: none;
+    }
+  }
+
+  &__location {
+    margin: 0 0 6px 0;
+    @include font-base-book;
+  }
+
+  &__location,
+  .type-bill {
+    @include font-size--ol;
+  }
+
+  &__price-details {
+    @include font-size--ol;
+    @include font-base-book;
+    margin: 0;
+
+    .rental-period {
+      @include font-size--f;
+    }
+  }
+
+}

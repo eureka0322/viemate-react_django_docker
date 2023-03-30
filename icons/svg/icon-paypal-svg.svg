@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="69px" height="19px" viewBox="0 0 69 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Pay with</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="18" font-family="MaisonNeue-Medium, Maison Neue" font-weight="400">
+        <g id="Artboard" transform="translate(-884.000000, -745.000000)" fill="#25272E">
+            <g id="Group" transform="translate(845.000000, 726.000000)">
+                <g id="Group-2" transform="translate(38.000000, 15.000000)">
+                    <text id="Pay-with">
+                        <tspan x="0" y="18">Pay with </tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

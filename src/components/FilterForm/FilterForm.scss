@@ -1,0 +1,742 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.filter-form {
+  background-color: $color-white;
+  border: 1px solid #F2F2F2;
+  border-radius: 6px;
+  padding-left: 31px;
+  padding-right: 31px;
+
+  @include breakpoint ('tablet-landscape-custom'){
+    padding-left: 77px;
+    padding-right: 77px;
+  }
+
+  @include breakpoint ('tablet-portrait-custom') {
+    padding-left: 57px;
+    padding-right: 57px;
+  }
+
+  @include breakpoint ('phone-max') {
+    background-color: transparent;
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
+  }
+
+  &__header {
+    border-bottom: 1px solid $color-mercury;
+    color: $color-boulder;
+    @include font-size--ol;
+    @include font-base-book;
+    padding-top: 40px;
+    padding-bottom: 39px;
+    margin-bottom: 0;
+    text-align: center;
+
+    @include breakpoint ('tablet') {
+      padding-top: 36px;
+      padding-bottom: 30px;
+      margin-bottom: 7px;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-top: 0;
+      padding-bottom: 16px;
+      margin-bottom: -3px;
+    }
+  }
+
+  &__title {
+    color: $color-boulder;
+    padding: 24px 0 24px 0;
+    border-bottom: 1px solid $color-mercury;
+    @include font-size--k;
+    text-align: center;
+  }
+
+  &__section {
+    padding: 24px 0 24px 0;
+    border-bottom: 1px solid $color-mercury;
+
+    @include breakpoint ('tablet') {
+      padding-top: 37px;
+      padding-bottom: 31px;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-top: 25px;
+      padding-bottom: 27px;
+    }
+
+    &--type-rooms {
+      padding-top: 32px;
+      padding-bottom: 32px;
+
+      @include breakpoint ('tablet-max') {
+        padding-top: 46px;
+        padding-bottom: 35px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 29px;
+      }
+    }
+
+    &--range {
+      padding-top: 26px;
+      padding-bottom: 32px;
+
+      @include breakpoint ('tablet') {
+        padding-top: 38px;
+        padding-bottom: 43px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 34px;
+        padding-bottom: 38px;
+      }
+    }
+
+    &--select-gender {
+      padding-top: 32px;
+      padding-bottom: 32px;
+
+      @include breakpoint ('tablet') {
+        padding-top: 36px;
+        padding-bottom: 54px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 37px;
+        padding-bottom: 39px;
+      }
+    }
+
+    &--checkbox-group {
+      padding-top: 33px;
+      padding-bottom: 31px;
+
+      @include breakpoint ('tablet-max') {
+        padding-top: 40px;
+        padding-bottom: 44px;
+      }
+    }
+
+    &--type-group {
+      .form-radio__group {
+        .form-group {
+          @include breakpoint ('tablet') {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    &--checkdox-tags {
+      @include breakpoint ('tablet')  {
+        padding-top: 67px;
+        padding-bottom: 39px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 31px;
+        padding-bottom: 25px;
+        border-bottom: 0;
+      }
+    }
+
+    &--form-nav {
+      border-bottom: 0;
+      padding-top: 31px;
+      padding-bottom: 31px;
+
+      @include breakpoint ('tablet') {
+        padding-top: 49px;
+        padding-bottom: 69px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-bottom: 0;
+      }
+    }
+
+    .Select-placeholder,
+    .Select {
+      &--single  {
+        .Select-menu-outer {
+          width: 150px !important;
+
+          @include breakpoint ('tablet') {
+            width: 390px !important;
+          }
+
+          @include breakpoint ('phone-max') {
+            width: 100%!important;
+          }
+        }
+      }
+
+    }
+
+    .Select-option {
+      padding: 12px 22px 11px 22px;
+
+      @include breakpoint ('tablet') {
+        padding: 24px 21px 23px 21px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding: 21px 15px;
+      }
+    }
+
+    .date-range-picker {
+      .DateRangePicker {
+        &__picker {
+          &--show {
+            &.DateRangePicker__picker--end {
+              margin-right: 2px;
+
+              @include breakpoint ('tablet') {
+                margin-right: 0;
+              }
+
+              &:before,
+              &:after {
+                left: 92px;
+              }
+            }
+
+            &.DateRangePicker__picker--end,
+            &.DateRangePicker__picker--start {
+              @include breakpoint ('phone') {
+                transform: translateX(-50%);
+                left: 50%;
+              }
+            }
+          }
+        }
+
+        .DateInput {
+            &__display-text {
+              @include breakpoint ('phone-max') {
+                width: 100%;
+              }
+            }
+          }
+      }
+    }
+
+
+  }
+
+  &__label,
+  &__container {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include breakpoint ('tablet-max') {
+      display: block;
+    }
+  }
+
+  &__label {
+    color: $color-tundora;
+    @include font-size--e;
+    @include font-base-medium;
+    width: 25%;
+
+    @include breakpoint ('tablet-max') {
+      @include font-size--o;
+      margin-bottom: 52px;
+      text-align: center;
+      width: 100%;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 23px;
+    }
+
+    &--type-rooms-label {
+      @include breakpoint ('tablet') {
+        margin-bottom: 39px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 41px;
+        letter-spacing: -1px;
+      }
+
+      br {
+        @include breakpoint ('tablet-max') {
+          display: none;
+        }
+      }
+    }
+
+    &--range-label {
+      @include breakpoint ('tablet') {
+        margin-bottom: 66px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 42px;
+      }
+    }
+
+    &--select-label {
+
+      @include breakpoint ('tablet') {
+        margin-bottom: 49px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--checkbox-group-label {
+     @include breakpoint ('tablet') {
+      margin-bottom: 65px;
+     }
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--label-checkbox-tags {
+      @include breakpoint ('tablet') {
+        margin-bottom: 29px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__container {
+    width: 75%;
+    position: relative;
+
+    @include breakpoint ('tablet-max') {
+      width: 100%;
+    }
+
+    .form-group {
+      .date-range-picker {
+        width: 100%;
+
+        @include breakpoint ('phone-max') {
+          padding: 0 16px 0 25px;
+        }
+
+        .DateRangePicker {
+          .DateInput {
+            margin-right: 5.2%;
+            width: 42.3%;
+
+            @include breakpoint ('tablet') {
+              margin-right: 3.4%;
+              width: 43.8%;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            @include breakpoint ('phone-max') {
+              margin-right: 0;
+              width: 100%;
+            }
+          }
+        }
+
+        .DateRangePickerInput {
+          &__arrow {
+            position: relative;
+            display: inline-block;
+            height: 1px;
+            margin: 0 5.2% 0 0;
+            width: 4.5%;
+
+            @include breakpoint ('tablet-max') {
+              margin-right: 3.4%;
+              width: 5.5%;
+            }
+
+            @include breakpoint ('phone-max') {
+              display: block;
+              margin: 0 auto;
+              top: -27px;
+              width: 14%;
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 17px;
+              background-color: $color-iron;
+              height: 100%;
+              width: 100%;
+
+              @include breakpoint ('tablet') {
+                top: 20px;
+              }
+
+              @include breakpoint ('phone-max') {
+                top: 0;
+                left: 50%;
+                margin-left: -17px;
+              }
+            }
+
+            & > svg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .date-range-picker .DateRangePicker__picker {
+      @include breakpoint ('phone-max') {
+        margin-left: -5px;
+      }
+    }
+
+  }
+
+  &__wrapper-element {
+    border: 1px solid $color-mercury;
+    border-radius: 3px;
+
+    @include breakpoint ('tablet-max') {
+      border: 0;
+      border-radius: 0;
+      margin: 0 -17px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+
+
+  &__item {
+    &.form-group {
+      position: relative;
+    }
+  }
+
+  &__trip-form {
+    font-size: 0;
+
+    .form-group {
+      display: inline-block;
+      vertical-align: middle;
+      width: 45%;
+
+
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        width: 100%;
+      }
+
+
+      &__separator {
+        background-color: $color-iron;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 3.2%;
+        height: 1px;
+        width: 2.8%;
+
+        @include breakpoint ('phone-max') {
+          display: block;
+          margin: 19px auto 26px auto;
+          width: 34px;
+        }
+      }
+
+      .form-control-feedback {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        margin-top: -7px;
+
+        @include breakpoint ('tablet-max') {
+          margin-top: -9px;
+        }
+      }
+    }
+
+  }
+
+  &__price-range {
+    @include clearfix;
+    margin-top: 20px;
+
+    @include breakpoint ('tablet-max') {
+      margin-top: 0;
+    }
+
+    @include breakpoint ('phone') {
+      margin: 0 15px;
+    }
+
+    .range-data {
+      color: $color-boulder;
+      @include font-size--f;
+      @include font-base-book;
+      margin-top: 25px;
+      float: left;
+      width: 50%;
+
+      &:last-child {
+        text-align: right;
+        position: relative;
+      }
+
+      @include breakpoint ('tablet') {
+        @include font-size--g;
+        margin-top: 38px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-top: 27px;
+      }
+    }
+
+  }
+
+  &__checkbox-lists{
+    margin: 0 -8px;
+
+    @include breakpoint ('tablet') {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 8px;
+
+      @include breakpoint ('tablet') {
+        padding: 9px 10px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding: 5px;
+      }
+    }
+  }
+
+
+
+
+  &__nav {
+    text-align: right;
+
+    @include breakpoint ('tablet-max') {
+      text-align: center;
+    }
+
+    @include breakpoint ('phone-max') {
+      background-color: $color-white;
+      border-radius: 0;
+      box-shadow: 0px -3px 4px 0px rgba(199,199,199,0.50);
+      padding: 13px 0 13px 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 13;
+      max-width: 100% !important;
+      width: 100%;
+      margin: 0 auto;
+      backface-visibility: hidden;
+      // -webkit-backface-visibility: hidden;
+      pointer-events: none;
+    }
+
+    .form-button {
+      margin: 0 10px;
+      @include font-size--e;
+      text-transform: capitalize;
+      padding: 18px 40px 17px 40px;
+      pointer-events: auto;
+
+      @include breakpoint ('tablet') {
+        @include font-size--k;
+        padding: 19px 42px 18px 42px;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--e;
+        padding: 18px 46px 16px 46px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+        margin-right: 10px;
+
+        @include breakpoint ('phone-max') {
+          margin-right: 10px;
+          padding-left: 41px;
+          padding-right: 41px;
+        }
+      }
+
+      &:last-child {
+        margin-left: 10px;
+        margin-right: 0;
+
+        @include breakpoint ('phone-max') {
+          margin-left: 9px;
+        }
+      }
+    }
+  }
+
+  &__modal-container {
+    max-width: 821px;
+
+    @include breakpoint ('tablet') {
+      max-width: 100% !important;
+    }
+
+    @include breakpoint ('phone-max') {
+      max-width: 383px !important;
+    }
+
+    @include breakpoint ('phone') {
+      max-width: 100% !important;
+    }
+  }
+
+  &__inner-scroll {
+
+    @include breakpoint ('phone-max') {
+      position: absolute;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: $color-white;
+      border-radius: 6px 6px 0 0;
+      max-width: 375px !important;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      padding-bottom: 76px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+      z-index: 12;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+      width: 7px;
+      z-index: 12;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-clip: content-box;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      width: 3px;
+      z-index: 12;
+    }
+
+    &::-ms-scrollbar {
+      width: 7px;
+      z-index: 12;
+    }
+
+    &::-ms-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+      width: 7px;
+      z-index: 12;
+    }
+
+    &::-ms-scrollbar-thumb {
+      background-clip: content-box;
+      background-color: transparent;
+      border: transparent;
+      border-radius: 7px;
+      width: 3px;
+      z-index: 12;
+    }
+  }
+
+  &__scroll-wrapper {
+
+    @include breakpoint ('phone-max') {
+      padding-left: 6%;
+      padding-right: 6%;
+    }
+  }
+
+  &--rent-type {
+    .form-group {
+      @include breakpoint ('tablet') {
+        width: 50%;
+      }
+    }
+  }
+
+  &__btn-closed{
+    position: absolute;
+    left: 185px;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+
+    img{
+      width: 25px;
+      height: 25px;
+    }
+
+    @include breakpoint ('tablet-max') {
+      left: 37%;
+      top: 19px;
+    }
+
+    @include breakpoint ('phone-max') {
+      left: auto;
+      right: 25px;
+      top: 12px;
+    }
+  }
+}
+

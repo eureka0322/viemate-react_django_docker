@@ -1,0 +1,270 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.confirm-form {
+  background-color: $color-white;
+  border-radius: 6px;
+  margin: 0 auto;
+  max-width: 429px;
+
+  &__container {
+    padding: 34px 36px 0 36px;
+
+    @include breakpoint ('phone-max') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &--bg {
+      &-white {
+        background-color: $color-white;
+        border-radius: 6px 6px 0 0;
+      }
+
+      &-green {
+        background-color: rgba(80, 227, 194, .1);
+        border-radius: 6px 6px 0 0;
+        padding-bottom: 115px;
+      }
+    }
+
+
+  }
+
+  &__title {
+    color: $color-tundora;
+    @include font-size--k;
+    @include font-base-book;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__group {
+    font-size: 0;
+    &--half-w {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+    }
+  }
+
+  &__rent_to {
+    border-radius: 3px;
+    border: 1px solid #E1E1E1;
+    padding: 12px 8px;
+    max-width: 130px;
+    width: 100%;
+    background: $color-concrete;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  &__section {
+    margin-bottom: 12px;
+    padding: 0 21px;
+
+    @include breakpoint ('phone-max') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &--select-period {
+      width: 46%;
+      margin-right: 21px;
+
+      @include breakpoint ('phone-max') {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    &--text {
+      color: $color-silver-light;
+      padding-top: 13px;
+      width: 47%;
+    }
+
+    &--select-period,
+    &--text {
+      display: inline-block;
+      vertical-align: middle;
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .date-range-picker {
+      margin-bottom: 0;
+      width: 100%;
+
+      &__label {
+        color: $color-tundora;
+        @include font-size--e;
+
+        &-wrap {
+          &--start {
+            margin: 0 25px 0 0;
+            width: 46%;
+
+            @include breakpoint ('phone-max') {
+              margin-right: 0;
+            }
+          }
+
+          &--end {
+            margin: 0;
+            width: 46%;
+          }
+
+          &--start,
+          &--end {
+            @include breakpoint ('phone-max') {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &__labels {
+        margin-bottom: 8px;
+      }
+
+      .DateRangePicker {
+
+        &__picker {
+          &--end {
+            &:before {
+              left: 160px;
+            }
+
+            &:after {
+              left: 162px;
+            }
+          }
+
+          &--horizontal {
+            display: none;
+          }
+        }
+
+        .DateInput {
+          width: 46%;
+
+          @include breakpoint ('phone-max') {
+            display: block;
+            width: 100%;
+          }
+
+          &:first-child {
+            margin-right: 25px;
+
+            @include breakpoint ('phone-max') {
+              margin-right: 0;
+              margin-bottom: 47px;
+            }
+          }
+
+          &__display-text {
+            @include breakpoint ('phone-max') {
+              padding-top: 17px;
+              padding-bottom: 16px;
+              height: 55px;
+            }
+          }
+        }
+      }
+    }
+
+    .select-custom {
+       .Select--single {
+          & > .Select-control {
+            height: 55px;
+            width: 100%;
+
+            .Select-value {
+              padding-top: 20px;
+              padding-bottom: 18px;
+              padding-left: 29px;
+            }
+          }
+       }
+    }
+  }
+
+  &__label {
+    &--select-lebel {
+      color: $color-tundora;
+      @include font-size--e;
+    }
+  }
+
+
+  .table {
+    margin-top: 36px;
+    margin-bottom: 3px;
+
+    &__cell {
+      border-top: 1px solid $color-mercury;
+      border-bottom: 0;
+      color: $color-tundora;
+      padding-top: 15px;
+      padding-bottom: 14px;
+    }
+  }
+
+  .panel-info {
+    color: $color-tundora;
+    @include font-size--c;
+    padding: 35px 36px 28px 36px;
+
+    @include breakpoint ('phone-max') {
+      padding-bottom: 0;
+    }
+
+    .icon,
+    span {
+      display: block;
+    }
+
+    .icon {
+      float: left;
+    }
+
+    span {
+      margin-left: 35px;
+    }
+  }
+
+  &__info-text {
+    @include font-size--o;
+    padding-top: 15px;
+  }
+
+  .icon--success-lg {
+    margin-top: 96px;
+    margin-bottom: 57px;
+  }
+
+  .form-button {
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+
+    @include breakpoint ('phone-max') {
+      width: 100%;
+    }
+  }
+
+  &__success-text {
+    color: $color-turquoise;
+    @include font-size--i;
+    margin-bottom: 20px;
+  }
+
+}

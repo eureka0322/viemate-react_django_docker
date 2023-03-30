@@ -1,0 +1,13 @@
+.form-btn {
+  &__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 95px;
+    margin-bottom: 21px;
+
+    @include breakpoint('phone-max') {
+      padding-left: 0;
+    }
+  }
+}

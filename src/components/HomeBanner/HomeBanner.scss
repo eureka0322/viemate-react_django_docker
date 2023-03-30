@@ -1,0 +1,381 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+@import "../../stylesheets/animations";
+
+.animation {
+  &--stage_1 {
+    transition-delay: .25s;
+  }
+  &--stage_2 {
+    transition-delay: .35s;
+  }
+  &--stage_3 {
+    transition-delay: .43s;
+  }
+  &--stage_4 {
+    transition-delay: .5s;
+  }
+  &--stage_5 {
+    transition-delay: 1.2s;
+  }
+}
+
+.home-banner {
+  background-color: $color-black;
+  position: relative;
+  overflow: hidden;
+  min-height: 608px;
+  height: 100vh;
+  min-height: 450px;
+
+  @include breakpoint ('phone-max') {
+    background-image: url("../../images/banner-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100vh;
+    min-height: 320px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &:after {
+    @include breakpoint ('phone-max')  {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0, .5);
+    }
+  }
+
+  &__animated {
+    &--opacity {
+      transition: opacity .7s ease-in;
+    }
+  }
+
+  &__wrapper {
+    height: 100vh;
+    min-height: 608px;
+  }
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    .player {
+      .sidedock {
+        .box {
+          display: none !important;
+        }
+      }
+    }
+
+    .controls .play svg {
+      display: none !important;
+    }
+  }
+
+  &__video {
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+  }
+
+  &__container {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 3;
+  }
+
+  &__content {
+    display: table;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+
+    &-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    color: $color-white;
+    margin-top: 0;
+    // -webkit-user-select: none;
+    user-select: none;
+
+
+    @include breakpoint ('retina-display') {
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  &__title {
+    font-size: 144px;
+    line-height: 146px;
+    letter-spacing: 1px;
+    @include font-didot-regular;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    padding: 0 15px;
+    max-width: 100%;
+    word-spacing: -8px;
+    letter-spacing: 4px;
+
+    &--animate {
+      transition: opacity 1s ease-in;
+    }
+
+
+    @include breakpoint ('desktop-sm') {
+      font-size: 123px;
+      line-height: 124px;
+    }
+
+    @include breakpoint ('tablet-desktop') {
+      font-size: 106px;
+      line-height: 108px;
+    }
+
+    @include breakpoint ('tablet-landscape-custom') {
+      font-size: 103px;
+      line-height: 105px;
+      margin-bottom: 23px;
+      word-spacing: -4px;
+      letter-spacing: 2px;
+    }
+
+    @include breakpoint ('tablet-portrait-custom') {
+      font-size: 68px;
+      line-height: 70px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 50px;
+      line-height: 52px;
+      word-spacing: 0;
+      letter-spacing: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include breakpoint ('phone6') {
+      font-size: 42px;
+      line-height: 44px;
+    }
+
+    @include breakpoint ('iphone5') {
+      font-size: 28px;
+      font-size: 30px;
+    }
+
+    @include breakpoint ('phone') {
+      font-size: 33px;
+      line-height: 35px;
+    }
+  }
+
+  &__pre-title {
+    @include font-pinyon-regular;
+    font-size: 155px;
+    text-transform: none;
+
+    @include breakpoint ('desktop-sm') {
+      font-size: 133px;
+    }
+
+    @include breakpoint ('tablet-desktop') {
+      font-size: 116px;
+    }
+
+    @include breakpoint ('tablet-landscape-custom') {
+      font-size: 113px;
+    }
+
+    @include breakpoint ('tablet-portrait-custom') {
+      font-size: 78px;
+    }
+
+    @include breakpoint ('phone-max-custom') {
+      font-size: 44px;
+    }
+
+    @include breakpoint ('phone-custom') {
+      font-size: 38px;
+    }
+
+  }
+
+  &__subtitle {
+    @include font-size--k;
+    @include font-base-book;
+    font-weight: normal;
+    margin-bottom: 30px;
+
+    @include breakpoint ('tablet') {
+      margin-bottom: 70px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 53px;
+    }
+
+    @include breakpoint ('phone5') {
+      margin-bottom: 18px;
+    }
+
+    &--animate {
+      transition: opacity .7s .7s ease-in;
+    }
+
+  }
+
+  &__group-btns {
+    padding-left: 0;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 15px;
+    }
+
+    & > li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 17px;
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 15px;
+      }
+
+      .form-button {
+        @include font-size--g;
+        padding: 18px 23px 14px 23px;
+        @include font-base-book;
+
+        @include breakpoint ('phone-max') {
+          @include font-size--e;
+          padding: 16px 28px 12px 28px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 79px;
+    text-align: center;
+
+    @include breakpoint ('tablet-desktop') {
+      padding-bottom: 40px;
+    }
+
+    @include breakpoint ('tablet-max') {
+      padding-bottom: 20px;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-bottom: 75px;
+    }
+
+    @include breakpoint ('iphone5') {
+      &:not(:root:root){
+        padding-bottom: 85px;
+      }
+    }
+
+    @include breakpoint ('iphone5') {
+      padding-bottom: 85px;
+    }
+
+    @include breakpoint ('iphone6') {
+      padding-bottom: 80px;
+    }
+
+    @media all and (-ms-high-contrast:none) {
+      *::-ms-backdrop {
+        padding-bottom: 40px;
+      }
+    }
+
+    &-title {
+      color: $color-white;
+      display: block;
+      @include font-size--g;
+      margin-bottom: 21px;
+
+      @include breakpoint ('tablet') {
+        @include font-size--k;
+        margin-bottom: 25px;
+      }
+
+      @include breakpoint ('phone-max') {
+        bottom: 32px;
+        @include font-size--e;
+        margin-bottom: 15px;
+      }
+    }
+
+    &--scroll_btn {
+      // animation: transform .7s ease-in 1;
+    }
+
+    &--circular {
+      height: 100%;
+      transform-origin: center center;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: rotate(-90deg);
+    }
+
+    &--path {
+      stroke-dasharray: 200, 200;
+      stroke-dashoffset: 0;
+      animation: dash .7s ease-in 1;
+      stroke-linecap: round;
+      stroke: #ffffff;
+    }
+
+    &--icons {
+      opacity: 1;
+      animation: opacity .7s ease-in 1;
+    }
+
+  }
+}
+
+_:-ms-fullscreen, :root .home-banner__nav { padding-bottom: 40px; }
+

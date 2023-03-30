@@ -1,0 +1,77 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.save-block {
+  padding: 0 32px;
+  margin: 0 auto;
+  max-width: 677px;
+  width: 100%;
+
+  @include breakpoint ('phone-max') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__container {
+    background-color: $color-white;
+    border: 1px solid $color-gallery-grey;
+    border-radius: 8px;
+    padding: 31px 34px 21px 34px;
+  }
+
+  &__title,
+  &__content {
+    @include font-size--i;
+    padding-left: 22px;
+    padding-right: 22px;
+
+    @include breakpoint ('phone-max') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    border-bottom: 1px solid $color-mountain-mist;
+    color: $color-tundora-light;
+    padding-bottom: 14px;
+  }
+
+  &__content {
+    color: $color-dusty-gray;
+    padding-top: 16px;
+    margin-bottom: 53px;
+  }
+
+  &__nav {
+    text-align: right;
+
+    @include breakpoint ('phone-max') {
+      text-align: center;
+    }
+
+    .form-button {
+      @include breakpoint ('phone-max') {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      &--user-action {
+        @include breakpoint ('tablet') {
+          @include font-size--e;
+          padding: 17px 32px 16px 32px;
+        }
+      }
+
+      &--default-dark {
+        margin-right: 17px;
+
+        @include breakpoint ('phone-max') {
+          margin-right: auto;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

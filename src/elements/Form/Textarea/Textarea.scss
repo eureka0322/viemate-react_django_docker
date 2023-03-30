@@ -1,0 +1,104 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+$form-textarea: 'form-textarea';
+
+.#{$form-textarea} {
+  resize: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+    &::-webkit-input-placeholder {
+      color: $color-silver-light;
+    }
+
+  &--count {
+    padding-right: 30px;
+  }
+}
+
+.textarea {
+  &-count {
+    color: $color-silver-light;
+    @include font-size--c;
+    @include font-base-book;
+    padding: 14px 10px 28px 0;
+    position: absolute;
+    right: 0;
+    top: auto;
+    z-index: 2;
+    text-align: right;
+    width: 45px;
+
+    @include breakpoint ('tablet-max') {
+      top: 0;
+      padding: 9px 0 0 0;
+      @include font-size--e;
+    }
+
+     @include breakpoint ('phone-max') {
+      padding-top: 0;
+    }
+  }
+
+  &--description-profile {
+    & > .form-control {
+      height: 200px !important;
+      padding-right: 45px;
+
+      @include breakpoint ('tablet-max') {
+        height: 270px;
+        padding-right: 18px;
+      }
+
+      @include breakpoint ('phone-max') {
+        height: 150px;
+      }
+    }
+  }
+
+  &--contact-us {
+    margin-bottom: 30px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 36px;
+    }
+
+    & > .form-control {
+      border-color: $color-dusty;
+      font-size: 26px;
+      line-height: 36px;
+      padding: 30px 26px;
+
+      @include breakpoint ('phone-max') {
+        font-size: 20px;
+        padding: 8px 12px
+      }
+    }
+  }
+
+  &--feedback {
+
+    label {
+      display: none;
+    }
+
+    textarea {
+      border-color: $color-silver-chalice;
+      border-radius: 6px;
+      box-shadow: 0 0 1px 0 rgba(0,0,0,0.13);
+      padding: 18px 15px;
+      @include font-size--g;
+      @include font-base-medium;
+
+      @include breakpoint ('phone-max') {
+        @include font-size--g;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $color-silver-light;
+      }
+    }
+  }
+}

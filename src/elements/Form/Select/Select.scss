@@ -1,0 +1,502 @@
+
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+$form-select: 'form-select';
+
+.#{$form-select} {
+  &-contents {
+    &--industry {
+      height: 200px !important;
+    }
+
+    &--persona,
+    &--use-category {
+      height: 83px !important;
+    }
+
+    &--stage {
+     height: 83px !important;
+    }
+
+    &--filter {
+      &-persona,
+      &-industry,
+      &-stage {
+        height: 70px !important;
+      }
+    }
+  }
+
+  &--currency {
+    & >  .Select--single {
+      & > .Select-control {
+        width: 100% !important;
+        height: 52px !important;
+        border-radius: 6px;
+
+        & > .Select-value {
+          padding-top: 14px !important;
+          padding-bottom: 14px !important;
+        }
+      }
+    }
+
+    .Select-placeholder {
+      color: $color-boulder !important;
+    }
+  }
+}
+
+.select-custom  {
+
+  &--xs {
+    .Select-placeholder,
+    .Select {
+      &--single {
+        & >.Select-control,
+        .Select-menu-outer {
+          width: 111px !important;
+
+          @include breakpoint ('tablet-max') {
+             width: 189px !important;
+          }
+
+          @include breakpoint ('phone-max') {
+            width: 140px !important;
+          }
+        }
+      }
+    }
+  }
+
+  &--sm {
+    .Select-placeholder,
+    .Select {
+      &--single {
+        & >.Select-control,
+        .Select-menu-outer {
+          width: 160px !important;
+
+          @include breakpoint ('tablet-max') {
+            width: 240px !important;
+          }
+
+          @include breakpoint ('phone-max') {
+            width: 180px !important;
+          }
+        }
+      }
+    }
+  }
+
+  &--full-width {
+    .Select-placeholder,
+    .Select {
+      &--single {
+        & > .Select-control,
+        .Select-menu-outer {
+          width: 100% !important;
+
+          @include breakpoint ('tablet-max') {
+            width: 100% !important;
+          }
+
+          .Select-value {
+            color: #474747 !important;
+            padding: 12px 52px 12px 22px !important;
+            @include font-base-book;
+
+            @include breakpoint ('tablet') {
+              padding: 26px 57px 14px 21px !important;
+            }
+
+            @include breakpoint ('phone-max') {
+              padding: 10px 40px 10px 11px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--lg-h {
+
+    .Select-placeholder,
+    .Select {
+      &--single  {
+        & > .Select-control {
+          height: 54px !important;
+
+
+          @include breakpoint ('tablet-max') {
+            height: 65px !important;
+          }
+
+          @include breakpoint ('phone-max') {
+            height: 50px !important;
+          }
+
+          .Select-arrow-zone {
+            @include breakpoint ('tablet') {
+              width: 56px;
+            }
+
+             @include breakpoint ('phone-max') {
+                width: 31px;
+                padding-right: 17px !important;
+             }
+          }
+
+          .Select-value {
+            padding-top: 19px !important;
+            padding-bottom: 17px !important;
+            padding-left: 19px !important;
+            @include font-base-book;
+
+            @include breakpoint ('tablet-max') {
+              font-size: 20px !important;
+              line-height: 22px !important;
+              padding-top: 21px !important;
+              padding-bottom: 19px !important;
+            }
+
+            @include breakpoint ('phone-max') {
+              font-size: 16px !important;
+              line-height: 18px !important;
+              padding-top: 17px !important;
+              padding-bottom: 17px !important;
+              padding-left: 17px !important;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &__multi {
+    display: none;
+
+    .Select--multi {
+      .Select-control,
+      .Select-multi-value-wrapper {
+        border-color: $color-mercury;
+        height: 34px;
+        min-width: 188px;
+        max-width: 100%;
+
+        &:hover {
+          box-shadow: none;
+        }
+
+        @include breakpoint ('tablet') {
+          height: 52px;
+          min-width: 240px !important;
+        }
+
+        @include breakpoint ('phone-max') {
+          height: 40px;
+          min-width: 207px !important;
+        }
+
+        .Select-multi-value-wrapper {
+          padding: 0;
+          width: 100%;
+        }
+
+        .Select-placeholder {
+          color: $color-boulder;
+          font-size: 14px;
+          line-height: 0;
+          padding: 17px 52px 8px 19px;
+          opacity: .3;
+
+          @include breakpoint ('tablet') {
+            font-size: 18px;
+            padding: 26px 57px 14px 21px;
+          }
+
+          @include breakpoint ('phone-max') {
+            padding: 10px 40px 10px 11px;
+          }
+        }
+
+        .Select-arrow-zone {
+          padding-right: 20px;
+        }
+
+        .Select-input {
+          height: 0;
+        }
+
+      }
+
+      &.has-value{
+        .Select-arrow-zone {
+
+          @include breakpoint ('tablet') {
+            top: 7px;
+          }
+
+          @include breakpoint ('phone-max') {
+            top: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  &--edit {
+    .Select-placeholder,
+    .Select {
+      &--single  {
+        & > .Select-control {
+          height: 56px !important;
+          font-size: 16px !important;
+          line-height: 18px !important;
+
+          @include breakpoint ('tablet') {
+            height: 65px !important;
+          }
+          @include breakpoint ('phone-max') {
+            height: 50px !important;
+          }
+        }
+      }
+    }
+
+    .Select-placeholder, .Select--single > .Select-control .Select-value {
+      padding-top: 21px !important;
+    }
+  }
+
+  &--terms{
+    .Select-placeholder, .Select--single > .Select-control .Select-value {
+      padding: 19px 52px 11px 19px !important;
+      font-size: 14px !important;
+      line-height: 16px !important;
+       @include font-base-book;
+    }
+
+    .Select-option {
+      font-size: 14px !important;
+      line-height: 16px !important;
+    }
+  }
+
+  &--country {
+    .Select-placeholder, .Select--single > .Select-control .Select-value {
+      padding: 18px 52px 11px 19px !important;
+      @include font-base-book;
+
+      @include breakpoint ('tablet') {
+        padding-top: 24px !important;
+      }
+    }
+  }
+
+  &--gender{
+    .Select-placeholder, .Select--single > .Select-control .Select-value {
+      padding: 18px 52px 17px 19px !important;
+
+      @include breakpoint ('phone-max') {
+        padding-top: 17px !important;
+        padding-bottom: 17px !important;
+        padding-left: 17px !important;
+      }
+    }
+  }
+
+  &--gender-filter {
+    & > .Select-placeholder,
+    & > .Select--single > .Select-control .Select-value {
+      padding: 12px 52px 17px 19px !important;
+
+      @include breakpoint ('phone-max') {
+        padding-top: 17px !important;
+        padding-bottom: 17px !important;
+        padding-left: 17px !important;
+      }
+    }
+
+    .Select-placeholder {
+      height: 50px;
+    }
+  }
+
+  .Select-arrow {
+    border: 0;
+    background-image: url("../../../../icons/svg/icon-select.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 8px;
+    width: 14px;
+  }
+
+  .Select-placeholder,
+  .Select {
+    &--single {
+      & > .Select-control {
+        border-color: $color-mercury;
+        height: 50px;
+        // width: 150px;
+
+        @include breakpoint ('tablet-max') {
+          height: 65px;
+          // width: 390px;
+        }
+
+        @include breakpoint ('phone-max') {
+          height: 60px;
+          width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+          box-shadow: none;
+        }
+
+        .Select-arrow-zone {
+          padding-right: 20px;
+
+          @include breakpoint ('phone-max') {
+            padding-right: 15px;
+          }
+        }
+
+        .Select-value {
+          border-radius: 3px;
+          color: $color-silver-light;
+          @include font-size--e;
+          @include font-base-book;
+          padding: 18px 52px 16px 14px !important;
+          text-overflow: clip;
+
+          @include breakpoint ('tablet') {
+            font-size: 18px !important;
+            padding: 21px 57px 19px 14px !important;
+          }
+
+          @include breakpoint ('phone-max') {
+            padding: 18px 40px 10px 14px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .Select-menu-outer {
+    border-color: $color-mercury;
+    box-shadow: none;
+    width: 100% !important;
+    max-width: 100%;
+
+    @include breakpoint ('tablet') {
+      width: 100% !important;
+    }
+
+    @include breakpoint ('phone-max') {
+      width: 100%;
+    }
+  }
+
+  .Select-option {
+    background-color: $color-white;
+    color: $color-silver-light;
+    @include font-size--e;
+    padding: 19px 22px 17px 19px;
+
+    @include breakpoint ('tablet') {
+      padding-left: 21px;
+      font-size: 20px !important;
+      line-height: 22px !important;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding: 17px;
+      font-size: 16px !important;
+      line-height: 18px !important;
+    }
+
+    &:last-child  {
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px
+    }
+
+    &.is-selected,
+    &.is-focused,
+    &.is-pseudo-focused,
+    &.is-focused.is-pseudo-focused,
+    &.is-searchable {
+      color: $color-white;
+      background-color: $color-extra-grey !important;
+    }
+
+    @include breakpoint ('tablet') {
+      padding-left: 21px;
+    }
+  }
+
+  .Select {
+    &--multi {
+      .Select-control {
+        width: auto;
+        min-width: 177px;
+        max-width: 250px;
+      }
+    }
+  }
+
+}
+
+.Select-placeholder, .Select--single > .Select-control .Select-value {
+  padding: 18px 52px 11px 19px !important;
+  line-height: 1.2 !important;
+  @include font-base-book;
+
+  @include breakpoint ('tablet-max') {
+    font-size: 15px !important;
+    line-height: 17px !important;
+  }
+
+  @include breakpoint ('tablet-large') {
+    padding-top: 24px !important;
+  }
+}
+
+.Select-input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  padding-left: 19px !important;
+
+  & > input {
+    height: 100%;
+    width: 100% !important;
+  }
+}
+
+.Select {
+  &.is-selected,
+  &.is-focused,
+  // &.is-focused.is-pseudo-focused,
+  // &.is-searchable,
+  &.is-pseudo-focused {
+    color: $color-white;
+    // border-color: $color-extra-grey !important;
+    background-color: transparent !important;
+  }
+
+  .Select-control {
+    border-color: $color-mercury !important;
+  }
+}
+
+.has-value.Select--single > .Select-control .Select-value .Select-value-label, .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+  color: $color-boulder !important;
+
+  &.credit-card__item .form-group input::-webkit-input-placeholder {
+    color: $color-silver-light;
+  }
+}

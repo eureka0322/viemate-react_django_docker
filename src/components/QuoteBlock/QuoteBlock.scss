@@ -1,0 +1,113 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+// @import "../../stylesheets/animations";
+
+.quote-block {
+  font-size: 0;
+  padding: 97px 0 122px 0;
+  // margin: 0 -32px;
+
+  @include breakpoint ('tablet-max') {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 121px;
+    padding-bottom: 115px;
+  }
+
+  @include breakpoint ('phone-max') {
+    padding-top: 48px;
+    padding-bottom: 73px;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 32px;
+
+    // animation: transform .7s ease-in 1, opacity .3s ease-in 1;
+
+    .quote-block-enter & {
+      opacity: 0.01;
+    }
+
+    .quote-block-enter.quote-block-enter-active & {
+      opacity: 1;
+    }
+
+    @include breakpoint ('tablet-max') {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    &--left {
+      width: 49%;
+
+      .quote-block-enter & {
+        transform: translateX(11px);
+      }
+
+      .quote-block-enter.quote-block-enter-active & {
+        transform: translateX(0);
+        transition: all 500ms;
+      }
+    }
+
+    &--right {
+      width: 51%;
+
+      .quote-block-enter & {
+        transform: translateX(11px);
+      }
+
+      .quote-block-enter.quote-block-enter-active & {
+        transform: translateX(0);
+        transition: all 500ms;
+      }
+    }
+
+    &--left,
+    &--right {
+      @include breakpoint ('tablet-max') {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    color: $color-tundora;
+    @include font-size--x;
+    @include font-base-bold;
+
+    @include breakpoint ('tablet') {
+      font-size: 42px;
+      line-height: 53px;
+      margin-bottom: 69px;
+    }
+    @include breakpoint ('phone-max') {
+      font-size: 26px;
+      line-height: 38px;
+      margin-bottom: 29px;
+    }
+  }
+
+  &__content {
+    color: $color-boulder;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 2%;
+    margin-bottom: 0;
+
+    @include breakpoint ('tablet-max') {
+      padding-left: 0;
+      font-size: 26px;
+      line-height: 42px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}

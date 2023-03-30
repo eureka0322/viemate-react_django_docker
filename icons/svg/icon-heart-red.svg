@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer-iPad" transform="translate(-506.000000, -566.000000)" fill="#FF3366">
+            <path d="M514.31775,567.31775 C514.19675,567.43875 514.10375,567.57675 513.99975,567.70675 C513.89575,567.57675 513.80275,567.43875 513.68175,567.31775 C511.92475,565.56075 509.07475,565.56075 507.31775,567.31775 C505.56075,569.07475 505.56075,571.92475 507.31775,573.68175 L513.99975,579.99975 L520.68175,573.68175 C522.43875,571.92475 522.43875,569.07475 520.68175,567.31775 C518.92475,565.56075 516.07475,565.56075 514.31775,567.31775 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

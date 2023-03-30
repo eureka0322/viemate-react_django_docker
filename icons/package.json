@@ -1,0 +1,27 @@
+{
+  "name": "material-design-icons",
+  "version": "2.1.3",
+  "description": "Material Design icons by Google",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google/material-design-icons"
+  },
+  "keywords": [
+    "icons",
+    "material",
+    "material-design",
+    "google"
+  ],
+  "author": "Material Design Authors",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/google/material-design-icons/issues"
+  },
+  "homepage": "https://github.com/google/material-design-icons",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-webfont": "^1.1.0",
+    "jit-grunt": "^0.9.1"
+  }
+}

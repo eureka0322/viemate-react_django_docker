@@ -1,0 +1,101 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.message-container {
+  background-color: $color-white;
+  border: 1px solid $color-concrete;
+  border-radius: 6px;
+  margin-bottom: 60px;
+  text-align: center;
+
+  @include breakpoint('phone-max') {
+    border-top: 0;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  &--popup {
+    @include breakpoint ('phone-max') {
+      border: 0;
+      max-width: 375px;
+      margin-bottom: 0;
+    }
+  }
+
+  &--btn-wrapper {
+    padding: 39px 40px;
+
+    @include breakpoint ('tablet-desktop') {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include breakpoint('phone-max') {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      padding: 0 20px 38px 20px;
+    }
+  }
+
+  .btn--default-dark {
+    border-radius: 100px;
+    @include font-size--f;
+    padding: 12px 20px 11px 20px;
+  }
+
+  &__btn-group {
+    border-radius: 0 0 6px 6px;
+    border-top: 1px solid $color-concrete;
+    width: 100%;
+
+    .btn {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      color: $color-silver-light;
+      @include font-size--f;
+      padding: 23px;
+      width: 50%;
+
+      &:first-child {
+        border-right: 1px solid $color-concrete;
+      }
+
+      .icon--share {
+        width: 15px;
+      }
+
+      .icon,
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .icon {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &__share {
+
+    .dropdown__share {
+      border-right: 0;
+      width: 100%;
+
+      .dropdown-menu {
+        min-width: 100%;
+      }
+    }
+
+  }
+
+  .product-nav {
+    padding: 0;
+
+    .form-button {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

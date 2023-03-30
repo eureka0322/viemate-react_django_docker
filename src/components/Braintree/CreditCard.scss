@@ -1,0 +1,182 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.credit-card {
+
+  &__title {
+    margin: 46px 0 38px;
+    @include font-base-book;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  &__form-section {
+    // margin: 0 -15px 36px;
+    margin-bottom: 20px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 31px;
+    }
+
+    &--margin {
+      margin-bottom: 48px;
+
+      @include breakpoint("phone-max") {
+        margin-bottom:  31px;
+      }
+    }
+  }
+
+  &__items-wrap {
+    margin: -15px -15px 0;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px 15px 0;
+
+    &--padding-sm {
+      iframe {
+        padding-left: 16px;
+      }
+    }
+
+    &--padding-lg {
+      iframe {
+        padding-left: 20px;
+
+        @include breakpoint ('phone-max') {
+          padding-left: 35px;
+        }
+      }
+    }
+
+    &--no-label {
+      vertical-align: bottom;
+
+      @include breakpoint ('phone-max') {
+        margin-left: -4px;
+      }
+    }
+
+    &--lg {
+      width: 100%;
+
+      label {
+        display: none;
+      }
+    }
+
+    &--md {
+      width: 50%;
+
+      @include breakpoint("phone-max") {
+        width: 100%;
+      }
+    }
+
+    &--sm {
+      width: 33.33333%;
+
+      @include breakpoint("phone-max") {
+        margin-bottom: 18px;
+        width: 38%;
+      }
+
+      &:last-child {
+        @include breakpoint("phone-max") {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .form-group {
+      .input--base {
+        @include font-base-medium;
+        font-size: 15px;
+        font-family: helvetica, arial;
+
+        &::placeholder {
+          color: $color-silver-light;
+        }
+      }
+    }
+
+    .form-control {
+      position: relative;
+
+      &.braintree-hosted-fields-focused {
+        border-color: $color-turquoise;
+      }
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      float: none !important;
+      display: block;
+    }
+  }
+
+  &__label-form {
+    color: $color-boulder;
+    @include font-size--f;
+    margin-bottom: 16px;
+  }
+
+  &__card-lists {
+    margin-bottom: 28px;
+
+    @include breakpoint("phone-max") {
+      text-align: center;
+    }
+  }
+
+  &__btn-groups {
+    text-align: right;
+    margin: 100px -15px 0 -15px;
+
+    @include breakpoint ('phone-max') {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    &--ach-btns {
+      margin-top: 45px;
+    }
+
+    .form-button {
+      margin: 0 15px;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 15px;
+    @include font-size--f;
+    @include font-base-demi;
+    color: $color-boulder;
+  }
+
+  &__ach {
+    margin-bottom: 26px;
+  }
+
+  &__ach-img {
+    background: rgba(207, 225, 234, .3);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding-top: 21px;
+    padding-bottom: 26px;
+
+    .icon--check {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+
+}

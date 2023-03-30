@@ -1,0 +1,66 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.post {
+
+
+  &__logo {
+    display: block;
+    text-align: center;
+    margin: 0 auto 52px auto;
+
+    .logo {
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    @include font-size--k;
+    margin-bottom: 15px;
+    text-align: center;
+
+    span {
+      position: relative;
+      padding-bottom: 6px;
+
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 12%;
+        right: 12%;
+        height: 1px;
+        width: 74%;
+        background: rgba(255, 255, 255, .5);
+      }
+    }
+  }
+
+  &__list {
+    height: 100%;
+    margin-top: 40px;
+    text-align: center;
+
+    &-item {
+      color: $color-white;
+      cursor: pointer;
+      display: block;
+      @include font-size--xl;
+      text-transform: uppercase;
+      padding: 40px 0;
+
+      @include breakpoint ('phone-max') {
+        @include font-size--x;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-dusty-gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user-profile {
+  color: $color-tundora;
+  background-color: $color-white;
+  border: 1px solid $color-concrete;
+  border-radius: 6px;
+  margin-bottom: 58px;
+  text-align: center;
+
+  @include breakpoint ('tablet') {
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint('phone-max') {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+
+  }
+
+  &__wrapper {
+    padding: 39px;
+
+    @include breakpoint ('tablet-desktop') {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding: 38px 20px;
+    }
+  }
+
+  .avatar-wrapper {
+    float: none;
+    margin: 0 auto 15px auto;
+  }
+
+  &__name {
+    @include font-size--o;
+    letter-spacing: -.4px;
+    margin: 0 0 18px 0;
+  }
+
+  &__user-bage {
+    margin-left: 13px;
+    display: inline-block;
+    vertical-align: bottom;
+
+    @include breakpoint('phone-max') {
+      position: absolute;
+      margin-left: 10px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 0;
+    max-height: 110px;
+    overflow: hidden;
+    word-spacing: normal;
+    word-wrap: break-word;
+    white-space: normal;
+
+    // &:after {
+    //   content: '...';
+    // }
+
+    // @include breakpoint ('tablet-desktop') {
+    //   max-height: 134px;
+    // }
+
+    // @include breakpoint ('tablet-portrait-custom') {
+    //   max-height: 107px;
+    // }
+  }
+}
+
+.user-profile,
+.action {
+  @include breakpoint('tablet') {
+    margin-bottom: 40px;
+  }
+}

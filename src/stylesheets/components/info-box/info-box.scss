@@ -1,0 +1,62 @@
+.info-box {
+  &__nav {
+    &-btn {
+      text-align: right;
+
+      @include breakpoint ('phone-max') {
+        text-align: center;
+      }
+
+      .form-button {
+        @include font-size--f;
+        padding: 13px 41px 12px 41px;
+        font-smooth: auto;
+        -webkit-font-smoothing: auto;
+      }
+
+    }
+
+    .table {
+      &__cell {
+        vertical-align: middle;
+        border-bottom: 0;
+
+        @include breakpoint ('phone-max') {
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+  &__panel-info {
+    text-align: left;
+    @include breakpoint ('phone-max') {
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      margin-right: 15px;
+      float: left;
+    }
+
+    .info-text {
+      color: $color-tundora;
+      display: block;
+      @include font-size--c;
+      padding-right: 63px;
+      margin-left: 35px;
+      text-align: left;
+
+      @include breakpoint ('phone-max') {
+        padding-right: 0;
+      }
+
+      &--new-address {
+        padding-right: 0;
+        line-height: 21px;
+      }
+    }
+  }
+}

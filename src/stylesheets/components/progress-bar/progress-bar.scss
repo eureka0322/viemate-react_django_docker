@@ -1,0 +1,30 @@
+.progress {
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+  &--base {
+    background-color: $color-mercury;
+    border-radius: 8px;
+  }
+
+  &--md {
+    background-color: rgba(191, 191, 191, .94);
+    border-radius: 8px;
+    height: 6px;
+  }
+
+  .progress-bar {
+    border-radius: 8px;
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: $color-white;
+    text-align: center;
+    background-color: $color-radical-red;
+    @include transition (width $base-transition $base-transition--link--time);
+
+    &--pink {
+      background-color: $color-radical-red;
+    }
+  }
+}

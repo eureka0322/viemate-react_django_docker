@@ -1,0 +1,82 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user-header {
+  color: $color-tundora;
+  margin: 44px 40px 40px 40px;
+  position: relative;
+
+  @include breakpoint('tablet-max') {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  @include breakpoint ('phone-max') {
+    margin-top: 43px;
+  }
+
+  &--left {
+    margin-right: 30px;
+  }
+
+  &__icon-like {
+    cursor: pointer;
+    position: absolute;
+    margin-top: -13px;
+    right: 0;
+    top: 50%;
+
+    @include breakpoint ('phone-max') {
+      margin-top: -4px;
+      top: 0;
+    }
+
+    &:hover {
+      .icon--like-grey {
+        background-image: url("../../../icons/svg/icon-like-pink.svg");
+        background-size: 30px 26px;
+        width: 30px;
+        height: 26px;
+      }
+    }
+
+    &.is-active {
+      .icon--like-grey{
+        display: none;
+      }
+
+      .icon--like-full-1 {
+        display: block;
+      }
+    }
+
+    .icon {
+      &--like-grey {
+        display: block;
+      }
+
+      &--like-full-1 {
+        display: none;
+      }
+    }
+  }
+
+  &__location {
+    margin: 0 0 6px 0;
+  }
+
+  &__location,
+  &__price-details {
+    @include font-size--ol;
+    @include font-base-book;
+  }
+
+  &__price-details {
+    margin: 0;
+
+    .rental-period {
+      @include font-size--f;
+    }
+  }
+
+}

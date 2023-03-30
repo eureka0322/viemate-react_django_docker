@@ -1,0 +1,693 @@
+.icon {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: middle;
+
+  &--arrow-down {
+    background-image: url("../../../icons/svg/arrow-down.svg");
+    width: 16px;
+    height: 8px;
+    margin-left: 9px;
+  }
+
+  &--arrow-down-white {
+    background-image: url("../../../icons/svg/icon-arrow-down-white.svg");
+    width: 14px;
+    height: 8px;
+
+    @include breakpoint ('tablet') {
+      width: 23px;
+      height: 12px;
+    }
+  }
+
+  &--arrow-down-pink {
+    background-image: url("../../../icons/svg/icon-arrow-down-pink.svg");
+    width: 14px;
+    height: 8px;
+
+    @include breakpoint ('tablet') {
+      width: 23px;
+      height: 12px;
+    }
+  }
+
+  &--arrow-back {
+    background-image: url("../../../icons/svg/icon-arrow-back.svg");
+    height: 11px;
+    width: 13px;
+  }
+
+  &--notification {
+    background-image: url("../../../icons/svg/icon-notification.svg");
+    width: 22px;
+    height: 25px;
+    position: relative;
+  }
+
+  &--notification-grey {
+    background-image: url("../../../icons/svg/icon-notification-grey.svg");
+    width: 22px;
+    height: 25px;
+    position: relative;
+  }
+
+  &--avatar {
+    background-image: url("../../../icons/svg/icon-avatar.svg");
+    background-size: cover;
+    height: 38px;
+    width: 38px;
+  }
+
+  &--email {
+    background-image: url("../../../icons/svg/icon-email.svg");
+    width: 24px;
+    height: 20px;
+    position: relative;
+  }
+
+  &--email-grey {
+    background-image: url("../../../icons/svg/icon-email-grey.svg");
+    width: 24px;
+    height: 20px;
+    position: relative;
+  }
+
+  &--email-gray {
+    background-image: url("../../../icons/svg/icon-email-gray.svg");
+    width: 39px;
+    height: 32px;
+
+    @include breakpoint ('phone-max') {
+      width: 27px;
+      height: 22px;
+    }
+  }
+
+  &--heart {
+    background-image: url("../../../icons/svg/icon-heart-red.svg");
+    width: 16px;
+    height: 14px;
+  }
+
+  &--instagram {
+    background-image: url("../../../icons/svg/icon-instagram.svg");
+    width: 24px;
+    height: 24px;
+  }
+
+  &--facebook {
+    background-image: url("../../../icons/svg/icon-facebook.svg");
+    width: 24px;
+    height: 24px;
+  }
+
+  &--facebook-messenger {
+    background-image: url("../../../icons/svg/icon-facebook-messenger.svg");
+    width: 14px;
+    height: 14px;
+  }
+
+  &--tumblr {
+    background-image: url("../../../icons/svg/icon-tumblr.svg");
+    width: 14px;
+    height: 24px;
+  }
+
+  &--twitter {
+    background-image: url("../../../icons/svg/icon-twitter.svg");
+    width: 24px;
+    height: 20px;
+  }
+
+  &--twitter-gray {
+    background-image: url("../../../icons/svg/icon-twitter-gray.svg");
+    width: 52px;
+    height: 43px;
+
+    @include breakpoint ('phone-max') {
+      width: 37px;
+      height: 30px;
+    }
+  }
+
+
+  &--business {
+    background-image: url("../../../icons/svg/icon-business.svg");
+    width: 23px;
+    height: 23px;
+  }
+
+  &--calendar {
+    background-image: url("../../../icons/svg/icon-calendar.svg");
+    width: 20px;
+    height: 20px;
+  }
+
+  &--calendar-input {
+    background-image: url("../../../icons/svg/icon-calendar-input.svg");
+    width: 17px;
+    height: 15px;
+
+    @include breakpoint ('tablet-max') {
+      width: 21px;
+      height: 19px;
+      background-size: 21px 19px;
+      top: 4px;
+      position: relative;
+    }
+
+    @include breakpoint ('phone-max') {
+      width: 19px;
+      height: 17px;
+      background-size: 19px 16px;
+      top: -4px;
+    }
+  }
+
+  &--home {
+    background-image: url("../../../icons/svg/icon-home.svg");
+    width: 20px;
+    height: 20px;
+  }
+
+  &--close {
+    background-image: url("../../../icons/svg/icon-close.svg");
+    width: 15px;
+    height: 15px;
+  }
+
+  &--like {
+    background-image: url("../../../icons/svg/icon-like.svg");
+    background-size: 54px 48px;
+    width: 54px;
+    height: 48px;
+  }
+
+  &--like-full-1 {
+    background-image: url("../../../icons/svg/icon-like-full-1.svg");
+    width: 30px;
+    height: 26px;
+  }
+
+  &--like-full {
+    background-image: url("../../../icons/svg/icon-like-full.svg");
+    width: 54px;
+    height: 48px;
+  }
+
+
+  &--like-grey {
+    background-image: url("../../../icons/svg/icon-like-grey.svg");
+    width: 30px;
+    height: 26px;
+  }
+
+  &--like-full-grey {
+    background-image: url("../../../icons/svg/icon-like-full-grey.svg");
+    width: 60px;
+    height: 55px;
+    position: relative;
+  }
+
+   &--like-best {
+    background-image: url("../../../icons/svg/icon-like-best.svg");
+    width: 60px;
+    height: 55px;
+    position: relative;
+    right: -13px;
+
+    @include breakpoint ('tablet') {
+      right: 0;
+    }
+  }
+
+  &--share {
+    background-image: url("../../../icons/svg/icon-share.svg");
+    background-repeat: repeat-x;
+    width: 3px;
+    height: 3px;
+  }
+
+  &--report {
+    background-image: url("../../../icons/svg/icon-report.svg");
+    width: 14px;
+    height: 18px;
+  }
+
+  &--mustache {
+    background-image: url("../../../icons/svg/icon-mustache.svg");
+    height: 18px;
+    width: 50px;
+  }
+
+  &--search {
+    background-image: url("../../../icons/svg/icon-search.svg");
+    height: 16px;
+    width: 16px;
+  }
+
+  &--delete {
+    background-image: url("../../../icons/svg/icon-delete.svg");
+    height: 24px;
+    width: 22px;
+  }
+
+  &--delete-white {
+    background-image: url("../../../icons/svg/icon-delete-white.svg");
+    height: 24px;
+    width: 22px;
+  }
+
+  &--select {
+    background-image: url("../../../icons/svg/icon-select.svg");
+    height: 4px;
+    width: 14px;
+  }
+
+  &--information {
+    background-image: url("../../../icons/svg/icon-information.svg");
+    height: 44px;
+    width: 44px;
+
+    @include breakpoint ('phone-max') {
+      height: 60px;
+      width: 60px;
+      background-size: 60px 60px;
+    }
+  }
+
+  &--location-type,
+  &--information {
+    @include breakpoint ('tablet') {
+      height: 70px !important;
+      width: 70px !important;
+      background-size: 70px 70px;
+    }
+  }
+
+  &--heart-tag {
+    background-image: url("../../../icons/svg/icon-heart-tag.svg");
+    height: 46px;
+    width: 46px;
+
+    @include breakpoint ('tablet') {
+      height: 71px;
+      width: 75px;
+    }
+
+    @include breakpoint ('phone-max') {
+      height: 64px;
+      width: 67px;
+    }
+  }
+
+  &--image {
+    background-image: url("../../../icons/svg/icon-image.svg");
+    height: 44px;
+    width: 44px;
+
+    @include breakpoint ('tablet') {
+      height: 76px;
+      width: 77px;
+    }
+
+    @include breakpoint ('phone-max') {
+      height: 58px;
+      width: 58px;
+    }
+  }
+
+  &--location-type {
+    background-image: url("../../../icons/svg/icon-location-type.svg");
+    height: 44px;
+    width: 46px;
+
+    @include breakpoint ('phone-max') {
+      height: 58px;
+      width: 58px;
+      background-size: 58px 58px;
+    }
+  }
+
+  &--upload {
+    background-image: url("../../../icons/svg/icon-upload.svg");
+    height: 21px;
+    width: 24px;
+  }
+
+  &--plus {
+    background-image: url("../../../icons/svg/icon-plus.svg");
+    height: 20px;
+    width: 20px;
+
+    @include breakpoint ('phone-max') {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &--plus-circle {
+    background-image: url("../../../icons/svg/icon-plus-circle.svg");
+    height: 24px;
+    width: 24px;
+  }
+
+  &--delete-img {
+    background-image: url("../../../icons/svg/icon-delete-img.svg");
+    height: 24px;
+    width: 24px;
+
+    @include breakpoint ('phone-max') {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  &--google {
+    background-image: url("../../../icons/svg/icon-google.svg");
+    height: 20px;
+    width: 20px;
+  }
+
+  &--facebook-circle {
+    background-image: url("../../../icons/svg/icon-facebook-circle.svg");
+    height: 20px;
+    width: 20px;
+  }
+
+  &--setting {
+    background-image: url("../../../icons/svg/icon-arrow-down-setting.svg");
+    height: 6px;
+    width: 12px;
+  }
+
+  &--setting-default {
+    background-image: url("../../../icons/svg/icon-setting.svg");
+    height: 15px;
+    width: 14px;
+  }
+
+  &--close-black {
+    background-image: url("../../../icons/svg/icon-close-black.svg");
+    height: 11px;
+    width: 11px;
+  }
+
+  &--success {
+    background-image: url("../../../icons/svg/icon-success.svg");
+    height: 23px;
+    width: 30px;
+
+    @include breakpoint ('phone-max') {
+      height: 17px;
+      width: 23px;
+    }
+  }
+
+  &--success-md {
+    background-image: url("../../../icons/svg/icon-success-md.svg");
+    height: 54px;
+    width: 54px;
+  }
+
+  &--success-lg {
+    background-image: url("../../../icons/svg/icon-success-lg.svg");
+    height: 82px;
+    width: 82px;
+  }
+
+  &--accepted {
+    background-image: url("../../../icons/svg/icon-accepted.svg");
+  }
+
+  &--error {
+    background-image: url("../../../icons/svg/icon-error.svg");
+  }
+
+   &--error-lg {
+    background-image: url("../../../icons/svg/icon-error-lg.svg");
+    height: 54px;
+    width: 54px;
+  }
+
+  &--error-xs {
+    background-image: url("../../../icons/svg/icon-error-xl.svg");
+    height: 16px;
+    width: 16px;
+    margin-right: 14px;
+  }
+
+  &--check-orange {
+    background-image: url("../../../icons/svg/icon-check-orange.svg");
+  }
+
+  &--accepted,
+  &--error,
+  &--check-orange {
+    height: 20px;
+    width: 20px;
+
+    @include breakpoint ('phone-max') {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  &--location {
+     background-image: url("../../../icons/svg/icon-location.svg");
+     width: 16px;
+     height: 20px;
+  }
+
+  &--favourite {
+    background-image: url("../../../icons/svg/icon-love.svg");
+    height: 55px;
+    width: 60px;
+    position: relative;
+
+    .count {
+      font-style: normal;
+      position: relative;
+      top: 19px;
+    }
+  }
+
+  &--favourite-checked {
+    background-image: url("../../../icons/svg/icon-favourite-pink.svg");
+    height: 55px;
+    width: 60px;
+  }
+
+  &--checked {
+    background-image: url("../../../icons/svg/icon-checked.svg");
+    height: 24px;
+    width: 24px;
+    margin-left: 30px;
+
+    @include breakpoint ('tablet') {
+      margin-left: 15px;
+    }
+  }
+
+  &--checked-green {
+    background-image: url("../../../icons/svg/icon-checked-green.svg");
+    height: 43px;
+    width: 43px;
+    margin-right: 38px;
+
+    @include breakpoint ('tablet-max') {
+      margin-right: 18px;
+    }
+  }
+
+  &--worry {
+    background-image: url("../../../icons/svg/icon-worry.svg");
+    height: 20px;
+    width: 20px;
+  }
+
+  &--female {
+    background-image: url("../../../icons/svg/icon-female.svg");
+    height: 33px;
+    width: 40px;
+  }
+
+  &--lock {
+    background-image: url("../../../icons/svg/icon-lock.svg");
+    height: 26px;
+    width: 21px;
+  }
+
+  &--people {
+    background-image: url("../../../icons/svg/icon-people.svg");
+    height: 27px;
+    width: 20px;
+  }
+
+  &--next-nav,
+  &--prev-nav {
+    width: 6px;
+    height: 12px;
+  }
+
+  &--prev-nav {
+    background-image: url("../../../icons/svg/icon-prev-grey.svg");
+  }
+
+  &--next-nav {
+    background-image: url("../../../icons/svg/icon-next-grey.svg");
+  }
+
+  &--car {
+    background-image: url("../../../icons/svg/icon-car.svg");
+    height: 22px;
+    width: 22px;
+
+    &-active {
+      background-image: url("../../../icons/svg/icon-car-active.svg");
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  &--bus {
+    background-image: url("../../../icons/svg/icon-bus.svg");
+    height: 22px;
+    width: 18px;
+
+    &-active {
+      background-image: url("../../../icons/svg/icon-bus-active.svg");
+      height: 22px;
+      width: 18px;
+    }
+  }
+
+  &--man {
+    background-image: url("../../../icons/svg/icon-man.svg");
+    height: 22px;
+    width: 24px;
+
+    &-active {
+      background-image: url("../../../icons/svg/icon-man-active.svg");
+      height: 22px;
+      width: 24px;
+    }
+  }
+
+  &--bicycle {
+    background-image: url("../../../icons/svg/icon-bicycle.svg");
+    background-size: 27px 22px;
+    height: 22px;
+    width: 27px;
+
+    &-active {
+      background-image: url("../../../icons/svg/icon-bicycle-active.svg");
+      background-size: 27px 22px;
+      height: 22px;
+      width: 27px;
+    }
+  }
+
+  &--master-card {
+    background-image: url("../../../icons/svg/icon-mastercard.svg");
+    height: 36px;
+    width: 47px;
+  }
+
+  &--visa {
+    background-image: url("../../../icons/svg/icon-visa.svg");
+    height: 18px;
+    width: 52px;
+  }
+
+  &--discover {
+    background-image: url("../../../icons/svg/icon-discover.svg");
+    height: 33px;
+    width: 50px;
+  }
+
+  &--american-express {
+    background-image: url("../../../icons/svg/icon-american-express.svg");
+    height: 17px;
+    width: 66px;
+  }
+
+  &--paypal {
+    background-image: url("../../../icons/svg/icon-paypal.svg");
+    height: 24px;
+    width: 81px;
+  }
+
+  &--paypal-md {
+    background-image: url("../../../icons/svg/icon-paypal.svg");
+    height: 24px;
+    width: 81px;
+  }
+
+
+  &--paypal-logo {
+    background-image: url("../../../icons/svg/icon-paypal.svg");
+    height: 40px;
+    width: 153px;
+  }
+
+  &--paypal-btn {
+    background-image: url("../../../icons/png/icon-paypal-btn.png");
+    height: 32px;
+    width: 130px;
+    margin-left: 14px;
+  }
+
+  &--declined-orange {
+    background-image: url("../../../icons/svg/icon-declined-orange.svg");
+    height: 20px;
+    width: 20px;
+  }
+
+  &--blue_bage {
+    background-image: url("../../../icons/svg/icon-blue_bage.svg");
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: -1px;
+  }
+
+  &--check {
+    background-image: url("../../../icons/svg/icon-checks.svg");
+    height: 123px;
+    width: 246px;
+  }
+}
+
+.icon-count {
+  background-color: $color-radical-red;
+  border: 2px solid $color-radical-red;
+  border-radius: 100px;
+  color: $color-cod-grey;
+  display: inline-block;
+  @include font-base-bold;
+  @include transition(
+    color $base-transition--base--time,
+    border-color $base-transition--base--time,
+    background-color $base-transition--base--time
+  );
+  font-size: 11px;
+  line-height: 11px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  min-height: 18px;
+  min-width: 18px;
+  text-align: center;
+  // height: 100%;
+  // width: 100%;
+  text-align: center;
+  padding: 2px;
+
+  @include breakpoint ('retina-display') {
+   border-width: 1px;
+  }
+}

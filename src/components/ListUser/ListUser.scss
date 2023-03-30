@@ -1,0 +1,144 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.list-user {
+  margin-bottom: 26px;
+
+  @include breakpoint ('tablet') {
+    margin-bottom: 36px;
+  }
+
+  @include breakpoint ('phone-max') {
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    max-width: 1630px;
+    margin: 30px auto -11px auto;
+    width: 100%;
+
+    @include breakpoint ('extra-desktop-tablet') {
+      max-width: 1300px;
+    }
+
+    @include breakpoint ('extra-desktop-lg') {
+      max-width: 968px;
+    }
+
+    @include breakpoint ('extra-tablet') {
+      max-width: 637px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-top: 31px;
+      margin-bottom: 27px;
+      max-width: 100%;
+    }
+
+    .title,
+    .list-user__favourite-nav {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .title {
+      width: 70%;
+
+      @include breakpoint ('tablet') {
+        width: 60%;
+      }
+
+      @include breakpoint ('phone-max') {
+        width: 76%;
+      }
+    }
+
+    .list-apartment__nav-fav {
+      display: inline-block;
+      margin-bottom: 0;
+      text-align: right;
+      width: 30%;
+
+      @include breakpoint ('tablet') {
+        width: 40%;
+      }
+
+      @include breakpoint ('phone-max') {
+        width: 24%;
+      }
+    }
+
+    .icon--like-full-grey {
+      position: relative;
+      right: -13px;
+    }
+  }
+
+  &__favourite-nav {
+    opacity: 1;
+    text-align: right;
+
+  }
+
+  &__lists {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+
+    @include breakpoint('phone-max') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__item {
+      display: flex;
+      padding: 0 35px 32px 35px;
+      vertical-align: top;
+      width: 50%;
+
+      @include breakpoint('tablet-desktop') {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      @include breakpoint('tablet') {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      @include breakpoint('phone-max') {
+        padding-right: 15px;
+        padding-left: 15px;
+        width: 100%;
+      }
+    }
+  }
+
+  .user-card {
+    .panel-links {
+      &__like,
+      &__btn {
+        opacity: 0;
+      }
+
+      &__like {
+        &.is-active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      .panel-links {
+      &__like,
+      &__btn {
+        opacity: 1;
+      }
+    }
+    }
+  }
+
+}

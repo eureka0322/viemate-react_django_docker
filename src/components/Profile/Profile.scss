@@ -1,0 +1,241 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.profile {
+  @include font-base-book;
+
+  .avatar {
+    display: block;
+    float: left;
+    margin-right: 32px;
+
+    @include breakpoint('phone-max') {
+      margin-right: 20px;
+    }
+
+    @include breakpoint('phone') {
+      margin-right: 10px;
+    }
+  }
+
+  &-wrap {
+    .list-apartment {
+      padding-bottom: 32px;
+
+      @include breakpoint('phone-max') {
+        padding-bottom: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &-data {
+    margin-left: 160px;
+    position: relative;
+    padding-top: 17px;
+
+    @include breakpoint('phone-max') {
+      margin-left: 116px;
+    }
+
+    @include breakpoint('phone') {
+      padding-top: 0;
+      margin-left: 96px;
+    }
+  }
+
+  &__user-bage {
+    margin-left: 31px;
+    display: inline-block;
+
+    @include breakpoint('phone-max') {
+      margin-left: 10px;
+      position: absolute;
+    }
+  }
+
+  &__user-name,
+  &__user-location {
+    display: block;
+    letter-spacing: -.4px;
+
+    @include breakpoint('phone-max') {
+      letter-spacing: 0;
+    }
+  }
+
+  &__user-name {
+    @include font-base-demi;
+    color: $color-tundora;
+    font-size: 45px;
+    line-height: 47px;
+    margin: 0 0 12px 0;
+
+    @include breakpoint('phone-max') {
+      font-size: 35px;
+      line-height: 43px;
+      position: relative;
+    }
+  }
+
+  &__user-location {
+    @include font-base-book;
+    color: $color-boulder;
+    font-size: 35px;
+    line-height: 37px;
+    text-transform: capitalize;
+
+    @include breakpoint('phone-max') {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+
+  &-info {
+    padding-top: 120px;
+    margin-bottom: 35px;
+    margin-top: 72px;
+    @include clearfix;
+
+    @include breakpoint('phone-max') {
+      padding-top: 64px;
+    }
+
+  }
+
+  &-description,
+  &-options__item {
+    margin: 0 0 32px 0;
+  }
+
+  &-description{
+    color: $color-tundora;
+    font-size: 25px;
+    line-height: 38px;
+    word-spacing: normal;
+    word-wrap: break-word;
+    // word-break: break-all;
+    white-space: pre-line;
+
+    @include breakpoint('phone-max') {
+      font-size: 17px;
+      line-height: 25px;
+    }
+  }
+
+  &-options {
+    margin: 0;
+
+    &__item {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+
+      &:nth-child(2n) {
+        padding-left: 3%;
+
+        @include breakpoint('phone-max') {
+          padding-left: 0;
+        }
+      }
+
+      &--verified {
+        .profile__verified {
+          display: inline-block;
+        }
+      }
+    }
+
+    &__title,
+    &__option {
+      display: block;
+    }
+
+    &__title {
+      @include font-base-medium;
+      font-size: 16px;
+      line-height: 32px;
+      color: rgba(0,0,0,0.44);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale !important;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    &__option {
+      color: $color-tundora;
+      @include font-base-book;
+      font-size: 25px;
+      line-height: 32px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 12px;
+    right: 33px;
+
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    .form-button {
+      padding: 13px 30px 11px 31px;
+      @include font-base-book;
+
+      @include breakpoint ('phone-max') {
+        padding: 16px 60px 15px 60px;
+      }
+    }
+  }
+}
+
+.body-profile {
+
+  .container {
+    &--medium-width,
+    &--medium-xs-width {
+      max-width: 820px;
+
+      @include breakpoint ('tablet') {
+        max-width: 647px;
+      }
+
+      @include breakpoint('phone-max') {
+        max-width: 375px;
+      }
+    }
+  }
+
+  .form-button--favourite {
+    display: none;
+  }
+
+  .list-apartment {
+    &__wrap {
+      margin-left: -31px;
+      margin-right: -31px;
+
+      @include breakpoint('phone-max') {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &__item {
+      padding-left: 31px;
+      padding-right: 31px;
+
+      @include breakpoint('phone-max') {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &__header {
+      @include breakpoint ('tablet-large') {
+        margin-top: 31px;
+      }
+    }
+  }
+}

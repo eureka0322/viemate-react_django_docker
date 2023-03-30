@@ -1,0 +1,81 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.incomplete-post {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  @include font-base-book;
+  font-size: 18px;
+
+  &__list {
+    margin-bottom: 20px;
+
+    &-item {
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+  }
+
+  &__key {
+    float: left;
+    min-width: 200px;
+    @include font-base-demi;
+  }
+
+  &__data {
+    display: block;
+    overflow: hidden;
+    padding-left: 10px;
+  }
+
+  &__full {
+    margin-bottom: 40px;
+  }
+
+  &__fields {
+    margin-bottom: 40px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @include breakpoint ('phone-max') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__field-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3%;
+    padding: 0 15px;
+
+    @include breakpoint ('phone-max') {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    label {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__map-wrap {
+    margin-bottom: 40px;
+  }
+
+  &__btns {
+    margin: 0 -10px;
+    text-align: center;
+
+    .form-button {
+      margin: 0 10px;
+    }
+  }
+}

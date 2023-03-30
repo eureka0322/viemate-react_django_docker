@@ -1,0 +1,85 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+$animSpeed: .6s;
+
+.progress-bar {
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); // prevents chrome bug with overflow: hidden && transition
+
+  &--absolute {
+    margin: 0;
+    height: auto;
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    .progress-bar__progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    height: 100%;
+    background: $color-radical-red;
+    transform-origin: 0 0;
+    transition: transform .3s;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 0 5px;
+    color: #fff;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+
+    &-dots {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    &-dot {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    &--dot1 {
+      animation: fadeIn $animSpeed linear infinite alternate;
+    }
+
+    &--dot2 {
+      animation: fadeIn $animSpeed linear infinite alternate;
+      animation-delay: $animSpeed / 3;
+    }
+
+    &--dot3 {
+      animation: fadeIn $animSpeed linear infinite alternate;
+      animation-delay: $animSpeed / 3 * 2;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

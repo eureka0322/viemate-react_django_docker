@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill-opacity="0.6" fill="#DB2A56" opacity="0.200000018" cx="27" cy="27" r="27"></circle>
+        <g id="error" transform="translate(25.000000, 13.000000)" fill="#DB2A56">
+            <path d="M2.6875,22.5 C3.3125,22.5 3.875,22.75 4.3125,23.1875 C4.75,23.625 5,24.1875 5,24.8125 C5,25.4375 4.75,26 4.3125,26.4375 C3.8125,26.875 3.3125,27.125 2.75,27.125 C2.1875,27.125 1.625,26.875 1.1875,26.4375 C0.6875,26 0.5,25.4375 0.5,24.8125 C0.5,24.1875 0.75,23.625 1.1875,23.1875 C1.5,22.6875 2.0625,22.5 2.6875,22.5 L2.6875,22.5 Z" id="Path"></path>
+            <polygon id="Path" points="4.3125 19.4375 1.125 19.4375 1.125 0 4.3125 0"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+.InputRange {
+  cursor: pointer;
+  height: 2px;
+  position: relative;
+  width: 100%;
+  background: #fff;
+
+  &:after {
+    content: '';
+    background: $color-mercury;
+    border-radius: $InputRange-track-height;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: $inputRange-track-transition;
+  }
+}
+
+.InputRange-sliderContainer {
+  transition: none;
+}

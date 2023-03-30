@@ -1,0 +1,186 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+.message-user {
+  height: 100%;
+  outline: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(100% - 66px);
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-white;
+    border-radius: 10px;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    width: 0;
+  }
+
+  &::-ms-scrollbar {
+    width: 0;
+  }
+
+  &::-ms-scrollbar-track {
+    background-color: $color-white;
+    border-radius: 10px;
+    width: 0;
+  }
+
+  &::-ms-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    width: 0;
+  }
+
+  &__lists {
+    margin: 0;
+    height: 100%;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-concrete;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    @include clearfix;
+
+    &--default {
+      background-color: $color-white;
+
+      a {
+        color: $color-tundora;
+      }
+
+      &:hover {
+        .message-user__btn-delete {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--unread {
+      background-color: $color-mine-grey;
+      color: $color-white;
+
+      a {
+        color: $color-white;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+
+      &:hover {
+        .message-user__btn-delete {
+          opacity: 1;
+          .form-button--message-user {
+            .icon--delete {
+              display: none;
+
+              &-white {
+                display: block;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    &--new {
+      .message-user__post {
+        color: $color-tundora;
+        @include font-base-bold;
+        padding-left: 8px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          bottom: 0;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: $color-radical-red;
+          margin-top: -5px;
+          margin-right: 7px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 25px 46px 25px 23px;
+
+    @include breakpoint ('tablet') {
+      padding-left: 24px;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-left: 32px;
+      padding-right: 16px;
+    }
+  }
+
+  &__btn-delete {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    margin-top: -12px;
+    opacity: 0;
+    @include transition(
+      opacity $base-transition $base-transition--link--time
+    );
+
+  }
+
+  &__avatar {
+    float: left;
+    margin-right: 16px;
+  }
+
+  &__details {
+    margin-left: 56px;
+  }
+
+  &__post {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 1px;
+    position: relative;
+
+    @include breakpoint ('phone-max') {
+     font-size: 14px;
+    }
+  }
+
+  &__user-data {
+    @include font-size--d;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .separator {
+      padding: 0 6px;
+    }
+  }
+}

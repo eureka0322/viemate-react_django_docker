@@ -1,0 +1,73 @@
+.InputRange-slider {
+  appearance: none;
+  background: $color-radical-red;
+  border: $color-radical-red;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  margin-left: $InputRange-slider-width / -2;
+  margin-top: -18px;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transition: $InputRange-slider-transition;
+  width: 20px;
+  z-index: 11;
+
+    @include breakpoint ('tablet') {
+      width: 25px;
+      height: 25px;
+      margin-top: -28px;
+    }
+
+    @include breakpoint ('phone-max') {
+      width: 23px;
+      height: 23px;
+      margin-top: -19px;
+    }
+
+
+  &:active {
+    transform: $InputRange-slider--active-transform;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 5px transparentize($InputRange-slider-background, 0.8);
+  }
+
+  .InputRange.is-disabled & {
+    background: $InputRange-slider--is-disabled-background;
+    border: $InputRange-slider--is-disabled-border;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.InputRange-sliderContainer {
+  transition: $InputRange-sliderContainer-transition;
+  &:last-child {
+    .InputRange-slider{
+      width: 32px;
+      height: 32px;
+      margin-top: -24px;
+      position: relative;
+      right: 25px;
+
+      @include breakpoint ('tablet') {
+        width: 42px;
+        height: 42px;
+        margin-top: -36px;
+        right: 37px;
+      }
+
+      @include breakpoint ('phone-max') {
+        width: 23px;
+        height: 23px;
+        margin-top: -19px;
+        right: 18px;
+      }
+    }
+  }
+
+}

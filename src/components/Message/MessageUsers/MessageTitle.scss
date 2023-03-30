@@ -1,0 +1,71 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+.message-title {
+  height: 66px;
+  padding: 0;
+  width: 100%;
+
+  @include breakpoint('tablet-max') {
+    padding-left: 9px;
+  }
+
+  @include breakpoint ('phone-max') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    color: $color-tundora;
+    cursor: pointer;
+    display: inline-block;
+    @include font-size--f;
+    line-height: 66px;
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      border-color: $color-radical-red;
+      color: $color-tundora;
+    }
+
+    &--inbox {
+
+      @include breakpoint ('tablet') {
+        margin-left: 12px;
+      }
+    }
+
+    &--back {
+      border-bottom: 0;
+    }
+
+    .icon {
+      margin-right: 13px;
+    }
+
+    .icon,
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &--separator {
+    padding: 0 5px;
+  }
+
+  .table {
+    &__cell {
+      &:last-child {
+        padding-right: 17px;
+        text-align: right;
+
+        @include breakpoint ('phone-max') {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

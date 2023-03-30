@@ -1,0 +1,177 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+$form-checkbox: 'form-checkbox';
+
+.#{$form-checkbox} {
+
+  &__label {
+    color: $color-m-shaft;
+    cursor: pointer;
+    @include font-size--e;
+    @include font-base-medium;
+    margin-top: 3px;
+
+    @include breakpoint ('tablet-max') {
+      @include font-size--i;
+      margin-bottom: 25px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 11px;
+    }
+
+    &--caption {
+      color: $color-silver-light;
+      cursor: pointer;
+      @include font-base-book;
+      padding-left: 10px;
+
+      @include breakpoint ('tablet-desktop') {
+        padding-left: 5px;
+      }
+
+      @include breakpoint ('tablet-max') {
+        @include font-size--g;
+        line-height: 26px;
+        margin-bottom: 0;
+        display: block;
+        padding-left: 0;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--f;
+        padding-left: 0;
+        display: block !important;
+      }
+    }
+
+    &--tag {
+      background-color: $color-white;
+      border: 1px solid $color-mercury;
+      border-radius: 3px;
+      color: $color-boulder;
+      @include font-size--e;
+      padding: 10px 19px 7px 19px;
+      position: relative;
+
+      @include breakpoint ('tablet') {
+        @include font-size--i;
+        padding: 17px 32px 13px 32px;
+        margin-bottom: 0;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding: 13px 28px 9px 28px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__label,
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__checkbox-group {
+    .form-group {
+      border-bottom: 1px solid $color-mercury;
+      padding: 15px 18px 14px 18px;
+      text-align: left;
+
+      @include breakpoint ('tablet-max') {
+        border-bottom: 0;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 15px;
+        width: 50%;
+      }
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      .form-checkbox  {
+        label {
+          position: relative;
+          padding-left: 44px;
+
+          @include breakpoint ('tablet-desktop') {
+            padding-left: 38px;
+          }
+
+          @include breakpoint ('tablet') {
+            padding-left: 57px;
+          }
+
+          @include breakpoint ('phone-max') {
+            padding-left: 41px;
+          }
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+    margin-left: 0;
+  }
+
+  input[type="checkbox"] + .#{$form-checkbox}__icon {
+    background-color: $color-white;
+    border: 1px solid $color-mercury;
+    border-radius: 4px;
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url("../../../../icons/svg/icon-check.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      height: 9px;
+      width: 12px;
+      top: 50%;
+      left: 50%;
+      margin-top: -5px;
+      margin-left: -5px;
+    }
+
+    @include breakpoint ('tablet-max') {
+      height: 23px;
+      width: 23px;
+      vertical-align: top;
+    }
+
+  }
+
+  input[type="checkbox"]:checked + .#{$form-checkbox}__icon {
+    background-color: $color-m-shaft;
+    border-color: $color-m-shaft;
+  }
+
+
+
+  input[type="checkbox"]:checked + span.#{$form-checkbox}__label--tag.#{$form-checkbox}__label {
+    background-color: $color-tundora;
+    border-color: $color-tundora;
+    color: $color-white;
+  }
+
+}

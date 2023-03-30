@@ -1,0 +1,279 @@
+.container {
+  width: 100%;
+
+  &-home {
+    width: 100%;
+    // flex: 1 0 auto;
+  }
+
+  &--full-width {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--desktop-width {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 100%;
+  }
+
+  &--extra-desktop-width {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 1368px;
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 375px;
+    }
+  }
+
+  &--default-width {
+    max-width:  1294px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    @include breakpoint ('tablet') {
+      max-width: 1024px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 375px;
+    }
+
+  }
+
+  &--base-width {
+    max-width: 1240px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include breakpoint ('tablet') {
+      max-width: 854px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 100%;
+    }
+  }
+
+  &--lg-width {
+    max-width: 1444px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    @include breakpoint ('tablet-max') {
+      max-width: 780px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @include breakpoint('phone-max') {
+      max-width: 100%;
+    }
+  }
+
+  &--extra-width {
+    max-width: 97%;
+    margin-left: 3%;
+  }
+
+  &--extra-md-width {
+    max-width: 898px;
+  }
+
+
+  &--medium-width {
+    max-width: 835px;
+
+    @media only screen
+    and (min-width: 768px)
+    and (max-width: 992px) {
+      max-width: 640px;
+    }
+
+    @include breakpoint('phone-max') {
+      max-width: 375px;
+    }
+
+  }
+
+  &--md-extra-width {
+    max-width: 1076px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    @include breakpoint('tablet') {
+      max-width: 780px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 375px;
+    }
+  }
+
+  &--md-width {
+    max-width: 850px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    @include breakpoint('tablet') {
+      max-width: 780px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 375px;
+    }
+  }
+
+  &--md-max-width {
+    max-width: 845px;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+
+    @include breakpoint('tablet') {
+      max-width: 747px;
+    }
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px !important;
+      padding-right: 15px!important;
+      max-width: 375px;
+    }
+  }
+
+  &--large-md-width {
+    max-width: 1024px;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px !important;
+      padding-right: 15px!important;
+      max-width: 375px;
+    }
+  }
+
+  &--sm-extra-width {
+    max-width: 839px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    @include breakpoint('phone-max') {
+      padding-left: 15px !important;
+      padding-right: 15px!important;
+      max-width: 375px;
+    }
+  }
+
+  &--sm-width {
+    max-width: 822px;
+
+    @include breakpoint('tablet') {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+      max-width: 899px;
+
+    }
+
+    &.edit-profile {
+      max-width: 852px;
+
+      @include breakpoint('tablet') {
+        max-width: 964px;
+      }
+    }
+
+    @include breakpoint('phone-max') {
+      max-width: 375px !important;
+    }
+  }
+
+  &--xs-full-width {
+    @include breakpoint('phone-max') {
+      max-width: 100%;
+    }
+  }
+
+  &--medium-xs-width {
+    max-width: 759px;
+
+    @include breakpoint('phone-max') {
+      max-width: 375px;
+    }
+  }
+
+  &--xs-width {
+    max-width: 788px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include breakpoint('tablet-max') {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @include breakpoint('phone-max') {
+      max-width: 375px;
+    }
+  }
+
+  &--extra-xs-width {
+    max-width: 708px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+
+    @include breakpoint('tablet-max') {
+      max-width: 100%;
+    }
+
+    @include breakpoint('phone-max') {
+      max-width: 375px;
+    }
+  }
+
+  &--bg {
+    &-white {
+      background-color: $color-white;
+    }
+
+    &-grey {
+      background-color: $color-cararra;
+    }
+  }
+
+  &--separator {
+    background-color: $color-concrete;
+    margin: 23px 0 34px 0;
+    padding: 0;
+    height: 1px;
+    max-width: 100%;
+    width: 100%;
+
+    @include breakpoint('phone-max') {
+      margin-top: 24px;
+      margin-bottom: 41px;
+    }
+
+    &-profile {
+      margin: 0 0 25px 0;
+    }
+  }
+
+  &--verify {
+    padding-top: 72px;
+  }
+
+
+}

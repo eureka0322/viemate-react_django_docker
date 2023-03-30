@@ -1,0 +1,164 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.avatar {
+  background-color: $color-gray-nurse;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  image-rendering: -webkit-optimize-contrast;
+
+  &-wrapper {
+    position: relative;
+    background-color: $color-gray-nurse;
+    border-radius: 50%;
+    float: right;
+
+    &--xs {
+      height: 40px;
+      width: 40px;
+    }
+
+    &--sm {
+      height: 52px;
+      width: 52px;
+    }
+
+    &--md {
+      height: 64px;
+      width: 64px;
+    }
+
+    &--md-max {
+      height: 74px;
+      width: 74px;
+    }
+
+    &--md-large {
+      height: 75px;
+      width: 75px;
+    }
+
+    &--extra-xs {
+      height: 38px;
+      width: 38px;
+    }
+
+    &--medium {
+      width: 96px;
+      height: 96px;
+    }
+
+    &--sm-m {
+      height: 58px;
+      width: 58px;
+    }
+
+    &--position-left {
+      float: left;
+      margin-right: 31px;
+
+      @include breakpoint ('phone-max') {
+        height: 58px;
+        width: 58px;
+        margin-right: 15px;
+      }
+    }
+
+    .avatar {
+      background-color: transparent;
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: -1px;
+      right: -1px;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, .41);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  &--empty {
+    background-image: url("../../../icons/svg/icon-avatar.svg");
+    background-size: 56%;
+  }
+
+  &--large {
+    overflow: hidden;
+    height: 128px;
+    width: 128px;
+
+    @include breakpoint('phone-max') {
+      height: 96px;
+      width: 96px;
+    }
+
+    @include breakpoint('phone') {
+      height: 86px;
+      width: 86px;
+    }
+  }
+
+  &--medium {
+    width: 96px;
+    height: 96px;
+  }
+
+  &--md-max {
+    height: 74px;
+    width: 74px;
+  }
+
+  &--md {
+    height: 64px;
+    width: 64px;
+  }
+
+  &--sm-m {
+    height: 58px;
+    width: 58px;
+  }
+
+  &--sm {
+    height: 52px;
+    width: 52px;
+  }
+
+  &--extra-xs {
+    height: 38px;
+    width: 38px;
+  }
+
+  &--position-left {
+    float: left;
+    margin-right: 31px;
+
+    @include breakpoint ('phone-max') {
+      height: 58px;
+      width: 58px;
+      margin-right: 15px;
+    }
+  }
+}

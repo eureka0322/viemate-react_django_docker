@@ -1,0 +1,79 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user {
+  @include clearfix;
+  margin: 0 auto 53px auto;
+  padding-top: 125px;
+
+  @include breakpoint ('tablet-max') {
+    margin-bottom: 56px;
+  }
+
+  @include breakpoint('phone-max') {
+    padding-top: 104px;
+    margin: 0 auto 60px auto;
+    max-width: 375px !important;
+  }
+
+  @include breakpoint('phone') {
+    max-width: 320px;
+  }
+
+  &__details,
+  &__profile {
+    padding: 0 21px 0 9px;
+    pointer-events: all;
+
+    @include breakpoint('phone-max') {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &__details-wrapper {
+    background-color: $color-white;
+    border: 1px solid $color-concrete;
+    border-radius: 6px;
+  }
+
+  &__details {
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 23px;
+    float: left;
+    width: 67%;
+
+    @include breakpoint ('tablet-max') {
+      width: 69%;
+    }
+
+    @include breakpoint('phone-max') {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+
+  &__profile {
+    float: right;
+    padding-left: 15px;
+    width: 31%;
+    padding-right: 0;
+
+    @include breakpoint ('tablet-max') {
+      padding-left: 12px;
+      width: 30.7%;
+    }
+
+    @include breakpoint('phone-max') {
+      float: none;
+      padding-left: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+}
+

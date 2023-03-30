@@ -1,0 +1,37 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+$form-group: 'form-group';
+
+.#{$form-group} {
+  position: relative;
+
+  &:last-child:not(:first-child) {
+    margin-bottom: 0;
+  }
+
+  .checkbox {
+    label {
+      display: inline-block;
+    }
+  }
+
+  .help-block {
+
+    &.form-error {
+      color: $color-cerise-red !important;
+      @include font-size--e;
+      margin-top: 16px;
+
+      @include breakpoint ('tablet') {
+        @include font-size--i;
+        margin-top: 18px;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--g;
+        margin-top: 12px;
+      }
+    }
+  }
+}

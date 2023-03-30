@@ -1,0 +1,241 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.product-card {
+  border-radius: 8px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+
+    .panel-links__like {
+      opacity: 1;
+    }
+
+    .product-card {
+      &__btn-groups {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--liked {
+    .panel-links {
+      .icon {
+        &--like {
+          display: none !important;
+        }
+
+        &--like-full {
+          display: block !important;
+        }
+      }
+    }
+  }
+
+  &__btn-groups {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: right;
+    z-index: 3;
+    padding: 13px 15px 13px 22px;
+    @include transition(opacity $base-transition $base-transition--link--time);
+    opacity: 0;
+    display: none;
+
+    @include breakpoint ('phone-max') {
+      padding: 19px 10px;
+    }
+
+    .form-button {
+
+      &--user-action {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 7px;
+        @include font-size--g;
+        padding: 14px 26px 13px 26px;
+
+        @include breakpoint ('tablet-max') {
+          padding-left: 15px;
+          padding-right: 15px;
+          @include font-size--g;
+        }
+
+        @include breakpoint ('phone-max') {
+          margin-left: 10px;
+          margin-right: 10px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+
+
+      &--default-dark {
+        padding: 14px 23px 13px 23px;
+
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__panel-img {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+
+  &__media-cover {
+    // -webkit-backface-visibility: hidden;
+    // -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background-color: $color-grey;
+    // border-radius: 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: -1px;
+
+    img {
+      height: 100%;
+      user-select: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .img-vertical {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__properties {
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 60%, rgba(0,0,0,0.65) 100%);
+    border-radius: 6px;
+    pointer-events: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 100% 23px 31px 23px;
+    position: absolute;
+    z-index: 4;
+
+    @include breakpoint('phone-max') {
+      padding-top: 140%;
+    }
+  }
+
+  &__avatar,
+  &__details {
+    display: inline-block;
+
+  }
+
+  &__avatar {
+    pointer-events: all;
+    text-align: right;
+    vertical-align: bottom;
+    width: 20%;
+
+    // @include breakpoint('phone-max') {
+    //   vertical-align: top;
+    // }
+
+    .avatar-wrapper--sm {
+      display: inline-block;
+
+      @include breakpoint('phone-max') {
+        height: 52px;
+        width: 52px;
+      }
+    }
+  }
+
+  &__details {
+    color: $color-white;
+    padding-right: 15px;
+    width: 80%;
+    cursor: text;
+    text-align: left;
+
+    @include breakpoint('phone-max') {
+      padding-right: 8px;
+    }
+
+    .type-room,
+    .price {
+      display: block;
+      font-smooth: always;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .type-room {
+      @include font-size--g;
+      @include font-base-book;
+      margin-bottom: 5px;
+
+      @include breakpoint('phone-max') {
+        @include font-size--f;
+      }
+    }
+
+    .price {
+      font-size: 25px;
+      line-height: 32px;
+      @include font-base-medium;
+
+      @include breakpoint('phone-max') {
+        font-size: 23px;
+        line-height: 30px;
+      }
+    }
+  }
+
+
+  &__separator {
+    display: inline-block;
+    margin: 0 5px;
+    background-color: $color-white;
+    height: 15px;
+    vertical-align: middle;
+    width: 1px;
+  }
+
+  .panel-links {
+    right: -11px;
+    top: -4px;
+    opacity: 1;
+
+    &__like {
+      opacity: 0;
+
+    @include breakpoint ('phone-max') {
+      opacity: 1;
+    }
+
+    }
+
+    .icon {
+      &--like {
+        display: block;
+      }
+
+      &--like-full {
+        display: none;
+      }
+    }
+  }
+}

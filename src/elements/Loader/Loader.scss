@@ -1,0 +1,79 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1054;
+  background-color: rgba(51, 51, 51, .9);
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+
+  &--bg-white {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  &--absolute {
+    position: absolute;
+    // max-height: 804px !important;
+    overflow: hidden;
+    bottom: 0;
+    top: 0;
+    transform: translateY(0);
+
+    .loader__list {
+      top: calc(100% - 54.5% - 22px);
+      transform: translateY(0);
+    }
+  }
+
+
+  @include breakpoint ('phone-max') {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__list {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__dot-item {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $color-radical-red;
+    float: left;
+    margin: 0 7px;
+    padding: 2px;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+
+    &:nth-child(2) {
+       animation-delay: .2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .4s;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}

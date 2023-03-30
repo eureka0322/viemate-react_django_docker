@@ -1,0 +1,118 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.users {
+  padding-top: 138px;
+
+  @include breakpoint ('tablet-max') {
+    max-width: 100%;
+  }
+
+  @include breakpoint ('tablet-large') {
+    padding-top: 0;
+  }
+
+  @include breakpoint('phone-max') {
+    max-width: 375px !important;
+  }
+
+  @include breakpoint('phone') {
+    max-width: 320px;
+  }
+
+  &--favourites-wrap {
+    padding-top: 72px;
+    max-width: 1280px;
+
+    .list-user__header {
+      margin-top: 33px;
+      margin-bottom: -3px;
+
+      @include breakpoint('phone-max')  {
+        margin-bottom: 0;
+      }
+
+      .title {
+        @include breakpoint('phone-max') {
+          margin-bottom: 7px;
+        }
+      }
+
+      .title,
+      .list-apartment__nav-fav {
+        @include breakpoint('phone-max')  {
+          width: 100%;
+        }
+      }
+
+      .message-title__item {
+        @include breakpoint('phone-max') {
+          text-align: left;
+        }
+      }
+    }
+
+    .list-apartment__nav-fav {
+      @include breakpoint ('phone-max') {
+        display: block !important;
+        width: 100% !important;
+        @include clearfix;
+      }
+
+      .message-title__item {
+        @include breakpoint ('phone-max') {
+          text-align: left;
+          width: 75%;
+        }
+      }
+
+      .list-user__favourite-nav {
+        @include breakpoint ('phone-max') {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+
+    .list-user {
+
+      &__item {
+        display: flex;
+        padding: 20px 16px;
+        position: relative;
+        vertical-align: top;
+        width: 332px;
+        z-index: 1;
+
+        @include breakpoint ('tablet-desktop') {
+          // padding-left: 15px;
+          // padding-right: 15px;
+        }
+
+        @include breakpoint('tablet-max') {
+          // padding: 34px 32px 14px 32px;
+          // width: 50%;
+        }
+
+        @include breakpoint('phone-max') {
+          padding: 0 0 24px 0;
+          width: 100%;
+        }
+
+        &:last-child {
+          @include breakpoint ('phone') {
+            padding-bottom: 46px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+

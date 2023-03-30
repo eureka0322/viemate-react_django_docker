@@ -1,0 +1,59 @@
+.input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include breakpoint('phone-max') {
+      flex-direction: column;
+    }
+
+    &__wrapper{
+      width: 100%;
+      max-width: 300px;
+    }
+
+    &__label{
+      min-width: 95px;
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-tundora;
+      margin: 0;
+      padding-top: 8px;
+      @include font-base-light;
+
+      @include breakpoint('phone-max') {
+        padding-top: 0;
+        padding-bottom: 5px;
+      }
+    }
+
+    &__caption {
+      font-size: 8px;
+      line-height: 10px;
+      @include font-base-light;
+      padding-top: 4px;
+    }
+
+    &--default {
+      input {
+        background-color: transparent;
+        border: 1px solid $color-tundora;
+        border-radius: 6px;
+        color: $color-white;
+        font-size: 15px;
+        line-height: 19px;
+        padding: 13px 16px 12px 16px;
+        height: 44px;
+      }
+    }
+
+    &--search {
+      input {
+        background-color: $color-white;
+        border: 1px solid $color-mercury;
+        border-radius: 0;
+        padding: 12px;
+      }
+
+    }
+}

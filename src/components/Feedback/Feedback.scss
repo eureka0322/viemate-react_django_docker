@@ -1,0 +1,92 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.feedback-form {
+  background-color: $color-white;
+  border: 1px solid $color-gallery-grey;
+  border-radius: 8px;
+  padding: 24px 46px;
+
+  @include breakpoint ('phone-max') {
+    padding: 19px 22px;
+  }
+
+  &__title {
+    color: $color-tundora-light;
+    @include font-size--i;
+    @include font-base-medium;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(151, 151, 151, .5);
+    margin-bottom: 18px;
+
+    @include breakpoint ('phone-max') {
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__radio-group {
+    margin-bottom: 20px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-radio {
+      &__label {
+        @include font-base-medium;
+        @include font-size--i;
+      }
+
+      & > label {
+        padding-left: 38px;
+      }
+    }
+
+    .form-radio input[type="radio"] + .form-radio__icon {
+      @include breakpoint ('tablet') {
+        display: inline-block;
+        position: absolute;
+        margin: 0;
+      }
+    }
+
+    .form-radio__icon,
+    .form-radio__label {
+      @include breakpoint ('tablet') {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__radio-group,
+  &__textarea {
+    @include breakpoint ('phone-max') {
+      padding-left: 19px;
+      padding-right: 19px;
+    }
+  }
+
+  &__textarea {
+    margin-bottom: 24px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 19px;
+    }
+  }
+
+  &__btn {
+    text-align: right;
+
+    .form-button {
+      @include font-size--i;
+      @include font-base-demi;
+      padding: 12px 32px 10px;
+    }
+  }
+
+}

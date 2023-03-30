@@ -1,0 +1,206 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.edit-profile {
+  margin-bottom: 83px;
+  margin-top: 190px;
+  padding-top: 0;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @include breakpoint ('tablet') {
+    margin-top: 163px;
+    margin-bottom: 81px;
+  }
+
+  @include breakpoint ('phone-max') {
+    margin-top: 0;
+    margin-bottom: 57px;
+    padding-top: 104px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include clearfix;
+  }
+
+
+  &__title {
+    color: $color-tundora;
+    @include font-size--ol;
+    letter-spacing: -.35px;
+    margin-bottom: 15px;
+    margin-top: 0;
+
+    @include breakpoint ('tablet') {
+      @include font-size--xxl;
+      letter-spacing: -.56px;
+      margin-bottom: 11px;
+    }
+
+     @include breakpoint ('phone-max') {
+      @include font-size--lx;
+      letter-spacing: -.42px;
+      line-height: 42px;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-boulder;
+    @include font-size--g;
+    margin-bottom: 30px;
+
+    @include breakpoint ('tablet') {
+      @include font-size--ol;
+      margin-bottom: 82px;
+    }
+
+    @include breakpoint ('phone-max') {
+      @include font-size--g;
+      line-height: 25px;
+      margin-bottom: 59px;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+
+  .edit-form {
+    &__btn-groups {
+      border-top: 1px solid $color-concrete;
+      padding-top: 40px;
+      margin-top: 15px;
+      text-align: right;
+
+      @include breakpoint ('tablet-max') {
+        border-top: 0;
+        padding-top: 11px;
+        text-align: center;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 0;
+        margin-top: 11px;
+      }
+
+      .form-button {
+        text-transform: capitalize;
+
+        @include breakpoint ('tablet') {
+          width: 185px;
+        }
+
+        @include breakpoint ('phone-max') {
+          @include font-size--g;
+          vertical-align: top;
+          padding-left: 36px;
+          padding-right: 36px;
+          max-width: 123px;
+          width: 100%;
+          overflow: hidden;
+        }
+
+        &:first-child {
+          margin-right: 16px;
+
+          @include breakpoint ('tablet') {
+            margin-right: 37px;
+          }
+
+          @include breakpoint ('phone-max') {
+            margin-right: 20px;
+          }
+
+        }
+      }
+    }
+
+    &__grid {
+      font-size: 0;
+      margin: 0 -24px;
+
+      @include breakpoint ('tablet') {
+        margin-left: -32px;
+        margin-right: -32px;
+      }
+
+      @include breakpoint ('phone-max') {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &-item {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 24px;
+      margin-bottom: 47px;
+
+      @include breakpoint ('tablet') {
+        padding-left: 32px;
+        padding-right: 32px;
+        margin-bottom: 56px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 38px;
+      }
+
+      .avatar {
+        &:hover {
+          .avatar__overlay {
+            opacity: 1;
+          }
+        }
+      }
+
+      &--w-50 {
+        width: 50%;
+
+        @include breakpoint ('phone-max') {
+          width: 100%;
+        }
+      }
+
+      &--w-100 {
+        width: 100%;
+
+        .post-form__item {
+          display: block;
+        }
+      }
+
+      &--w-25 {
+        width: 25%;
+
+        @include breakpoint ('tablet') {
+          width: 29.5%;
+        }
+
+        @include breakpoint ('phone-max') {
+          width: 50%;
+        }
+      }
+
+      &--gender {
+        @include breakpoint ('phone-max') {
+          padding-right: 8px;
+        }
+      }
+
+      &--hometown {
+         @include breakpoint ('phone-max') {
+          padding-left: 8px;
+        }
+      }
+    }
+
+  }
+
+
+  }
+
+
+}

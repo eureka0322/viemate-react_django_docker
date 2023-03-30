@@ -1,0 +1,174 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.product-details {
+  @include clearfix;
+  margin: 0 auto 53px auto;
+  padding-top: 125px;
+
+  @include breakpoint('tablet-max') {
+    max-width: 100%;
+  }
+
+  @include breakpoint('phone-max') {
+    padding-top: 0;
+    margin: 104px auto 72px auto;
+    max-width: 375px !important;
+  }
+
+  @include breakpoint('phone') {
+    max-width: 320px;
+  }
+
+  &--no-panel {
+    .product-details__offer {
+      float: none;
+      padding-right: 0;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__preview {
+    .product-options {
+      @include breakpoint('phone-max') {
+        margin: 0 -15px;
+      }
+
+      &__item {
+        @include breakpoint('phone-max') {
+          padding: 0 15px;
+          margin-bottom: 20px;
+        }
+
+        &:nth-child(2n) {
+          @include breakpoint('phone') {
+            padding-left: 15px;
+          }
+        }
+      }
+
+      &__separator {
+        @include breakpoint('phone-max') {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .product-details {
+      .map {
+        & > div,
+        &__inner {
+          @include breakpoint('phone-max') {
+            height: 285px !important;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  &__offer,
+  &__user-profile{
+    display: block;
+    pointer-events: all;
+  }
+
+  &__offer-wrapper {
+    background-color: $color-white;
+    border: 1px solid $color-concrete;
+    border-radius: 6px;
+  }
+
+  &__offer {
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 24px;
+    float: left;
+    width: 67%;
+
+    @include breakpoint('phone-max') {
+      padding-right: 0;
+      padding-left: 0;
+      margin-bottom: 0;
+      margin-top: 40px;
+      float: none;
+      width: 100%;
+    }
+
+    .product-slider {
+      .swiper-button-next,
+      .swiper-button-prev  {
+        &:after {
+          background-color: transparent;
+          box-shadow: none;
+          height: 28px;
+          width: 14px;
+        }
+
+        &:before {
+          background-size: 14px 28px;
+          height: 28px;
+          width: 14px;
+          margin-top: -14px;
+        }
+      }
+
+      .swiper-button-next {
+        &:before {
+          background-image: url("../../../icons/svg/icon-arrow-next-w.svg");
+          right: 18px;
+        }
+      }
+
+      .swiper-button-prev {
+        &:before {
+          background-image: url("../../../icons/svg/icon-arrow-prev-w.svg");
+          left: 18px;
+        }
+      }
+    }
+  }
+
+  &__user-profile {
+    float: right;
+    padding-left: 10px;
+    width: 30.5%;
+
+    @include breakpoint('phone-max') {
+      padding-left: 0;
+      float: none;
+      width: 100%;
+    }
+
+    &--offered {
+      .product-profile {
+        @include breakpoint('phone-max') {
+          border-bottom: 1px solid $color-concrete;
+          border-bottom-right-radius: 6px;
+          border-bottom-left-radius: 6px;
+        }
+      }
+
+    }
+  }
+
+  .map {
+
+    & > div,
+    &__inner {
+
+      @include breakpoint ('tablet') {
+        height: 313px !important;
+      }
+      @include breakpoint ('phone-max') {
+        height: 240px !important;
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,76 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.pagination {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
+
+  @include breakpoint ('phone-max') {
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin: 0 2px;
+    }
+
+    &.active,
+    &:hover,
+    &:active {
+      .pagination__item-link {
+        background-color: $color-tundora;
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+
+    &-prev,
+    &-next {
+      border-color: $color-mercury !important;
+    }
+
+    &-link {
+      background-color: $color-white;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: $color-boulder;
+      display: block;
+      @include font-size--e;
+      @include font-base-book;
+      position: relative;
+      float: left;
+      padding: 14px 12px 13px 12px;
+      text-align: center;
+      text-decoration: none;
+      height: 44px;
+      width: 44px;
+
+      @include breakpoint ('phone-max') {
+        @include font-size--c;
+        padding: 10px 6px 7px 6px;
+        height: 33px;
+        width: 33px;
+      }
+    }
+  }
+}

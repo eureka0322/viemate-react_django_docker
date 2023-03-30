@@ -1,0 +1,43 @@
+.image-gallery {
+  max-width: 919px;
+  margin: 0 auto;
+
+  &-thumbnail {
+    &.active {
+      img {
+        border-color: $color-radical-red;
+      }
+    }
+  }
+
+  &-right-nav,
+  &-left-nav {
+    &:before {
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      content: '';
+      width: 14px;
+      height: 30px;
+    }
+
+    @include breakpoint ('tablet-max') {
+      display: none;
+    }
+  }
+
+  &-right-nav {
+    right: -88px;
+
+    &:before {
+      background-image: url("../../../icons/svg/icon-next.svg");
+    }
+  }
+
+  &-left-nav {
+    left: -88px;
+
+    &:before {
+      background-image: url("../../../icons/svg/icon-prev.svg");
+    }
+  }
+}

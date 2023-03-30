@@ -1,0 +1,135 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.body-messages {
+  margin-bottom: 0;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .app {
+    &__container {
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+
+      & > div {
+        min-height: 0;
+        height: 100%;
+        flex: 1 0 auto;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.messages {
+  @include clearfix;
+  padding-top: 72px;
+  min-height: 0;
+  height: 100%;
+
+  &__container {
+    flex: 1 0 auto;
+
+    @include breakpoint ('tablet-max') {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    @include breakpoint ('phone-max') {
+      max-width: 100% !important;
+    }
+  }
+
+  &--search {
+    min-height: 0;
+    height: 100%;
+    flex: 1 0 auto;
+
+    @include breakpoint ('tablet-max') {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    @include breakpoint ('phone-max') {
+      max-width: 100% !important;
+    }
+  }
+
+  &__users {
+    float: left;
+    width: 30%;
+
+    @media only screen
+    and (min-width: 992px)
+    and (max-width: 1024px){
+      width: 30%;
+    }
+
+    @media only screen
+    and (min-width: 768px)
+    and (max-width: 992px) {
+      width: 40%;
+    }
+
+    // @include breakpoint ('phone-max') {
+    //   display: none;
+    // }
+
+    &--bounds {
+      border-left: 1px solid $color-concrete;
+
+      @include breakpoint ('tablet-max') {
+        border-left: 0;
+      }
+    }
+  }
+
+  &__users,
+  &__lists {
+    // min-height: 100%;
+    height: 100%;
+    flex: 1 0 auto;
+
+    @include breakpoint ('phone-max') {
+      float: none !important;
+      width: 100% !important;
+    }
+  }
+
+  &__lists {
+    border-left: 1px solid $color-concrete;
+    float: right;
+    position: relative;
+    width: 70%;
+
+    @media only screen
+    and (min-width: 992px)
+    and (max-width: 1024px){
+      width: 70%;
+    }
+
+    @media only screen
+    and (min-width: 768px)
+    and (max-width: 992px) {
+      width: 60%;
+    }
+
+    @include breakpoint ('phone-max') {
+      border-left: 0;
+    }
+
+    & > div {
+      height: 100%;
+      position: relative;
+    }
+
+  }
+
+  .container--separator {
+    margin: 0;
+    position: relative;
+    // z-index: 4;
+  }
+}

@@ -1,0 +1,43 @@
+.browsehappy {
+  background-color: $color-black;
+  display: table;
+  margin: 0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  overflow: hidden;
+
+  &__inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__message {
+    border: 1px solid $color-white;
+    border-radius: 3px;
+    color: $color-white !important;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+
+    & > a {
+      border-bottom: 1px solid $color-white;
+      color: $color-white !important;
+
+      &:hover {
+        border-bottom: 0;
+        text-decoration: none;
+      }
+    }
+  }
+}

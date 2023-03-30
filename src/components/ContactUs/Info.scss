@@ -1,0 +1,157 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.info-box {
+
+  &--mid-space {
+    margin-bottom: 52px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 38px;
+    }
+  }
+
+  &--hign-space {
+    margin-bottom: 76px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    float: left;
+    margin-top: 8px;
+  }
+
+  &__content {
+    color: $color-black;
+  }
+
+  &__alert-success,
+  &__content,
+  &__form {
+    margin-left: 88px;
+
+    @include breakpoint ('phone-max') {
+      margin-left: 42px;
+    }
+  }
+
+  &__title,
+  &__content,
+  &__item-link {
+    font-size: 26px;
+    line-height: 40px;
+
+    @include breakpoint ('phone-max') {
+      font-size: 20px;
+      line-height: 35px;
+    }
+  }
+
+  &__icon,
+  &__content {
+    &--inline-b {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__item-link {
+    &--default {
+      color: $color-shuttle-g;
+    }
+
+    &--black {
+      color: $color-black;
+    }
+  }
+
+  &__title {
+    color: $color-dusty-gray;
+
+    @include breakpoint ('phone-max') {
+      font-size: 22px;
+      line-height: 36px;
+    }
+  }
+
+  &__text-box {
+    margin-bottom: 27px;
+  }
+
+  &__form {
+    @include clearfix;
+
+    .form-button--send-sm {
+      float: right;
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        float: none;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__alert-success,
+  &__form {
+    margin-bottom: 103px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__alert-success {
+    .alert__icon,
+    .alert__title {
+      @include breakpoint ('tablet') {
+        display: block;
+        margin-left: 0;
+      }
+    }
+
+    .alert__icon {
+      margin: 0 auto 28px auto;
+    }
+  }
+
+  &__label {
+    color: $color-dusty-gray;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 22px;
+
+    @include breakpoint ('phone-max') {
+      font-size: 22px;
+      line-height: 36px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__sign_in {
+    text-align: right;
+    &--btn {
+      @include breakpoint ('phone-max') {
+        border: none;
+        background: none;
+        color: #727172;
+      }
+
+      &:hover,
+      &:focus {
+        @include breakpoint ('phone-max') {
+          background-color: transparent;
+          color: #727172;
+          text-decoration: underline;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+

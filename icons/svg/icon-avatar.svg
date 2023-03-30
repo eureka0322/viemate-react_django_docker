@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="45px" height="52px" viewBox="0 0 45 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-avatar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-avatar" transform="translate(1.000000, 1.000000)" stroke-width="2.4" stroke="#000000">
+            <g id="Page-1">
+                <g id="icon-avatar">
+                    <path d="M34.0242223,12.8532803 C34.0242223,7.83614459 31.0756982,3.50767354 26.8169424,1.50615955 C25.2011734,0.746786487 23.3968045,0.32236458 21.4933066,0.32236458 C14.5726729,0.32236458 8.96239081,5.93264667 8.96239081,12.8532803 C8.96239081,17.8635767 11.9028814,22.1870846 16.1522612,24.1922027 C7.1109014,26.2502116 0.43930875,33.4095979 0.43930875,41.9254788 C0.43930875,52.0478685 42.5473044,52.0478685 42.5473044,41.9254788 C42.5473044,33.4095979 35.8757117,26.2502116 26.8343519,24.1922027 C31.0837317,22.1870846 34.0242223,17.8635767 34.0242223,12.8532803 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

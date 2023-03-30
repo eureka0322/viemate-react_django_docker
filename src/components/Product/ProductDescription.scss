@@ -1,0 +1,30 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.product-description {
+  color: $color-tundora;
+  @include font-base-regular;
+  font-size: 25px;
+  line-height: 38px;
+  padding: 0 39px;
+  margin-top: 28px;
+  margin-bottom: 41px;
+  word-spacing: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+
+  @include breakpoint('tablet-max') {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @include breakpoint('phone-max') {
+    @include font-size--i;
+    line-height: 33px;
+    margin-top: 18px;
+    margin-bottom: 21px;
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+}

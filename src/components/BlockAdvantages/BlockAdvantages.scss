@@ -1,0 +1,135 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.advantages {
+  padding-top: 109px;
+  padding-bottom: 137px;
+
+  @include breakpoint ('tablet') {
+    padding-top: 113px;
+  }
+
+  @include breakpoint ('phone-max') {
+    padding-top: 58px;
+    padding-bottom: 0;
+  }
+
+  &__list {
+    font-size: 0;
+    margin: 0 -31px;
+
+    @include breakpoint('tablet-desktop') {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    @include breakpoint ('tablet-max') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    color: $color-tundora;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3333%;
+    padding: 0 31px;
+
+    @include breakpoint('tablet-desktop') {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    // @include breakpoint ('tablet-max') {
+    //   margin-bottom: 118px;
+    // }
+
+    @include breakpoint ('tablet-max') {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 84px;
+      text-align: center;
+      width: 100%;
+    }
+
+    &:last-child {
+      @include breakpoint ('phone-max') {
+        margin-bottom: 57px;
+      }
+    }
+  }
+
+  &__icon {
+    background-color: $color-radical-red;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    color: $color-white;
+    display: table-cell;
+    @include font-size--e;
+    padding: 14px 5px 11px 5px;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+
+    &-wrapper {
+      margin-bottom: 33px;
+      height: 64px;
+      width: 64px;
+
+      @include breakpoint ('tablet-max')  {
+        height: 115px;
+        width: 115px;
+        margin: 0 auto 44px auto;
+      }
+
+      @include breakpoint ('phone-max') {
+        height: 83px;
+        width: 83px;
+        margin: 0 auto 24px auto;
+      }
+
+      .table {
+        height: 100%;
+      }
+    }
+
+  }
+
+  &__title {
+    @include font-size--ol;
+    @include font-base-demi;
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    @include breakpoint ('tablet-max') {
+      font-size: 35px;
+      line-height: 41px;
+      margin-bottom: 21px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    @include font-base-book;
+
+    @include breakpoint ('tablet') {
+      font-size: 26px;
+      line-height: 42px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.static-banner {
+  background-color: $color-iron;
+  background-image: url("../../images/static-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 409px;
+  min-height: 320px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 125px;
+  margin-top: 72px;
+
+  @include breakpoint ('phone-max') {
+    height: 318px;
+  }
+
+  &:after {
+    content: '';
+    background-color: rgba(0, 0, 0, .42);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &--min-space {
+    margin-bottom: 61px;
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.main-title {
+  color: $color-white;
+  display: table-cell;
+  font-size: 72px;
+  line-height: 74px;
+  opacity: .8;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint ('phone-max') {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.container__static-page {
+  color: $color-tundora-light;
+  font-size: 26px;
+  line-height: 40px;
+  margin-bottom: 123px;
+
+  @include breakpoint ('phone-max'){
+    font-size: 22px;
+    line-height: 35px;
+  }
+}
+
+.static-banner,
+.container__static-page {
+  @include breakpoint ('phone-max') {
+    margin-bottom: 45px;
+  }
+}
+

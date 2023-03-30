@@ -1,0 +1,68 @@
+//MaisonNeue
+@font-face {
+  font-family: 'MaisonNeueBold';
+  src: url(../../fonts/font-maison/MaisonNeueWEB-Bold.woff) format('woff'),
+      url(../../fonts/font-maison/MaisonNeueWEB-Bold.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MaisonNeueBook';
+  src: url(../../fonts/font-maison/MaisonNeueWEB-Book.woff) format('woff'),
+  url(../../fonts/font-maison/MaisonNeueWEB-Book.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue Light';
+  src: url(../../fonts/font-maison/MaisonNeueWEB-Light.woff) format('woff'),
+  url(../../fonts/font-maison/MaisonNeueWEB-Light.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MaisonNeueMedium';
+  src: url(../../fonts/font-maison/MaisonNeueWEB-Medium.woff) format('woff'),
+  url(../../fonts/font-maison/MaisonNeueWEB-Medium.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'maison_neuedemi';
+  src: url('../../fonts/font-maison/maisonneue-demi-webfont.woff2') format('woff2'),
+       url('../../fonts/font-maison/maisonneue-demi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Pacifico
+@font-face {
+  font-family: 'pacificoregular';
+  src: url(../../fonts/font-pacifico/pacifico-webfont.woff) format('woff'),
+  url(../../fonts/font-pacifico/pacifico-webfont.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Didot
+@font-face {
+ font-family: 'didotregular';
+  src: url(../../fonts/font-didot/didot.eot);
+  src: url(../../fonts/font-didot/didot.ttf) format('truetype'),
+  url(../../fonts/font-didot/didot.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Pinyon
+@font-face {
+  font-family: 'pinyon_scriptregular';
+  src: url(../../fonts/font-pinyon/pinyonscript-regular-webfont.woff) format('woff'),
+  url(../../fonts/font-pinyon/pinyonscript-regular-webfont.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

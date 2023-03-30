@@ -1,0 +1,477 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.block-posts {
+
+  &__header {
+    padding: 87px 15px 107px 15px;
+    text-align: center;
+    margin: 0 auto;
+
+    @include breakpoint ('tablet') {
+      padding-top: 85px;
+      padding-bottom: 71px;
+    }
+
+    @include breakpoint ('phone-max') {
+      padding-top: 70px;
+      padding-bottom: 41px;
+    }
+  }
+
+  &__title {
+    color: $color-tundora;
+    font-size: 44px;
+    line-height: 52px;
+    margin: 0 auto;
+    max-width: 560px;
+    @include font-base-book;
+
+    @include breakpoint ('tablet') {
+      margin-bottom: 32px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 34px;
+      max-width: 100%;
+    }
+
+    @include breakpoint ('phone') {
+      max-width: 323px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-boulder;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 auto;
+    max-width: 390px;
+
+    @include breakpoint ('tablet')  {
+      font-size: 26px;
+      line-height: 42px;
+      max-width: 480px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  &__subtitle {
+    @include breakpoint ('phone-max') {
+      max-width: 100%;
+    }
+  }
+
+  &__offers,
+  &__users {
+    font-size: 0;
+
+    &-item {
+      background-color: $color-black;
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      width: 25%;
+      margin-top: -1px;
+      position: relative;
+
+      @include breakpoint ('tablet-desktop') {
+        width: 33.333333333%;
+      }
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+
+      .item-post {
+        background-color: rgba(0, 0, 0, .6);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        height: 0;
+        padding-bottom: 100%;
+        width: 100%;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+          filter: grayscale(0);
+
+          .avatar {
+            display: inline-block;
+          }
+
+          .form-button {
+            cursor: pointer;
+            display: inline-block;
+          }
+
+          .item-post__overlay {
+            opacity: 1;
+          }
+        }
+
+        &__overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(3, 3, 3, 0.6);
+          opacity: 0;
+          @include transition(
+            opacity $base-transition $base-transition--link--time
+          );
+          z-index: 2;
+        }
+
+        &__details {
+          padding: 0 10px;
+          text-align: right;
+
+          &--position-bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 0;
+            padding: 0 34px 42px 32px;
+
+            @include breakpoint ('desktop-md') {
+              padding-left: 18px;
+              padding-right: 18px;
+              padding-bottom: 18px;
+            }
+
+            @include breakpoint ('tablet-desktop') {
+              padding-bottom: 29px;
+            }
+
+            @include breakpoint ('tablet-max') {
+              padding-left: 20px;
+              padding-right: 20px;
+              padding-bottom: 16px;
+            }
+          }
+
+          &--position {
+            &-center {
+              height: 100%;
+              text-align: center;
+              width: 100%;
+            }
+
+            &-left {
+              position: absolute;
+              left: 0;
+              right: 0;
+              padding: 50px 15px 0 15px;
+
+              @include breakpoint ('phone-max') {
+                padding-top: 32px;
+              }
+            }
+
+            &-top {
+              padding-top: 27px;
+              padding-left: 10px;
+              padding-right: 10px;
+
+              @include breakpoint ('phone-max') {
+                padding-top: 20px;
+              }
+            }
+          }
+
+        }
+
+        &__nav,
+        &__properties {
+          display: inline-block;
+          vertical-align: bottom;
+        }
+
+        &__apart-title,
+        &__user-title  {
+          color: $color-white;
+        }
+
+        &__apart-title,
+        &__user-title  {
+          color: $color-white;
+        }
+
+        &__apart-title {
+          display: block;
+          font-size: 54px;
+          line-height: 58px;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+          @include font-base-medium;
+
+          @include breakpoint ('desktop-lg') {
+            font-size: 46px;
+            line-height: 48px;
+            margin-bottom: 3px;
+          }
+
+          @include breakpoint ('desktop-md') {
+            font-size: 36px;
+            line-height: 38px;
+          }
+
+          @include breakpoint ('tablet-desktop') {
+            font-size: 36px;
+            line-height: 38px;
+          }
+
+          @include breakpoint ('tablet') {
+            font-size: 28px;
+            line-height: 28px;
+            margin-bottom: 3px;
+          }
+
+          @include breakpoint ('phone-max') {
+            font-size: 42px;
+            line-height: 44px;
+          }
+        }
+
+        &__user {
+          &-title {
+            font-size: 36px;
+            line-height: 27px;
+            padding: 0 10px;
+
+            @include breakpoint ('desktop-lg') {
+              font-size: 32px;
+              line-height: 30px;
+            }
+
+            @include breakpoint ('desktop-md') {
+              @include font-size--r;
+            }
+
+            @include breakpoint ('tablet-desktop') {
+              font-size: 32px;
+              line-height: 34px;
+            }
+
+            @include breakpoint('tablet') {
+              @include font-size--r;
+            }
+
+            @include breakpoint ('phone-max') {
+              @include font-size--o;
+            }
+          }
+
+          &-pre-title {
+            display: block;
+            -moz-osx-font-smoothing: grayscale;
+
+            @include breakpoint ('tablet-max') {
+              @include font-size--m;
+            }
+          }
+        }
+
+
+        .place-type {
+          display: inline-block;
+          @include  font-size--k;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale !important;
+
+          @include breakpoint ('desktop-lg') {
+            @include font-size--g;
+          }
+
+          @include breakpoint ('desktop-md') {
+            @include font-size--i;
+          }
+
+          @include breakpoint ('tablet-desktop') {
+            @include font-size--h;
+          }
+
+          @include breakpoint ('tablet-max') {
+            @include font-size--e;
+          }
+        }
+
+
+        &__properties {
+          color: $color-white;
+          padding-bottom: 22px;
+          text-align: center;
+          width: 42%;
+
+          @include breakpoint ('phone-max') {
+            width: 53%;
+          }
+
+          &--titles {
+            width: 100%;
+            padding-bottom: 0;
+          }
+
+          &--full-width {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+          }
+
+          .type-room {
+            display: block;
+            margin-bottom: 6px;
+            @include font-size--k;
+            @include font-base-book;
+            text-transform: capitalize;
+
+            @include breakpoint ('desktop-lg') {
+              @include font-size--i;
+            }
+
+            @include breakpoint ('desktop-md') {
+              @include font-size--g;
+            }
+
+            @include breakpoint ('tablet-desktop') {
+              @include font-size--h;
+            }
+
+            @include breakpoint ('tablet') {
+              @include font-size--e;
+            }
+
+            @include breakpoint ('phone-max') {
+              @include font-size--i;
+            }
+          }
+
+          .price {
+            text-transform: none;
+          }
+
+          .location {
+            font-size: 44px;
+            line-height: 32px;
+            text-transform: capitalize;
+
+            @include breakpoint ('phone-max') {
+              font-size: 42px;
+            }
+
+            &-title {
+              display: block;
+              font-size: 20px;
+              line-height: 32px;
+              margin-bottom: 22px;
+
+              @include breakpoint ('tablet') {
+                font-size: 21px;
+              }
+
+              @include breakpoint ('phone-max') {
+                font-size: 16px;
+                margin-bottom: 12px;
+              }
+            }
+          }
+
+
+        }
+
+        &__nav {
+          text-align: right;
+          width: 58%;
+
+          @include breakpoint ('phone-max') {
+            width: 47%;
+          }
+
+          .form-button {
+            display: none;
+            margin: 0;
+          }
+
+          .avatar {
+
+            &--md-max {
+              height: 54px;
+              width: 54px;
+
+              @include breakpoint ('tablet-desktop') {
+                height: 74px;
+                width: 74px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  &__users {
+    width: 100%;
+    font-size: 0;
+
+    .item-post {
+      display: inline-block;
+      padding-bottom: 50%;
+      width: 50%;
+
+      &:hover,
+      &:focus {
+        .item-post__overlay {
+          opacity: 1;
+        }
+      }
+
+      &__overlay {
+        opacity: 0;
+      }
+
+      &__details {
+        &--position-bottom {
+          padding: 0 11px 9px 11px;
+
+          @include breakpoint ('phone-max') {
+           padding-left: 20px;
+           padding-right: 20px;
+           padding-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &__view-more {
+    padding-top: 70px;
+    padding-bottom: 80px;
+    text-align: center;
+
+      @include breakpoint ('tablet-max') {
+        padding-top: 56px;
+        padding-bottom: 46px;
+      }
+
+      @include breakpoint ('phone-max') {
+        padding-top: 52px;
+      }
+  }
+
+}

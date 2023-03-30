@@ -1,0 +1,14 @@
+// Transitions
+$base-transition: ease-out !default;
+$base-transition-in: ease-in !default;
+$base-transition-out: ease-out !default;
+$base-transition--base--time: 150ms !default;
+$base-transition--link--time: 150ms !default;
+$base-transition--button--time: 150ms !default;
+$base-transition--form--time: 150ms !default;
+$base-transition--modal--time: 150ms !default;
+$base-transition--translateY--time: 620ms !default;
+
+$transition: ease-in-out !default;
+$transition--time: 150ms !default;
+$transition--form--time: 150ms !default;

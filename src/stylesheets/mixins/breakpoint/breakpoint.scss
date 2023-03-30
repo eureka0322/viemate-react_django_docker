@@ -1,0 +1,211 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "phone" {
+    @media (max-width: $screen-xs) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-portrait" {
+    @media only screen and (max-width: $screen-xs) and (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-landscape" {
+    @media only screen and (max-width: $screen-xs) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-max" {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-max-portrait" {
+    @media only screen and (max-width: $screen-xs-max) and (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-max-landscape" {
+    @media only screen and (max-width: $screen-xs-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-max-custom" {
+    @media (min-width: 375px) and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-custom" {
+    @media (min-width: 320px) and (max-width: 374px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-phone-max" {
+    @media (min-width: $screen-xs) and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-phone-max-portrait" {
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-xs-max) and (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "phone-phone-max-landscape" {
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-xs-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-min" {
+    @media (min-width: $screen-sm-min) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-phone" {
+    @media (min-width: 320px) and (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-portrait-custom" {
+    @media (min-width: 767px) and (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-landscape-custom" {
+    @media (min-width: 992px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-large" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "extra-tablet" {
+    @media (min-width: 768px) and (max-width: 1051px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-extra-large" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet" {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-portrait" {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-landscape" {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-max" {
+    @media (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet-desktop" {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-xs" {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-tablet-large" {
+    @media (min-width: 992px) and (max-width: 1440px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-sm" {
+    @media (min-width: 1200px) and (max-width: 1340px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-md" {
+    @media (min-width: 1200px) and (max-width: 1440px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-lg" {
+    @media (min-width: 1440px) and (max-width: 1640px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "extra-desktop-lg" {
+    @media (min-width: 1051px) and (max-width: 1382px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "extra-desktop-tablet" {
+    @media (min-width: 1382px) and (max-width: 1714px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop-tablet" {
+    @media (min-width: 1440px) and (max-width: 1720px) {
+      @content;
+    }
+  }
+
+   @else if $breakpoint == "large-desktop" {
+    @media (min-width: 1720px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "retina-display" {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export ReactPaginate from './PaginationBoxView';

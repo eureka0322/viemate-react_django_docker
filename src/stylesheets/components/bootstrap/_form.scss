@@ -1,0 +1,13 @@
+.form-control {
+  .has-error & {
+    border-color: $color-azalea;
+    background-color: $color-azalea;
+    box-shadow: none;
+  }
+
+  &:focus {
+    .has-error & {
+      box-shadow: none;
+    }
+  }
+}

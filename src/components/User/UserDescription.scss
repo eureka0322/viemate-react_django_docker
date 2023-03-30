@@ -1,0 +1,30 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user-description {
+  color: $color-tundora;
+  font-size: 25px;
+  line-height: 38px;
+  padding: 0 39px 40px 39px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  word-spacing: normal;
+  word-wrap: break-word;
+  // word-break: break-all;
+  white-space: pre-line;
+
+  @include breakpoint('tablet-max') {
+    padding-right: 22px;
+    padding-left: 22px;
+    margin-top: 0;
+    padding-bottom: 40px;
+    line-height: 37px;
+  }
+
+  @include breakpoint('phone-max') {
+    padding-right: 19px;
+    padding-left: 19px;
+    margin-top: 29px;
+    padding-bottom: 45px;
+  }
+}

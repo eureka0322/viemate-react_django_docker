@@ -1,0 +1,239 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+
+$form-radio: 'form-radio';
+
+.#{$form-radio} {
+
+  @include breakpoint ('tablet-max') {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: block;
+    cursor: pointer;
+
+  }
+
+  &__label {
+    color: $color-tundora;
+    cursor: pointer;
+    @include font-size--e;
+    @include font-base-medium;
+    line-height: 22px;
+    font-weight: normal;
+    margin-top: 1px;
+
+    @include breakpoint ('tablet-max') {
+      @include font-size--i;
+      margin-bottom: 17px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-bottom: 11px;
+    }
+
+    &--caption {
+      color: $color-silver-light;
+      cursor: pointer;
+      @include font-base-book;
+      font-weight: normal;
+      padding-left: 5px;
+
+      @include breakpoint ('tablet-max') {
+        @include font-size--g;
+        line-height: 24px;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--f;
+        line-height: 24px;
+        margin-bottom: 0;
+        display: block !important;
+        padding-left: 0;
+      }
+    }
+
+    &--payment {
+      @include font-size--g;
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 0;
+        margin-top: 4px;
+      }
+    }
+
+    &--grey {
+      color: $color-dusty-gray;
+    }
+  }
+
+  &__label,
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include breakpoint ('tablet') {
+      display: block;
+    }
+  }
+
+  &__group {
+
+    .form-group {
+      border-bottom: 1px solid $color-mercury;
+      padding: 14px 22px 13px 22px;
+
+      @include breakpoint ('tablet-max') {
+        border-bottom: 0;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        padding: 0 17px;
+        width: 33.333%;
+      }
+
+      @include breakpoint ('phone-max') {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 36px;
+        text-align: left;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+
+      .form-radio {
+        label {
+          position: relative;
+          padding-left: 40px;
+
+          @include breakpoint ('tablet-desktop') {
+            padding-left: 38px;
+          }
+
+          @include breakpoint ('tablet') {
+            padding-left: 0;
+          }
+          @include breakpoint ('phone-max') {
+            padding-left: 45px;
+          }
+        }
+      }
+
+    }
+  }
+
+  &--payment-method {
+    .form-group {
+      padding: 0;
+      width: 100%;
+      text-align: left;
+
+      @include breakpoint ('phone-max') {
+        margin-bottom: 0;
+      }
+    }
+
+    .form-group .form-radio label {
+      padding-left: 55px;
+
+      @include breakpoint ('tablet-max') {
+        padding-left: 38px;
+      }
+    }
+
+    .form-radio input[type="radio"] + .form-radio__icon {
+      @include breakpoint ('tablet-max') {
+        display: inline-block;
+        position: absolute;
+        margin: 0;
+        vertical-align: middle;
+      }
+    }
+
+    .form-radio__label {
+      @include breakpoint ('tablet-max') {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    margin-left: 0;
+  }
+
+  input[type="radio"] + .#{$form-radio}__icon {
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: -1px;
+    top: 0;
+    border: 1px solid $color-mercury;
+    border-radius: 50%;
+    background-color: $color-white;
+    vertical-align: middle;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid $color-white;
+      margin-top: -3px;
+      margin-left: -3px;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+    }
+
+    @include breakpoint ('tablet') {
+      display: block;
+      position: relative;
+      margin: 0 auto 19px auto;
+      vertical-align: top;
+    }
+
+    &--white {
+      background-color: $color-m-shaft;
+
+      &:before {
+        border-color: $color-m-shaft;
+      }
+    }
+  }
+
+  input[type="radio"] + .#{$form-radio}__icon--size-lg {
+    height: 24px;
+    width: 24px;
+  }
+
+  input[type="radio"]:checked + .#{$form-radio}__icon--pink {
+    background-color: $color-radical-red;
+    border-color: $color-radical-red;
+  }
+
+  input[type="radio"]:checked + .#{$form-radio}__icon--black {
+    background-color: $color-m-shaft;
+    border-color: $color-m-shaft;
+  }
+
+  input[type="radio"]:checked + .#{$form-radio}__icon--white:before {
+    background-color: $color-white;
+    border-color: $color-white;
+  }
+
+}

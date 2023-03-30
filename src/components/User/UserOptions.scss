@@ -1,0 +1,69 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.user-options {
+  margin: 0;
+  padding: 49px 32px 0 32px !important;
+  border-top: 1px solid $color-concrete;
+
+
+  @include breakpoint('tablet-max') {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  &__date {
+    &--bold {
+      @include font-base-medium;
+      letter-spacing: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 36px;
+    padding: 0 7px;
+    vertical-align: top;
+    width: 50%;
+
+    @include breakpoint ('tablet') {
+      margin-bottom: 41px;
+    }
+
+    @include breakpoint('phone-max') {
+      display: block;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+
+    &:nth-child(2n) {
+      padding-left: 4%;
+
+      @include breakpoint ('tablet-phone') {
+        padding-left: 7px;
+      }
+    }
+  }
+
+  &__title,
+  &__option {
+    display: block;
+    @include font-base-book;
+  }
+
+  &__title {
+    color: $color-silver-light;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+  }
+
+  &__option {
+    color: $color-tundora;
+    font-size: 25px;
+    line-height: 33px;
+  }
+}
+

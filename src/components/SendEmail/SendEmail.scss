@@ -1,0 +1,112 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.send-email {
+  background-color: $color-white;
+  border-radius: 6px;
+  padding: 0 !important;
+
+  @include breakpoint ('phone-max') {
+    max-width: 375px !important;
+  }
+
+  &__product-card {
+    float: left;
+    width: 50.6%;
+
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    .product-card {
+      border-radius: 6px 0 0 6px;
+
+      &__panel-img {
+        min-height: 449px;
+
+        @include breakpoint ('tablet-desktop') {
+          min-height: 442px
+        }
+
+        @include breakpoint ('tablet') {
+          min-height: 379px
+        }
+      }
+
+      .panel-links {
+        display: none;
+      }
+    }
+  }
+
+
+
+  &__form {
+    float: right;
+    padding: 32px 38px 32px 35px;
+    width: 49.4%;
+
+    @include breakpoint ('phone-max') {
+      padding: 0;
+      float: none;
+      width: 100%;
+    }
+
+    &-label {
+      color: $color-boulder;
+      @include font-size--ol;
+      margin-bottom: 44px;
+
+      @include breakpoint ('tablet') {
+        margin-bottom: 12px;
+      }
+    }
+
+    &-item {
+      margin-bottom: 16px;
+
+      .input {
+        &--base {
+          height: 44px;
+
+          &::-webkit-input-placeholder {
+            color: $color-tundora;
+            opacity: .3;
+          }
+        }
+      }
+    }
+
+    .form-group {
+      label {
+        display: none;
+      }
+    }
+
+    .form-textarea-autosize {
+      .form-textarea {
+        border-radius: 6px;
+        min-height: 150px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+
+  &__nav {
+    margin-top: 47px;
+    text-align: right;
+
+    @include breakpoint ('tablet') {
+      margin-top: 0;
+    }
+
+    .form-button {
+      &--user-action {
+        @include font-size--f;
+        padding-top: 12px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

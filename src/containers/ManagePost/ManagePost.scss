@@ -1,0 +1,38 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.post-body {
+  @include breakpoint ('phone') {
+    overflow-x: hidden;
+  }
+
+  &__container {
+    &.container {
+      padding-left: 0;
+      padding-right: 0
+    }
+
+    & > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    // margin-top: 59px;
+    margin-top: 59px + 72px;
+    margin-bottom: 72px;
+
+    @include breakpoint ('tablet-max') {
+      margin-top: 62px + 72px;
+    }
+
+    @include breakpoint ('phone-max') {
+      margin-top: 46px + 66px;
+    }
+  }
+}
+
+.body-manage-posts {
+  padding-top: 72px;
+}

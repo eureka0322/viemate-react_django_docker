@@ -1,0 +1,172 @@
+.alert {
+  width: 100%;
+  position: relative;
+
+  &__text {
+    @include font-base-medium;
+    padding-top: 10px;
+    padding-left: 5px;
+    text-align: center;
+    width: 90%;
+
+    @include breakpoint ('phone-max') {
+      // width: 80%;
+      width: 100%;
+      padding-top: 15px;
+      padding-left: 0;
+    }
+  }
+
+  &__hide-notif {
+    position: absolute;
+    top: 12px;
+    right: 5px;
+  }
+
+  &--success {
+    background-color: rgba(80, 227, 194, .1);
+    color: $color-turquoise;
+    padding: 14px 28px 22px 28px;
+
+    .alert__icon {
+      .icon {
+        &--success-md {
+          display: inline-block;
+
+          @include breakpoint ('phone-max') {
+            margin-right: 10px;
+          }
+        }
+
+        &--error-lg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &--danger {
+    background-color: rgba(219, 42, 86, .1);
+    color: $color-cerise-red;
+    padding: 14px 28px 22px 28px;
+
+    .alert__icon {
+        .icon {
+        &--success-md {
+          display: none;
+        }
+
+        &--error-lg {
+          display: inline-block;
+        }
+      }
+    }
+
+    .alert__text {
+      @include font-size--g;
+    }
+  }
+
+  &--md {
+    height: 275px;
+    width: 100%;
+
+    @include breakpoint ('phone-max') {
+      min-height: 152px;
+      height: auto;
+      padding-top: 27px;
+      padding-bottom: 27px;
+    }
+  }
+
+  &--sm {
+    height: 225px;
+    width: 100%;
+  }
+
+
+  &__container {
+    display: table;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    &-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+
+  &__icon {
+    text-align: left;
+    // width: 10%;
+
+    @include breakpoint ('phone-max') {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &--md {
+      height: 63px;
+      width: 63px;
+      padding: 21px 17px 19px 17px;
+      margin-bottom: 32px;
+
+      @include breakpoint ('phone-max') {
+        height: 47px;
+        width: 47px;
+        padding: 16px 12px 14px 12px;
+        margin-bottom: 14px;
+      }
+    }
+
+    &--success {
+      background-color: $color-turquoise;
+      border-radius: 50%;
+    }
+  }
+
+  &__icon,
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include breakpoint("phone-max") {
+      display: block;
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: center;
+
+    @include breakpoint ('tablet') {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    @include breakpoint ('phone-max') {
+      font-size: 18px;
+    }
+
+    &--success {
+      color: $color-turquoise;
+    }
+
+    &--large {
+      @include font-size--i;
+    }
+  }
+
+  &__icon,
+  &__title {
+    @include breakpoint ('tablet') {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

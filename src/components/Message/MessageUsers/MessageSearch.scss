@@ -1,0 +1,81 @@
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixins";
+
+.message-search {
+  border-bottom: 1px solid $color-concrete;
+  background-color: $color-alabaster;
+  padding: 22px 25px 24px 23px;
+
+  @include breakpoint ('tablet') {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include breakpoint ('phone-max') {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__form {
+
+    .input-group-addon {
+      background-color: $color-white;
+      border-radius: 0 !important;
+      padding: 0 0 0 12px !important;
+      height: 38px !important;
+    }
+
+    input {
+      padding: 9px 12px;
+      @include font-size--c;
+      height: 39px !important;
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .input__wrapper {
+      max-width: 100%;
+    }
+
+    .input-group {
+      width: 100%;
+
+      .form-control {
+        border-radius: 0;
+        position: relative;
+        padding-left: 42px;
+
+        &:focus {
+          z-index: 0;
+        }
+      }
+
+      .input-group-addon {
+        position: absolute;
+        border:  0;
+        border-radius: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        padding: 0 !important;
+        width: 32px;
+        margin-left: 1px;
+        margin-top: 0;
+        height: 37px !important;
+        overflow: hidden;
+        margin-bottom: 1px;
+        margin-top: 1px;
+
+        .icon {
+          position: relative;
+          margin-top: -22px;
+          top: 50%;
+          left: 7px;
+        }
+      }
+    }
+  }
+}

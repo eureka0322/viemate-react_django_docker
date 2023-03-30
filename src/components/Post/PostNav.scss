@@ -1,0 +1,211 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixins";
+
+.post-nav {
+  background-color: $color-mine-grey;
+  // position: relative;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  left: 0;
+  z-index: 11;
+  backface-visibility: hidden;
+
+  &--last-page {
+    .post-nav__item--fifth {
+      display: none;
+    }
+  }
+
+  &__container {
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include breakpoint ('phone-max') {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &__lists {
+    margin: 0;
+    font-size: 0;
+
+    @include breakpoint ('phone-max') {
+      display: block;
+      margin-left: 55px;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+
+    @include breakpoint ('phone-max') {
+      display: none;
+      width: 100%  !important;
+    }
+
+    &:first-child {
+      text-align: left;
+
+      @include breakpoint ('phone-max') {
+        text-align: center;
+      }
+    }
+
+    &.is-active {
+      @include breakpoint ('phone-max') {
+        display: block;
+        padding-left: 24px;
+        text-align: left;
+      }
+
+      & > span,
+      & > .form-button {
+        color: $color-white;
+      }
+    }
+
+    &--first,
+    &--second,
+    &--third,
+    &--fourth {
+      width: 20%;
+
+      @include breakpoint ('tablet') {
+        width: 18.75%;
+      }
+    }
+
+    &--second {
+      @include breakpoint ('tablet') {
+        width: 25%;
+      }
+    }
+
+
+    &--fifth {
+      position: absolute;
+      right: 0;
+      max-width: 186px;
+      width: 100%;
+
+
+
+    }
+
+    & > span,
+    & > .form-button {
+      color: $color-silver-light;
+      display: block;
+      @include font-size--e;
+      padding: 23px 0;
+      height: 100%;
+      width: 100%;
+      cursor: default;
+
+      @include breakpoint ('tablet-max') {
+        @include font-size--e;
+        padding-top: 23px;
+        padding-bottom: 23px;
+      }
+
+      @include breakpoint ('phone-max') {
+        @include font-size--i;
+        text-align: left;
+      }
+
+      &--next-step {
+        color: $color-white;
+        cursor: pointer;
+        @include font-size--o;
+      }
+    }
+
+    .form-button[disabled] {
+      cursor: not-allowed;
+    }
+
+    .icon {
+      opacity: 0;
+
+       @include breakpoint ('phone-max') {
+        display: none;
+       }
+    }
+
+    // this modifier must be after .form-button
+    // due to cascading styles
+    &--clickable {
+      & > span,
+      & > .form-button {
+        cursor: pointer;
+
+        @include breakpoint("phone-max") {
+          cursor: default;
+        }
+      }
+    }
+
+    &--done {
+      .icon {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__progress-bar {
+    @include breakpoint ('phone-max') {
+      display: none;
+    }
+
+    &.progress {
+      background-color: $color-concrete;
+      height: 8px;
+      width: 100%;
+      overflow: hidden;
+
+      .progress-bar {
+        float: left;
+        width: 50%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        border-radius: 0 100px 100px 0;
+        background-color: $color-radical-red;
+        @include transition (width $base-transition $base-transition--link--time);
+      }
+    }
+  }
+
+  &__steps {
+    color: $color-white;
+    display: none;
+    @include font-size--i;
+    float: left;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    vertical-align: middle;
+
+    @include breakpoint ('phone-max') {
+      display: block;
+    }
+  }
+}
+
+.body-wanted-posts {
+  .post-nav {
+    &__item {
+      &--first,
+      &--second,
+      &--third {
+        width: 40%;
+      }
+    }
+  }
+}

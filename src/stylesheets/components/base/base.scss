@@ -1,0 +1,134 @@
+html {
+  position: relative;
+  // image-rendering: -webkit-optimize-contrast;
+}
+
+html, body {
+  height: 100%!important;
+  min-height: 0!important;
+  margin: 0;
+
+  @include breakpoint('phone') {
+    min-width: 320px;
+  }
+
+  @include breakpoint('phone-max-custom') {
+    min-width: 375px;
+  }
+}
+
+#content {
+  height: 100%!important;
+  min-height: 0!important;
+}
+
+body{
+  @include font-base-book;
+  background-color: $color-white;
+  height: 100%;
+  overflow-y: auto;
+  // font-smooth: always;
+  // -webkit-font-smoothing: antialiased;
+  // font-smooth: subpixel-antialiased;
+  // -webkit-font-smoothing: subpixel-antialiased;
+  // -moz-osx-font-smoothing: grayscale !important;
+  // text-rendering: optimizeLegibility;
+  // -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+  // prevents possible twitching of header
+  // -webkit-backface-visibility: hidden;
+
+
+  @include breakpoint('phone-max') {
+    margin-bottom: auto;
+  }
+
+}
+
+hr {
+  background-color: $color-concrete;
+  height: 1px;
+  width: 100%;
+}
+
+a,
+.form-button {
+  @include transition(
+    color $base-transition $base-transition--link--time,
+    background-color $base-transition $base-transition--link--time,
+    border-color $base-transition $base-transition--link--time,
+    opacity $base-transition $base-transition--link--time
+  );
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+
+.btn {
+  @include font-base-regular;
+}
+
+.hidden-sm-portrait {
+  @media only screen
+  and (min-width: 768px)
+  and (max-width: 992px) {
+   display: none !important;
+  }
+}
+
+.hidden-sm-xs {
+  @media (max-width: 992px) {
+    display: none !important;
+  }
+}
+
+.visible-sm-portrait {
+  @media only screen
+  and (min-width: 768px)
+  and (max-width: 992px) {
+    display: block !important;
+  }
+}
+
+.text-cutting {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hide-scroll {
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  // height: 100%;
+  // backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.ios {
+  .hide-scroll {
+    position: fixed;
+  }
+}
+
+.link {
+  &--underline {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &--inherit-color {
+    color: inherit;
+  }
+}
